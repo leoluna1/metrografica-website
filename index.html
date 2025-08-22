@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetroGráfica - Líderes en Impresión Digital y Marketing | Ecuador</title>
+    <meta name="description" content="Más de 12 años liderando la industria gráfica en Ecuador. Impresión digital, tradicional y servicios de marketing. Calidad garantizada.">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(51, 51, 51, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .logo-placeholder {
+            background: #E53E3E;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+        }
+        
+        nav {
+            background: #333;
+            padding: 0.8rem 0;
+            border-top: 1px solid #444;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            display: block;
+            padding: 1rem 1.8rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border-right: 1px solid #444;
+        }
+        
+        .nav-links li:first-child a {
+            background: #E53E3E;
+            color: white;
+        }
+        
+        .nav-links a:hover {
+            background: #E53E3E;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #E53E3E 0%, #C53030 50%, #B91C1C 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 140px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text {
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 1.2rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #E53E3E;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-primary:hover {
+            background: #f7fafc;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #E53E3E;
+            transform: translateY(-3px);
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .device-mockup {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .phone-mockup {
+            background: #2D3748;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+            transform: rotate(-5deg);
+        }
+        
+        .phone-screen {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .phone-screen .logo-mini {
+            background: #E53E3E;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            pointer-events: none;
+        }
+        
+        .floating-item {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-item:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-item:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .floating-item:nth-child(3) {
+            width: 70px;
+            height: 70px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: #2D3748;
+            padding: 4rem 0;
+            color: white;
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #E53E3E;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #CBD5E0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background: #F7FAFC;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+        
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: #2D3748;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: #4A5568;
+        }
+        
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 0;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            border-left: 6px solid #E53E3E;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(229, 62, 62, 0.2);
+            border-left-width: 10px;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: #E53E3E;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+        
+        .service-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2D3748;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+        
+        .service-card p {
+            color: #4A5568;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .service-features {
+            list-style: none;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #2D3748;
+            position: relative;
+            padding-left: 2rem;
+            font-weight: 500;
+        }
+        
+        .service-features li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #E53E3E;
+            font-weight: bold;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            border: 3px solid transparent;
+            cursor: pointer;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            border-color: #E53E3E;
+        }
+        
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 900;
+        }
+        
+        .portfolio-content {
+            padding: 1.8rem;
+        }
+        
+        .portfolio-content h4 {
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #2D3748;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        
+        .portfolio-content p {
+            color: #4A5568;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 0;
+            background: #2D3748;
+            color: white;
+        }
+        
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0;
+            padding: 2.5rem;
+            border-left: 6px solid #E53E3E;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #CBD5E0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: #E53E3E;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+        
+        .author-info h5 {
+            font-weight: 700;
+            color: white;
+            font-size: 1.1rem;
+        }
+        
+        .author-info p {
+            color: #CBD5E0;
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #E53E3E 0%, #C53030 50%, #B91C1C 100%);
+            color: white;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 0;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .contact-info h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+        
+        .contact-item-content h4 {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-item-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1A202C;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: #E53E3E;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-section p,
+        .footer-section li {
+            color: #CBD5E0;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: #CBD5E0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #E53E3E;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: #2D3748;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 900;
+        }
+        
+        .social-links a:hover {
+            background: #E53E3E;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #2D3748;
+            padding-top: 2rem;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: #4A5568;
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-catalog {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+        }
+        
+        .whatsapp-catalog:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+            color: white;
+        }
+        
+        /* Button Styles */
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 0;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+        
+        .btn-quote {
+            background: #E53E3E;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            width: 100%;
+        }
+        
+        .btn-quote:hover {
+            background: #C53030;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-container {
+                overflow-x: auto;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal.active {
+            opacity: 1;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 4px solid #E53E3E;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #E53E3E;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .modal h3 {
+            color: #E53E3E;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: #2D3748;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        
+        .modal input,
+        .modal select,
+        .modal textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            background: #f9fafb;
+            color: #333;
+        }
+        
+        .modal input:focus,
+        .modal select:focus,
+        .modal textarea:focus {
+            border-color: #E53E3E;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-placeholder">MetroGráfica</div>
+            </div>
+        </div>
+        <nav>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#inicio">INICIO</a></li>
+                    <li><a href="#nosotros">NOSOTROS</a></li>
+                    <li><a href="#portafolio">PORTAFOLIO</a></li>
+                    <li><a href="#catalogo">CATÁLOGO WHATSAPP</a></li>
+                    <li><a href="#contacto">CONTACTOS</a></li>
+                    <li><a href="#factron">FACTRÓN</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="fade-in">BIENVENIDOS</h1>
+                <div class="hero-subtitle fade-in">Líderes en Industria Gráfica</div>
+                <p class="fade-in">En Metrográfica sin duda, nos enorgullece ser líderes en la industria gráfica con más de 12 años de experiencia. A lo largo de nuestra trayectoria, hemos consolidado nuestra posición y nos hemos adaptado constantemente para satisfacer las necesidades cambiantes de nuestros valiosos clientes.</p>
+                <p class="fade-in">No solo ofrecemos lo mejor de la imprenta tradicional, sino que también hemos evolucionado al integrar el poder del mundo digital. Presentamos Metrográfica, tu solución integral en impresión y marketing digital en un solo lugar.</p>
+                <div class="hero-buttons fade-in">
+                    <a href="#catalogo" class="btn-primary">
+                        📱 VER CATÁLOGO
+                    </a>
+                    <a href="#contacto" class="btn-secondary">
+                        💬 CONTACTAR
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="device-mockup">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="logo-mini">MG</div>
+                            <h3>Impresión Digital</h3>
+                            <p>Marketing & Productos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-elements">
+                    <div class="floating-item">🎨</div>
+                    <div class="floating-item">📱</div>
+                    <div class="floating-item">🖨️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item fade-in">
+                <div class="stat-number">12+</div>
+                <div class="stat-label">Años de Experiencia</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number">5000+</div>
+                <div class="stat-label">Productos Impresos</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Clientes Satisfechos</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Atención Digital</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="nosotros">
+        <div class="section-header">
+            <h2>NUESTROS SERVICIOS</h2>
+            <p>Soluciones integrales que combinan la excelencia de la impresión tradicional con el poder del marketing digital</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-icon">MG</div>
+                <h3>IMPRESIÓN DIGITAL</h3>
+                <p>Servicios de impresión digital de alta calidad con tecnología de punta para todos tus proyectos comerciales y personales.</p>
+                <ul class="service-features">
+                    <li>Tarjetas de presentación premium</li>
+                    <li>Folletos y catálogos corporativos</li>
+                    <li>Material publicitario impactante</li>
+                    <li>Papelería corporativa completa</li>
+                    <li>Empaques y packaging personalizado</li>
+                </ul>
+                <button class="btn-quote">COTIZAR AHORA</button>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">📱</div>
+                <h3>MARKETING DIGITAL</h3>
+                <p>Potencia tu presencia online con nuestros servicios integrales de MKR Digital y alcanza tus objetivos de marketing de manera efectiva.</p>
+                <ul class="service-features">
+                    <li>Diseño de páginas web profesionales</li>
+                    <li>Gestión completa de redes sociales</li>
+                    <li>Publicidad digital (Google Ads, Facebook)</li>
+                    <li>Email marketing automatizado</li>
+                    <li>SEO y posicionamiento web</li>
+                </ul>
+                <button class="btn-quote">COTIZAR AHORA</button>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🎨</div>
+                <h3>DISEÑO GRÁFICO</h3>
+                <p>Creamos identidades visuales impactantes que destacan tu marca en el mercado con diseños innovadores y funcionales.</p>
+                <ul class="service-features">
+                    <li>Logotipos e identidad corporativa</li>
+                    <li>Diseño de empaques y packaging</li>
+                    <li>Material promocional creativo</li>
+                    <li>Diseño editorial y publicaciones</li>
+                    <li>Ilustraciones y gráficos personalizados</li>
+                </ul>
+                <button class="btn-quote">COTIZAR AHORA</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portafolio">
+        <div class="section-header">
+            <h2>NUESTRO PORTAFOLIO</h2>
+            <p>Proyectos exitosos que demuestran nuestra experiencia y calidad en la industria gráfica</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">📚</div>
+                <div class="portfolio-content">
+                    <h4>CATÁLOGOS CORPORATIVOS</h4>
+                    <p>Diseño e impresión de catálogos de alta calidad para empresas líderes del sector retail y servicios.</p>
+                </div>
+            </div>
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">🏢</div>
+                <div class="portfolio-content">
+                    <h4>IDENTIDAD CORPORATIVA</h4>
+                    <p>Desarrollo completo de marca incluyendo logo, papelería y aplicaciones digitales para empresas ecuatorianas.</p>
+                </div>
+            </div>
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">📦</div>
+                <div class="portfolio-content">
+                    <h4>PACKAGING PREMIUM</h4>
+                    <p>Diseño de empaques para productos gourmet y líneas premium con acabados especiales y materiales selectos.</p>
+                </div>
+            </div>
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">💻</div>
+                <div class="portfolio-content">
+                    <h4>CAMPAÑAS DIGITALES</h4>
+                    <p>Estrategias integrales de marketing digital que han aumentado las ventas de nuestros clientes significativamente.</p>
+                </div>
+            </div>
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">🎯</div>
+                <div class="portfolio-content">
+                    <h4>MATERIAL PUBLICITARIO</h4>
+                    <p>Desarrollo de material POP y publicitario para lanzamientos de productos y campañas promocionales.</p>
+                </div>
+            </div>
+            <div class="portfolio-item fade-in">
+                <div class="portfolio-image">📱</div>
+                <div class="portfolio-content">
+                    <h4>APLICACIONES MÓVILES</h4>
+                    <p>Diseño UX/UI para aplicaciones móviles de e-commerce con miles de descargas y excelente usabilidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2 style="color: white;">LO QUE DICEN NUESTROS CLIENTES</h2>
+            <p style="color: #CBD5E0;">La satisfacción de nuestros clientes es nuestro mayor logro y motivación diaria</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial-card fade-in">
+                <p class="testimonial-text">"Metrográfica superó todas nuestras expectativas. La calidad de impresión es excepcional y el servicio al cliente es de primera categoría. Definitivamente nuestra opción número uno para todos nuestros proyectos gráficos."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h5>María Rodríguez</h5>
+                        <p>Gerente de Marketing, TechCorp Ecuador</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p class="testimonial-text">"El equipo de marketing digital de Metrográfica transformó completamente nuestra presencia online. Aumentamos nuestras ventas en un 250% en solo 6 meses. Profesionales de primer nivel."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JS</div>
+                    <div class="author-info">
+                        <h5>Juan Salazar</h5>
+                        <p>Director Comercial, Salazar & Asociados</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p class="testimonial-text">"Profesionalismo, puntualidad y excelente calidad son las características que definen a Metrográfica. Llevamos 3 años trabajando con ellos y siempre cumplen con los tiempos y superan nuestras expectativas."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AC</div>
+                    <div class="author-info">
+                        <h5>Ana Castillo</h5>
+                        <p>Propietaria, Boutique Luna</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>¿LISTO PARA TU PRÓXIMO PROYECTO?</h3>
+                <p style="margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem;">Contáctanos hoy mismo y descubre por qué somos la opción preferida de empresas líderes en Ecuador para sus necesidades de impresión y marketing digital.</p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-item-content">
+                        <h4>EMAIL</h4>
+                        <p>info@metrografica.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-item-content">
+                        <h4>TELÉFONO</h4>
+                        <p>+593 99 123 4567</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-item-content">
+                        <h4>UBICACIÓN</h4>
+                        <p>Quito, Ecuador</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <div class="contact-item-content">
+                        <h4>HORARIOS</h4>
+                        <p>Lun - Vie: 8:00 AM - 6:00 PM<br>Sáb: 9:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3 style="margin-bottom: 2rem; text-transform: uppercase; font-weight: 900;">SOLICITA TU COTIZACIÓN</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">NOMBRE COMPLETO</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">TELÉFONO</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+593 99 123 4567" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">SERVICIO DE INTERÉS</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecciona un servicio</option>
+                            <option value="impresion-digital">Impresión Digital</option>
+                            <option value="marketing-digital">Marketing Digital</option>
+                            <option value="diseno-grafico">Diseño Gráfico</option>
+                            <option value="combo-integral">Solución Integral</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">MENSAJE</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-whatsapp" style="width: 100%;">
+                        ENVIAR COTIZACIÓN 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h4>MetroGráfica</h4>
+                    <p>Líderes en la industria gráfica con más de 12 años de experiencia. Tu aliado confiable en el mundo de la impresión y el marketing digital.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">ig</a>
+                        <a href="#" title="LinkedIn">in</a>
+                        <a href="#" title="WhatsApp">wa</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#">Impresión Digital</a></li>
+                        <li><a href="#">Marketing Digital</a></li>
+                        <li><a href="#">Diseño Gráfico</a></li>
+                        <li><a href="#">Identidad Corporativa</a></li>
+                        <li><a href="#">Packaging</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📧 info@metrografica.com</li>
+                        <li>📱 +593 99 123 4567</li>
+                        <li>📍 Quito, Ecuador</li>
+                        <li>🕒 Lun-Vie: 8AM-6PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Útiles</h4>
+                    <ul>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#portafolio">Portafolio</a></li>
+                        <li><a href="#catalogo">Catálogo WhatsApp</a></li>
+                        <li><a href="#factron">Factrón</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MetroGráfica. Todos los derechos reservados. | Diseñado con ❤️ en Ecuador</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Catalog Button -->
+    <a href="https://wa.me/593991234567" class="whatsapp-catalog" id="catalogo" title="Catálogo WhatsApp">
+        📱
+    </a>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header effects
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(51, 51, 51, 0.98)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(51, 51, 51, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Contact form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            const message = `Hola MetroGráfica! Solicito información:
+
+📋 *Servicio:* ${data.service}
+👤 *Nombre:* ${data.name}
+📧 *Email:* ${data.email}
+📱 *Teléfono:* ${data.phone}
+💬 *Mensaje:* ${data.message}
+
+¡Gracias!`;
+            
+            const whatsappUrl = `https://wa.me/593991234567?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            alert('¡Gracias! Te hemos redirigido a WhatsApp para completar tu solicitud.');
+            this.reset();
+        });
+
+        // Counter animation
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.floor(start) + (target >= 1000 ? '+' : target >= 90 ? '%' : '+');
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target + (target >= 1000 ? '+' : target >= 90 ? '%' : '+');
+                }
+            }
+            
+            updateCounter();
+        }
+
+        // Stats animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target.querySelector('.stat-number');
+                    const text = counter.textContent;
+                    const number = parseInt(text.replace(/[^0-9]/g, ''));
+                    
+                    if (!counter.animated) {
+                        animateCounter(counter, number);
+                        counter.animated = true;
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-item').forEach(item => {
+            statsObserver.observe(item);
+        });
+
+        // Portfolio interactions
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const title = this.querySelector('h4').textContent;
+                const description = this.querySelector('p').textContent;
+                
+                if(confirm(`${title}\n\n${description}\n\n¿Interesado en un proyecto similar? Haz clic en OK para contactarnos por WhatsApp.`)) {
+                    const message = `Hola MetroGráfica! Me interesa un proyecto de: ${title}`;
+                    window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+                }
+            });
+        });
+
+        // Quote modal function
+        function createQuoteModal() {
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <button class="modal-close" onclick="this.closest('.modal').remove()">×</button>
+                    <h3>COTIZACIÓN RÁPIDA</h3>
+                    <form id="quickQuote">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input type="tel" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Tipo de Proyecto</label>
+                            <select name="projectType" required>
+                                <option value="">Selecciona el tipo</option>
+                                <option value="tarjetas">Tarjetas de Presentación</option>
+                                <option value="folletos">Folletos/Volantes</option>
+                                <option value="catalogo">Catálogo/Revista</option>
+                                <option value="papeleria">Papelería Corporativa</option>
+                                <option value="packaging">Packaging/Empaques</option>
+                                <option value="web">Página Web</option>
+                                <option value="marketing">Marketing Digital</option>
+                                <option value="identidad">Identidad Corporativa</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Cantidad</label>
+                                <select name="quantity" required>
+                                    <option value="">Cantidad aproximada</option>
+                                    <option value="100">100 - 500 unidades</option>
+                                    <option value="1000">500 - 1,000 unidades</option>
+                                    <option value="5000">1,000 - 5,000 unidades</option>
+                                    <option value="10000">5,000+ unidades</option>
+                                    <option value="digital">Proyecto Digital</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Urgencia</label>
+                                <select name="urgency" required>
+                                    <option value="">Tiempo de entrega</option>
+                                    <option value="standard">Estándar (7-10 días)</option>
+                                    <option value="express">Express (3-5 días)</option>
+                                    <option value="urgent">Urgente (1-2 días)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Detalles del Proyecto</label>
+                            <textarea name="details" rows="3" placeholder="Describe tu proyecto..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-whatsapp" style="width: 100%; font-size: 1rem;">
+                            ENVIAR POR WHATSAPP 📱
+                        </button>
+                    </form>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            setTimeout(() => modal.classList.add('active'), 10);
+            
+            modal.querySelector('#quickQuote').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                const message = `Hola MetroGráfica! Solicito cotización:
+
+📋 *Proyecto:* ${data.projectType}
+👤 *Nombre:* ${data.name}
+📱 *Teléfono:* ${data.phone}
+📦 *Cantidad:* ${data.quantity}
+⏰ *Urgencia:* ${data.urgency}
+📝 *Detalles:* ${data.details || 'No especificados'}
+
+¡Gracias!`;
+                
+                window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+                modal.remove();
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) modal.remove();
+            });
+        }
+
+        // Quote buttons
+        document.querySelectorAll('.btn-quote').forEach(btn => {
+            btn.addEventListener('click', createQuoteModal);
+        });
+
+        // WhatsApp catalog
+        document.querySelector('.whatsapp-catalog').addEventListener('click', function(e) {
+            e.preventDefault();
+            const message = 'Hola MetroGráfica! Me interesa conocer su catálogo de productos y servicios.';
+            window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        // FACTRÓN link
+        document.querySelector('a[href="#factron"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            const message = 'Hola MetroGráfica! Me interesa conocer más sobre su servicio FACTRÓN.';
+            window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        // Mobile menu
+        function createMobileMenu() {
+            if (window.innerWidth <= 768) {
+                const nav = document.querySelector('.nav-container');
+                const navLinks = document.querySelector('.nav-links');
+                
+                if (!document.querySelector('.mobile-menu-btn')) {
+                    const btn = document.createElement('button');
+                    btn.innerHTML = '☰';
+                    btn.className = 'mobile-menu-btn';
+                    btn.style.cssText = `
+                        background: #E53E3E;
+                        border: none;
+                        color: white;
+                        padding: 0.8rem 1rem;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        position: absolute;
+                        right: 2rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    `;
+                    
+                    nav.style.position = 'relative';
+                    nav.appendChild(btn);
+                    
+                    let open = false;
+                    btn.addEventListener('click', () => {
+                        open = !open;
+                        if (open) {
+                            navLinks.style.display = 'flex';
+                            navLinks.style.position = 'absolute';
+                            navLinks.style.top = '100%';
+                            navLinks.style.left = '0';
+                            navLinks.style.right = '0';
+                            navLinks.style.background = '#333';
+                            navLinks.style.flexDirection = 'column';
+                            navLinks.style.zIndex = '1000';
+                            btn.innerHTML = '✕';
+                        } else {
+                            navLinks.style.display = 'none';
+                            btn.innerHTML = '☰';
+                        }
+                    });
+                }
+            }
+        }
+
+        window.addEventListener('resize', createMobileMenu);
+        createMobileMenu();
+
+        // Service card effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+                this.style.borderLeftWidth = '15px';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.borderLeftWidth = '6px';
+            });
+        });
+
+        // Testimonials rotation
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        let current = 0;
+
+        function rotateTestimonials() {
+            testimonials.forEach((card, index) => {
+                card.style.opacity = index === current ? '1' : '0.7';
+                card.style.transform = index === current ? 'scale(1.05)' : 'scale(1)';
+            });
+            current = (current + 1) % testimonials.length;
+        }
+
+        setInterval(rotateTestimonials, 4000);
+
+        // Initialize
+        console.log('✅ MetroGráfica - Sitio web cargado correctamente');
+        console.log('📱 WhatsApp: +593 99 123 4567');
+        console.log('🚀 Todas las funcionalidades activas');
+    </script>
+</body>
+</html>
