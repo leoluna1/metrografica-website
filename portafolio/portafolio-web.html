@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Fotográfico - MetroGráfica | Trabajos de Impresión Digital</title>
+    <meta name="description" content="Galería fotográfica de nuestros mejores trabajos de impresión digital, offset y gran formato. Más de 12 años creando proyectos excepcionales en Ecuador.">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(51, 51, 51, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .logo-placeholder {
+            background: #E53E3E;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+            box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-placeholder:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.6);
+        }
+        
+        nav {
+            background: #333;
+            padding: 0.8rem 0;
+            border-top: 1px solid #444;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            display: block;
+            padding: 1rem 1.8rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border-right: 1px solid #444;
+            position: relative;
+        }
+        
+        .nav-links a.active {
+            background: #E53E3E;
+            color: white;
+        }
+        
+        .nav-links a:hover {
+            background: #E53E3E;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, #E53E3E 0%, #C53030 50%, #B91C1C 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 140px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 2px, transparent 2px),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 1px, transparent 1px),
+                radial-gradient(circle at 40% 40%, rgba(255,255,255,0.06) 3px, transparent 3px);
+            background-size: 200px 200px, 150px 150px, 300px 300px;
+            animation: particlesFloat 15s linear infinite;
+        }
+        
+        @keyframes particlesFloat {
+            0% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-10px) translateY(-20px); }
+            50% { transform: translateX(-20px) translateY(0); }
+            75% { transform: translateX(-10px) translateY(20px); }
+            100% { transform: translateX(0) translateY(0); }
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        /* Filter Navigation */
+        .filter-nav {
+            background: #f8fafc;
+            padding: 2rem 0;
+            border-bottom: 3px solid #E53E3E;
+        }
+        
+        .filter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .filter-btn {
+            background: white;
+            color: #4A5568;
+            border: 2px solid #e2e8f0;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #E53E3E;
+            color: white;
+            border-color: #E53E3E;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+        }
+        
+        /* Gallery Grid */
+        .gallery-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .gallery-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(229, 62, 62, 0.2);
+        }
+        
+        .gallery-image {
+            height: 280px;
+            background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+        
+        .gallery-image::after {
+            content: '📸';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(229, 62, 62, 0.9), rgba(197, 48, 48, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .overlay-content {
+            text-align: center;
+            color: white;
+        }
+        
+        .overlay-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: zoomPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes zoomPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .overlay-text {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .gallery-content {
+            padding: 2rem;
+        }
+        
+        .gallery-category {
+            background: #E53E3E;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .gallery-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #2D3748;
+        }
+        
+        .gallery-description {
+            color: #4A5568;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .gallery-specs {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .spec-item {
+            background: #f8fafc;
+            color: #4A5568;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* Modal for full image view */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: #E53E3E;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background: #C53030;
+            transform: scale(1.1);
+        }
+        
+        /* Load More Section */
+        .load-more-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: #f8fafc;
+        }
+        
+        .btn-load-more {
+            background: linear-gradient(135deg, #E53E3E, #C53030);
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            border-radius: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.3);
+        }
+        
+        .btn-load-more:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(229, 62, 62, 0.4);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #2D3748 0%, #4A5568 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-cta {
+            background: #E53E3E;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.4);
+        }
+        
+        .btn-cta:hover {
+            background: #C53030;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(229, 62, 62, 0.6);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1A202C;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .footer-text {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: #2D3748;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 900;
+        }
+        
+        .social-links a:hover {
+            background: #E53E3E;
+            transform: translateY(-3px);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-catalog {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        .whatsapp-catalog:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .filter-container {
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-placeholder">MetroGráfica</a>
+            </div>
+        </div>
+        <nav>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+                    <li><a href="portafolio.html" class="active">PORTAFOLIO</a></li>
+                    <li><a href="#catalogo">CATÁLOGO WHATSAPP</a></li>
+                    <li><a href="#contacto">CONTACTOS</a></li>
+                    <li><a href="#factron">FACTRÓN</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>PORTAFOLIO FOTOGRÁFICO</h1>
+            <div class="hero-subtitle">Nuestros Mejores Trabajos de Impresión Digital</div>
+        </div>
+    </section>
+
+    <!-- Filter Navigation -->
+    <section class="filter-nav">
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">TODOS</button>
+            <button class="filter-btn" data-filter="offset">OFFSET HEIDELBERG</button>
+            <button class="filter-btn" data-filter="digital">DIGITAL XEROX</button>
+            <button class="filter-btn" data-filter="gran-formato">GRAN FORMATO</button>
+            <button class="filter-btn" data-filter="packaging">PACKAGING</button>
+            <button class="filter-btn" data-filter="textil">TEXTIL DTF</button>
+            <button class="filter-btn" data-filter="corporativo">CORPORATIVO</button>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Offset Projects -->
+            <div class="gallery-item" data-category="digital">
+                <div class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">💳</div>
+                            <div class="overlay-text">Ver Proyecto</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-content">
+                    <span class="gallery-category">DIGITAL XEROX</span>
+                    <h3 class="gallery-title">Material POP Promocional</h3>
+                    <p class="gallery-description">Serie de material promocional para lanzamiento de producto, incluyendo volantes, afiches y displays con impresión digital de alta resolución.</p>
+                    <div class="gallery-specs">
+                        <span class="spec-item">Alta Resolución</span>
+                        <span class="spec-item">Variedad</span>
+                        <span class="spec-item">Rápido</span>
+                        <span class="spec-item">Económico</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Load More Section -->
+    <section class="load-more-section">
+        <button class="btn-load-more" onclick="loadMoreProjects()">
+            CARGAR MÁS PROYECTOS
+        </button>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>¿QUIERES QUE TU PROYECTO SEA EL PRÓXIMO?</h2>
+            <p>Únete a nuestros clientes satisfechos y haz realidad tu proyecto de impresión con la calidad y experiencia de MetroGráfica.</p>
+            <a href="#contacto" class="btn-cta">
+                🚀 COMENZAR MI PROYECTO
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">&copy; 2025 MetroGráfica - Portafolio Fotográfico. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" title="Facebook">f</a>
+                <a href="#" title="Instagram">ig</a>
+                <a href="#" title="LinkedIn">in</a>
+                <a href="#" title="WhatsApp">wa</a>
+            </div>
+            <p style="opacity: 0.6; font-size: 0.9rem;">📸 Cada proyecto cuenta una historia | 🏆 12+ años de excelencia</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Catalog Button -->
+    <a href="https://wa.me/593991234567" class="whatsapp-catalog" title="Consultar Proyecto">
+        📱
+    </a>
+
+    <!-- Modal for Image View -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <img class="modal-image" id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const items = document.querySelectorAll('.gallery-item');
+                
+                items.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        item.style.animation = 'fadeInUp 0.6s ease-out';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Gallery item click handler
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                const title = this.querySelector('.gallery-title').textContent;
+                const description = this.querySelector('.gallery-description').textContent;
+                
+                const message = `Hola MetroGráfica! 📸 Me interesa un proyecto similar a: "${title}" 
+                
+Categoría: ${category}
+Descripción: ${description}
+
+¿Podrían enviarme más información y cotización?`;
+                
+                window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+            });
+        });
+
+        // Load more functionality
+        function loadMoreProjects() {
+            const button = document.querySelector('.btn-load-more');
+            const originalText = button.textContent;
+            
+            button.textContent = 'CARGANDO...';
+            button.disabled = true;
+            
+            // Simulate loading
+            setTimeout(() => {
+                // Add new gallery items
+                const gallery = document.getElementById('galleryGrid');
+                const newItems = createAdditionalProjects();
+                
+                newItems.forEach(item => {
+                    gallery.appendChild(item);
+                    
+                    // Add click handler to new items
+                    item.addEventListener('click', function() {
+                        const category = this.getAttribute('data-category');
+                        const title = this.querySelector('.gallery-title').textContent;
+                        const message = `Hola MetroGráfica! Me interesa el proyecto: "${title}"`;
+                        window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+                    });
+                });
+                
+                button.textContent = originalText;
+                button.disabled = false;
+                
+                // Hide button after loading more (simulate end of content)
+                button.style.display = 'none';
+                
+                // Show message
+                const loadSection = document.querySelector('.load-more-section');
+                loadSection.innerHTML = '<p style="color: #4A5568; font-style: italic;">📸 ¡Has visto todos nuestros proyectos destacados! <br>¿Quieres ver tu proyecto aquí? <a href="#contacto" style="color: #E53E3E; text-decoration: none; font-weight: bold;">¡Contáctanos!</a></p>';
+                
+            }, 1500);
+        }
+
+        // Create additional projects
+        function createAdditionalProjects() {
+            const projects = [
+                {
+                    category: 'corporativo',
+                    icon: '🏪',
+                    categoryText: 'CORPORATIVO',
+                    title: 'Señalética Comercial',
+                    description: 'Sistema completo de señalización para centro comercial con materiales duraderos y diseño moderno.',
+                    specs: ['Acrílico', 'LED', 'Exterior', 'Modular']
+                },
+                {
+                    category: 'packaging',
+                    icon: '🎁',
+                    categoryText: 'PACKAGING',
+                    title: 'Cajas Gift Premium',
+                    description: 'Línea de cajas regalo para joyería con acabados especiales, foil dorado y forro de terciopelo.',
+                    specs: ['Foil Dorado', 'Terciopelo', 'Premium', 'Troquelado']
+                },
+                {
+                    category: 'textil',
+                    icon: '🧢',
+                    categoryText: 'TEXTIL DTF',
+                    title: 'Merchandising Deportivo',
+                    description: 'Colección completa de merchandising para equipo deportivo incluyendo camisetas, gorras y accesorios.',
+                    specs: ['DTF Pro', 'Deportivo', 'Colección', 'Resistente']
+                }
+            ];
+            
+            return projects.map(project => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.setAttribute('data-category', project.category);
+                item.style.animation = 'fadeInUp 0.8s ease-out';
+                
+                item.innerHTML = `
+                    <div class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <div class="overlay-icon">${project.icon}</div>
+                                <div class="overlay-text">Ver Proyecto</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-content">
+                        <span class="gallery-category">${project.categoryText}</span>
+                        <h3 class="gallery-title">${project.title}</h3>
+                        <p class="gallery-description">${project.description}</p>
+                        <div class="gallery-specs">
+                            ${project.specs.map(spec => `<span class="spec-item">${spec}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+                
+                return item;
+            });
+        }
+
+        // Modal functionality
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on background click
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Escape key to close modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(51, 51, 51, 0.98)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(51, 51, 51, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // WhatsApp functionality
+        document.querySelector('.whatsapp-catalog').addEventListener('click', function(e) {
+            e.preventDefault();
+            const message = '¡Hola MetroGráfica! 📸 He visto su increíble portafolio fotográfico y me interesa desarrollar un proyecto similar. ¿Podrían contactarme para platicar sobre mi idea?';
+            window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        // CTA button functionality
+        document.querySelector('.btn-cta').addEventListener('click', function(e) {
+            e.preventDefault();
+            const message = '🚀 ¡Hola MetroGráfica! Después de ver su portafolio fotográfico, estoy listo para comenzar mi proyecto. ¿Cuándo podemos conversar sobre mi idea?';
+            window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        // Mobile menu
+        function createMobileMenu() {
+            if (window.innerWidth <= 768) {
+                const nav = document.querySelector('.nav-container');
+                const navLinks = document.querySelector('.nav-links');
+                
+                if (!document.querySelector('.mobile-menu-btn')) {
+                    const btn = document.createElement('button');
+                    btn.innerHTML = '☰';
+                    btn.className = 'mobile-menu-btn';
+                    btn.style.cssText = `
+                        background: #E53E3E;
+                        border: none;
+                        color: white;
+                        padding: 0.8rem 1rem;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        position: absolute;
+                        right: 2rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        border-radius: 4px;
+                    `;
+                    
+                    nav.style.position = 'relative';
+                    nav.appendChild(btn);
+                    
+                    let menuOpen = false;
+                    btn.addEventListener('click', () => {
+                        menuOpen = !menuOpen;
+                        if (menuOpen) {
+                            navLinks.style.display = 'flex';
+                            navLinks.style.position = 'absolute';
+                            navLinks.style.top = '100%';
+                            navLinks.style.left = '0';
+                            navLinks.style.right = '0';
+                            navLinks.style.background = '#333';
+                            navLinks.style.flexDirection = 'column';
+                            navLinks.style.zIndex = '1000';
+                            btn.innerHTML = '✕';
+                        } else {
+                            navLinks.style.display = 'none';
+                            btn.innerHTML = '☰';
+                        }
+                    });
+                }
+            }
+        }
+
+        window.addEventListener('resize', createMobileMenu);
+        createMobileMenu();
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe gallery items
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Console messages
+        console.log('📸 MetroGráfica - Portafolio Fotográfico cargado');
+        console.log('🎨 Galería interactiva con filtros funcionando');
+        console.log('📱 WhatsApp: +593 99 123 4567');
+        console.log('🚀 ¡Listo para mostrar proyectos increíbles!');
+    </script>
+</body>
+</html>category="offset">
+                <div class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">🏭</div>
+                            <div class="overlay-text">Ver Proyecto</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-content">
+                    <span class="gallery-category">OFFSET HEIDELBERG</span>
+                    <h3 class="gallery-title">Catálogo Corporativo Premium</h3>
+                    <p class="gallery-description">Impresión offset de 200 páginas para empresa del sector financiero con acabados especiales y encuadernación perfecta.</p>
+                    <div class="gallery-specs">
+                        <span class="spec-item">4 Colores</span>
+                        <span class="spec-item">200 páginas</span>
+                        <span class="spec-item">Papel Couché</span>
+                        <span class="spec-item">Barniz UV</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Projects -->
+            <div class="gallery-item" data-category="digital">
+                <div class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">⚡</div>
+                            <div class="overlay-text">Ver Proyecto</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-content">
+                    <span class="gallery-category">DIGITAL XEROX</span>
+                    <h3 class="gallery-title">Tarjetas de Presentación Ejecutivas</h3>
+                    <p class="gallery-description">Serie de tarjetas personalizadas para alta gerencia con impresión digital de calidad fotográfica y entrega inmediata.</p>
+                    <div class="gallery-specs">
+                        <span class="spec-item">Calidad Foto</span>
+                        <span class="spec-item">48x33cm</span>
+                        <span class="spec-item">Entrega 24h</span>
+                        <span class="spec-item">Personalizado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gran Formato Projects -->
+            <div class="gallery-item" data-category="gran-formato">
+                <div class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">🖨️</div>
+                            <div class="overlay-text">Ver Proyecto</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-content">
+                    <span class="gallery-category">GRAN FORMATO</span>
+                    <h3 class="gallery-title">Gigantografía Comercial</h3>
+                    <p class="gallery-description">Impresión de gran formato para fachada comercial con tecnología MIMAKI, resistente a intemperie y colores vibrantes.</p>
+                    <div class="gallery-specs">
+                        <span class="spec-item">3.20m Ancho</span>
+                        <span class="spec-item">MIMAKI</span>
+                        <span class="spec-item">Exterior</span>
+                        <span class="spec-item">Laminado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Packaging Projects -->
+            <div class="gallery-item" data-category="packaging">
+                <div class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">📦</div>
+                            <div class="overlay-text">Ver Proyecto</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-content">
+                    <span class="gallery-category">PACKAGING</span>
+                    <h3 class="gallery-title">Empaques Gourmet</h3>
+                    <p class="gallery-description">Diseño y producción de packaging premium para línea de productos gourmet con acabados especiales y troquelado.</p>
+                    <div class="gallery-specs">
+                        <span class="spec-item">Troquelado</span>
+                        <span class="spec-item">Hot Stamping</span>
+                        <span class="spec-item">Cartón Premium</span>
+                        <span class="spec-item">Acabado Mate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Textil Projects -->
+            <div class="gallery-item" data-category="textil">
+                <div class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">👕</div>
+                            <div class="overlay-text">Ver Proyecto</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-content">
+                    <span class="gallery-category">TEXTIL DTF</span>
+                    <h3 class="gallery-title">Uniformes Corporativos</h3>
+                    <p class="gallery-description">Estampado DTF para uniformes de empresa tecnológica, incluyendo camisas, gorras y accesorios con logo corporativo.</p>
+                    <div class="gallery-specs">
+                        <span class="spec-item">DTF Technology</span>
+                        <span class="spec-item">Durabilidad</span>
+                        <span class="spec-item">Colores Vivos</span>
+                        <span class="spec-item">Lavable</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corporativo Projects -->
+            <div class="gallery-item" data-category="corporativo">
+                <div class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">🏢</div>
+                            <div class="overlay-text">Ver Proyecto</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-content">
+                    <span class="gallery-category">CORPORATIVO</span>
+                    <h3 class="gallery-title">Identidad Visual Completa</h3>
+                    <p class="gallery-description">Desarrollo completo de identidad visual para startup, incluyendo papelería, señalética y material promocional.</p>
+                    <div class="gallery-specs">
+                        <span class="spec-item">Branding</span>
+                        <span class="spec-item">Papelería</span>
+                        <span class="spec-item">Señalética</span>
+                        <span class="spec-item">Promocional</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Projects -->
+            <div class="gallery-item" data-category="offset">
+                <div class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">📖</div>
+                            <div class="overlay-text">Ver Proyecto</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-content">
+                    <span class="gallery-category">OFFSET HEIDELBERG</span>
+                    <h3 class="gallery-title">Revista Institucional</h3>
+                    <p class="gallery-description">Impresión de revista trimestral para institución educativa con 80 páginas, papel especial y acabados profesionales.</p>
+                    <div class="gallery-specs">
+                        <span class="spec-item">80 Páginas</span>
+                        <span class="spec-item">4/4 Colores</span>
+                        <span class="spec-item">Papel Couché</span>
+                        <span class="spec-item">Encuadernado</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="gran-formato">
+                <div class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-icon">🎪</div>
+                            <div class="overlay-text">Ver Proyecto</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-content">
+                    <span class="gallery-category">GRAN FORMATO</span>
+                    <h3 class="gallery-title">Stand Ferial Completo</h3>
+                    <p class="gallery-description">Producción integral de stand ferial con impresiones de gran formato, estructura modular y sistema de iluminación LED.</p>
+                    <div class="gallery-specs">
+                        <span class="spec-item">Stand 6x3m</span>
+                        <span class="spec-item">Modular</span>
+                        <span class="spec-item">LED</span>
+                        <span class="spec-item">Portable</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-
