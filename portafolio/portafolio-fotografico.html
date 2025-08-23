@@ -147,6 +147,7 @@
                 opacity: 0;
                 transform: translateY(-10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -273,10 +274,21 @@
         }
 
         /* Different background patterns for categories */
-        .conceptual-bg { background: #3a3a3a; }
-        .publicitarias-bg { background: #f5f5f5; }
-        .food-bg { background: #3a3a3a; }
-        .bodas-bg { background: #f5f5f5; }
+        .conceptual-bg {
+            background: #3a3a3a;
+        }
+
+        .publicitarias-bg {
+            background: #f5f5f5;
+        }
+
+        .food-bg {
+            background: #3a3a3a;
+        }
+
+        .bodas-bg {
+            background: #f5f5f5;
+        }
 
         /* Modal */
         .modal {
@@ -389,9 +401,11 @@
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
+
             70% {
                 box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
@@ -582,16 +596,28 @@
             </div>
             <div class="photo-grid">
                 <div class="photo-item" data-category="conceptual">
-                    <div class="photo-placeholder">📸</div>
+                    <div class="photo-placeholder"><img src="/metrografica-website/images/m-cara-arriba.jpg"
+                            alt="Accesorios Audio"
+                            style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    </div>
                 </div>
                 <div class="photo-item" data-category="conceptual">
-                    <div class="photo-placeholder">🎭</div>
+                    <div class="photo-placeholder"><img src="/metrografica-website/images/m-cara-giro-iz.jpg"
+                            alt="Accesorios Audio"
+                            style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    </div>
                 </div>
                 <div class="photo-item" data-category="conceptual">
-                    <div class="photo-placeholder">🌟</div>
+                    <div class="photo-placeholder"><img src="/metrografica-website/images/m-cara-jiro-derecho.jpg"
+                            alt="Accesorios Audio"
+                            style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    </div>
                 </div>
                 <div class="photo-item" data-category="conceptual">
-                    <div class="photo-placeholder">🎨</div>
+                    <div class="photo-placeholder"><img src="/metrografica-website/images/m-cara-mariposa.jpg"
+                            alt="Accesorios Audio"
+                            style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    </div>
                 </div>
             </div>
         </section>
@@ -604,7 +630,10 @@
             </div>
             <div class="photo-grid">
                 <div class="photo-item" data-category="publicitarias">
-                    <div class="photo-placeholder">🏃‍♀️</div>
+                    <div class="photo-placeholder"><img src="/metrografica-website/images/m-cara-mariposa.jpg"
+                            alt="Accesorios Audio"
+                            style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);"></div>
+                    
                 </div>
                 <div class="photo-item" data-category="publicitarias">
                     <div class="photo-placeholder">🏋️‍♀️</div>
@@ -703,7 +732,8 @@
             <div class="footer-main">
                 <div class="footer-section">
                     <h4>MetroGráfica Fotografía</h4>
-                    <p>Capturamos momentos únicos con la más alta calidad fotográfica. Especializados en fotografía conceptual, publicitaria, food style y bodas en Ecuador.</p>
+                    <p>Capturamos momentos únicos con la más alta calidad fotográfica. Especializados en fotografía
+                        conceptual, publicitaria, food style y bodas en Ecuador.</p>
                     <div class="social-links">
                         <a href="#" title="Facebook">f</a>
                         <a href="#" title="Instagram">ig</a>
@@ -776,7 +806,7 @@
                 currentCategory = item.getAttribute('data-category');
                 categoryImages = Array.from(document.querySelectorAll(`[data-category="${currentCategory}"]`));
                 currentImageIndex = categoryImages.indexOf(item);
-                
+
                 showModal(item);
             });
         });
@@ -784,7 +814,7 @@
         function showModal(item) {
             const img = item.querySelector('img');
             const placeholder = item.querySelector('.photo-placeholder');
-            
+
             if (img) {
                 modalImage.src = img.src;
                 modalImage.alt = img.alt || 'Fotografía MetroGráfica';
@@ -794,10 +824,10 @@
                 canvas.width = 800;
                 canvas.height = 600;
                 const ctx = canvas.getContext('2d');
-                
+
                 // Create gradient background based on category
                 const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-                switch(currentCategory) {
+                switch (currentCategory) {
                     case 'conceptual':
                         gradient.addColorStop(0, '#3a3a3a');
                         gradient.addColorStop(1, '#2a2a2a');
@@ -818,23 +848,23 @@
                         gradient.addColorStop(0, '#E53E3E');
                         gradient.addColorStop(1, '#C53030');
                 }
-                
+
                 ctx.fillStyle = gradient;
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
+
                 // Add icon
                 ctx.fillStyle = 'white';
                 ctx.font = 'bold 120px Arial';
                 ctx.textAlign = 'center';
-                ctx.fillText(placeholder.textContent, canvas.width/2, canvas.height/2 + 40);
-                
+                ctx.fillText(placeholder.textContent, canvas.width / 2, canvas.height / 2 + 40);
+
                 // Add category label
                 ctx.font = 'bold 40px Arial';
-                ctx.fillText(currentCategory.toUpperCase(), canvas.width/2, canvas.height - 60);
-                
+                ctx.fillText(currentCategory.toUpperCase(), canvas.width / 2, canvas.height - 60);
+
                 modalImage.src = canvas.toDataURL();
             }
-            
+
             modal.style.display = 'block';
         }
 
