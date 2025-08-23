@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - MetroGráfica | Líderes en Impresión Digital Ecuador</title>
+    <meta name="description"
+        content="Conoce la historia, equipos y compromiso de MetroGráfica. Más de 12 años ofreciendo soluciones de impresión digital de alta calidad en Ecuador.">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(51, 51, 51, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo-placeholder {
+            background: #E53E3E;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+            box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo-placeholder:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.6);
+        }
+
+        nav {
+            background: #333;
+            padding: 0.8rem 0;
+            border-top: 1px solid #444;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 1rem 1.8rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border-right: 1px solid #444;
+            position: relative;
+        }
+
+        .nav-links a.active {
+            background: #E53E3E;
+            color: white;
+        }
+
+        .nav-links a:hover {
+            background: #E53E3E;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section - More Dynamic */
+        .hero {
+            min-height: 70vh;
+            background: linear-gradient(135deg, #E53E3E 0%, #C53030 50%, #B91C1C 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 140px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+            animation: heroAnimation 10s ease-in-out infinite;
+        }
+
+        @keyframes heroAnimation {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideInDown 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            border-bottom: 4px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 1rem;
+            display: inline-block;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Main Content - Modern Grid */
+        .main-content {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(229, 62, 62, 0.1) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 5rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            color: #2D3748;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, #E53E3E, #C53030);
+            border-radius: 3px;
+        }
+
+        .section-header p {
+            font-size: 1.3rem;
+            color: #4A5568;
+            line-height: 1.8;
+        }
+
+        /* Values Section - Card Design Revolution */
+        .values-section {
+            padding: 8rem 0;
+            background: white;
+            position: relative;
+        }
+
+        .values-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #E53E3E, #C53030, #B91C1C);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 60px rgba(229, 62, 62, 0.2);
+            border-color: #E53E3E;
+        }
+
+        .value-card:hover::before {
+            height: 12px;
+        }
+
+        .value-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #E53E3E, #C53030);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 900;
+            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover .value-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 35px rgba(229, 62, 62, 0.5);
+        }
+
+        .value-card h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #2D3748;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .value-card p {
+            color: #4A5568;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Equipment Section - Dark Theme Enhanced */
+        .equipment-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            position: relative;
+        }
+
+        .equipment-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(45deg, transparent 49%, rgba(229, 62, 62, 0.05) 50%, transparent 51%),
+                linear-gradient(-45deg, transparent 49%, rgba(229, 62, 62, 0.05) 50%, transparent 51%);
+            background-size: 60px 60px;
+        }
+
+        .equipment-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .equipment-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 3rem;
+            border: 1px solid rgba(229, 62, 62, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .equipment-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(229, 62, 62, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #E53E3E;
+        }
+
+        .equipment-card:hover::before {
+            opacity: 1;
+        }
+
+        .equipment-card h4 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #E53E3E;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 3;
+        }
+
+        .equipment-card p {
+            color: #CBD5E0;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .equipment-highlight {
+            background: linear-gradient(90deg, #E53E3E, #C53030);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
+            position: relative;
+            z-index: 3;
+        }
+
+        /* CTA Section - More Impact */
+        .cta-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #E53E3E 0%, #C53030 25%, #B91C1C 50%, #991B1B 100%);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.12) 0%, transparent 50%);
+            animation: ctaBackground 15s ease-in-out infinite;
+        }
+
+        @keyframes ctaBackground {
+
+            0%,
+            100% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            33% {
+                transform: rotate(120deg) scale(1.1);
+            }
+
+            66% {
+                transform: rotate(240deg) scale(0.9);
+            }
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #E53E3E;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.4s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(229, 62, 62, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover {
+            background: #f7fafc;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        /* Footer - Enhanced */
+        footer {
+            background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: #E53E3E;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: #CBD5E0;
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #CBD5E0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #E53E3E;
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #E53E3E, #C53030);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(229, 62, 62, 0.4);
+        }
+
+        .footer-bottom {
+            border-top: 2px solid rgba(229, 62, 62, 0.3);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #4A5568;
+            font-size: 1rem;
+        }
+
+        /* WhatsApp Button - Enhanced */
+        .whatsapp-catalog {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.2rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .whatsapp-catalog:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .values-grid,
+            .equipment-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .value-card,
+            .equipment-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-container {
+                overflow-x: auto;
+            }
+        }
+
+        /* Advanced Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            animation: fadeInRight 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(229, 62, 62, 0.2);
+            z-index: 1001;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #E53E3E, #C53030);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-placeholder">MetroGráfica</a>
+            </div>
+        </div>
+        <nav>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
+                    <li><a href="portafolio.html">PORTAFOLIO</a></li>
+                    <li><a href="#catalogo">CATÁLOGO WHATSAPP</a></li>
+                    <li><a href="#contacto">CONTACTOS</a></li>
+                    <li><a href="#factron">FACTRÓN</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>NOSOTROS</h1>
+            <div class="hero-subtitle">Más de 12 Años de Excelencia</div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="section-header">
+            <h2>NUESTRA EMPRESA</h2>
+            <p>En MetroGráfica nos enorgullecemos de ser líderes en la industria gráfica, ofreciendo soluciones de
+                impresión de alta calidad con compromiso, experiencia y tecnología de vanguardia que transforma ideas en
+                realidad.</p>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="section-header">
+            <h2>NUESTROS VALORES</h2>
+            <p>Los pilares fundamentales que nos distinguen en el mercado de impresión digital</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card fade-in">
+                <div class="value-icon">⚡</div>
+                <h3>CUMPLIMIENTO</h3>
+                <p>Nos enorgullece cumplir rigurosamente con los plazos de entrega acordados. Sabemos lo importante que
+                    es para ti contar con soluciones rápidas y eficientes. Nos comprometemos a ofrecerte tiempos de
+                    producción excepcionalmente cortos, para satisfacer incluso tus necesidades más urgentes.</p>
+            </div>
+
+            <div class="value-card fade-in-left">
+                <div class="value-icon">💎</div>
+                <h3>CALIDAD PREMIUM</h3>
+                <p>Aseguramos la reproducción precisa de colores en todos nuestros sistemas de impresión. Trabajamos con
+                    materiales de primera calidad y nos esforzamos por lograr acabados impecables en cada proyecto.
+                    Nuestro compromiso con la excelencia nos impulsa a superar tus expectativas constantemente.</p>
+            </div>
+
+            <div class="value-card fade-in-right">
+                <div class="value-icon">🎯</div>
+                <h3>FLEXIBILIDAD TOTAL</h3>
+                <p>Ofrecemos la posibilidad de imprimir el 90% de tus productos desde una única unidad, sin comprometer
+                    la calidad que nos distingue. Valoramos tus necesidades individuales y nos esforzamos por brindarte
+                    soluciones personalizadas sin importar el tamaño de tu proyecto.</p>
+            </div>
+
+            <div class="value-card fade-in">
+                <div class="value-icon">💰</div>
+                <h3>PRECIOS JUSTOS</h3>
+                <p>Ofrecemos impresiones de la más alta calidad a precios competitivos en el mercado. Valoramos tu
+                    satisfacción y nos esforzamos por brindarte un excelente valor por tu inversión. Resultados
+                    impresionantes sin comprometer la calidad, una solución confiable y asequible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Section -->
+    <section class="equipment-section">
+        <div class="section-header">
+            <h2 style="color: white;">TECNOLOGÍA DE VANGUARDIA</h2>
+            <p style="color: #CBD5E0;">Equipamiento de última generación para satisfacer todas tus necesidades de
+                impresión</p>
+        </div>
+        <div class="equipment-grid">
+            <div class="equipment-card fade-in">
+                <h4>OFFSET HEIDELBERG</h4>
+                <img src="/metrografica-website/images/offset.png" alt="Offset Heidelberg"
+                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <p>Perfecto para volúmenes de impresión medianos y grandes, nuestros equipos de impresión HEIDELBERG
+                    garantizan un resultado excepcional con un gran detalle, nitidez y uniformidad en los colores.
+                    Contamos con impresoras de 4 colores, 2 colores y mono color, ideales para adaptarse a todo tipo de
+                    papeles y cartulinas. Puedes confiar en nuestra tecnología de vanguardia y nuestra dedicación para
+                    ofrecerte resultados de impresión superiores en cada proyecto.</p>
+                <div class="equipment-highlight">4 COLORES • 2 COLORES • MONO COLOR</div>
+                <p>Adaptable a todo tipo de papeles y cartulinas con tecnología de vanguardia alemana.</p>
+            </div>
+
+            <div class="equipment-card fade-in-left">
+                <h4>⚡ DIGITAL XEROX 560</h4>
+                <p>La mejor opción para cantidades cortas, imprime desde 1 hoja con calidad fotográfica gracias a
+                    nuestra prensa digital XEROX 560 de última generación.</p>
+                <div class="equipment-highlight">HASTA 48×33CM • ENTREGA INMEDIATA</div>
+                <p>Calidad fotográfica profesional para proyectos urgentes y personalizados.</p>
+            </div>
+
+            <div class="equipment-card fade-in-right">
+                <h4>🖨️ GRAN FORMATO MIMAKI</h4>
+                <p>Tecnología japonesa de última generación para potenciar la imagen de tu establecimiento, capaz de
+                    imprimir hasta 3.20 metros de ancho.</p>
+                <div class="equipment-highlight">HASTA 3.20 METROS</div>
+                <p>Sin límites en tus proyectos, resultados impactantes que captan la atención de manera profesional.
+                </p>
+            </div>
+
+            <div class="equipment-card fade-in">
+                <h4>🎨 PLOTTER UVDTF</h4>
+                <p>Versatilidad máxima para imprimir en plástico, metal, cerámica, metacrilato, aluminio, madera, piel,
+                    vidrio, objetos cilíndricos y mucho más.</p>
+                <div class="equipment-highlight">MATERIALES ILIMITADOS</div>
+                <p>Convertimos tu imaginación en realidad con alta calidad en cualquier superficie.</p>
+            </div>
+
+            <div class="equipment-card fade-in-left">
+                <h4>👕 TEXTIL DTF</h4>
+                <p>Estampado profesional en textiles: camisetas, banderines, pañuelos, gorras y más. Proyectos
+                    publicitarios efectivos y duraderos.</p>
+                <div class="equipment-highlight">TEXTILES DIVERSOS</div>
+                <p>Resultados de calidad que cumplen y superan expectativas en el sector textil.</p>
+            </div>
+
+            <div class="equipment-card fade-in-right">
+                <h4>📐 PLANOS RICOH</h4>
+                <p>Impresión de carteles, pancartas y planos arquitectónicos con precisión milimétrica usando tecnología
+                    japonesa RICOH.</p>
+                <div class="equipment-highlight">PRECISIÓN ARQUITECTÓNICA</div>
+                <p>Trabajo impecable con impresiones técnicas que dejan impresión duradera.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>¿LISTO PARA LA EXCELENCIA?</h2>
+            <p>Únete a las empresas líderes de Ecuador que confían en MetroGráfica para sus proyectos de impresión y
+                marketing digital. Experiencia, calidad y resultados garantizados.</p>
+            <a href="#contacto" class="btn-primary">
+                🚀 COMENZAR PROYECTO
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h4>MetroGráfica</h4>
+                    <p>Líderes en la industria gráfica con más de 12 años de experiencia. Tu aliado confiable en el
+                        mundo de la impresión y el marketing digital, transformando ideas en realidad.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">ig</a>
+                        <a href="#" title="LinkedIn">in</a>
+                        <a href="#" title="WhatsApp">wa</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Servicios Premium</h4>
+                    <ul>
+                        <li><a href="#">Impresión Digital</a></li>
+                        <li><a href="#">Marketing Digital</a></li>
+                        <li><a href="#">Diseño Gráfico</a></li>
+                        <li><a href="#">Identidad Corporativa</a></li>
+                        <li><a href="#">Packaging & Empaques</a></li>
+                        <li><a href="#">Gran Formato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto Directo</h4>
+                    <ul>
+                        <li>📧 info@metrografica.com</li>
+                        <li>📱 +593 99 123 4567</li>
+                        <li>📍 Quito, Ecuador</li>
+                        <li>🕒 Lun-Vie: 8AM-6PM</li>
+                        <li>🕒 Sáb: 9AM-1PM</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="portafolio.html">Portafolio</a></li>
+                        <li><a href="#catalogo">Catálogo WhatsApp</a></li>
+                        <li><a href="#factron">Sistema Factrón</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 MetroGráfica. Todos los derechos reservados. | Diseñado con ❤️ para la excelencia en
+                    Ecuador</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Catalog Button -->
+    <a href="https://wa.me/593991234567" class="whatsapp-catalog" id="catalogo" title="Catálogo WhatsApp">
+        📱
+    </a>
+
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+        });
+
+        // Enhanced Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Advanced Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = `${index * 0.1}s`;
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with staggered animation
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach((el, index) => {
+            observer.observe(el);
+        });
+
+        // Enhanced Header Effects
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrolled = window.pageYOffset;
+
+            if (scrolled > 100) {
+                header.style.background = 'rgba(51, 51, 51, 0.98)';
+                header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.background = 'rgba(51, 51, 51, 0.95)';
+                header.style.boxShadow = 'none';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+
+        // Advanced Card Interactions
+        document.querySelectorAll('.value-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-15px) scale(1.03) rotateY(5deg)';
+                this.style.borderColor = '#E53E3E';
+                this.style.boxShadow = '0 25px 60px rgba(229, 62, 62, 0.25)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
+                this.style.borderColor = 'transparent';
+                this.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.1)';
+            });
+
+            // Click effect
+            card.addEventListener('click', function () {
+                this.style.animation = 'pulse 0.6s ease';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 600);
+            });
+        });
+
+        // Equipment cards enhanced interactions
+        document.querySelectorAll('.equipment-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-10px) scale(1.02) rotateX(5deg)';
+                this.style.background = 'rgba(255, 255, 255, 0.18)';
+                this.style.borderColor = '#E53E3E';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1) rotateX(0deg)';
+                this.style.background = 'rgba(255, 255, 255, 0.08)';
+                this.style.borderColor = 'rgba(229, 62, 62, 0.3)';
+            });
+        });
+
+        // WhatsApp Enhanced Functionality
+        document.querySelector('.whatsapp-catalog').addEventListener('click', function (e) {
+            e.preventDefault();
+            const message = 'Hola MetroGráfica! 👋 He revisado su página "Nosotros" y me impresiona su experiencia y equipamiento. Me interesa conocer más sobre sus servicios premium. ¿Podrían contactarme?';
+            window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        // CTA Button Enhanced
+        document.querySelector('.btn-primary').addEventListener('click', function (e) {
+            e.preventDefault();
+            const message = '🚀 Hola MetroGráfica! Estoy listo para comenzar un proyecto con ustedes. He visto su experiencia de 12+ años y su tecnología de vanguardia. ¿Cuándo podemos conversar?';
+            window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        // Mobile Menu Enhanced
+        function createMobileMenu() {
+            if (window.innerWidth <= 768) {
+                const nav = document.querySelector('.nav-container');
+                const navLinks = document.querySelector('.nav-links');
+
+                if (!document.querySelector('.mobile-menu-btn')) {
+                    const btn = document.createElement('button');
+                    btn.innerHTML = '☰';
+                    btn.className = 'mobile-menu-btn';
+                    btn.style.cssText = `
+                        background: linear-gradient(135deg, #E53E3E, #C53030);
+                        border: none;
+                        color: white;
+                        padding: 0.8rem 1rem;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        position: absolute;
+                        right: 2rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        border-radius: 8px;
+                        box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
+                        transition: all 0.3s ease;
+                    `;
+
+                    nav.style.position = 'relative';
+                    nav.appendChild(btn);
+
+                    let open = false;
+                    btn.addEventListener('click', () => {
+                        open = !open;
+                        if (open) {
+                            navLinks.style.display = 'flex';
+                            navLinks.style.position = 'absolute';
+                            navLinks.style.top = '100%';
+                            navLinks.style.left = '0';
+                            navLinks.style.right = '0';
+                            navLinks.style.background = 'rgba(51, 51, 51, 0.98)';
+                            navLinks.style.flexDirection = 'column';
+                            navLinks.style.zIndex = '1000';
+                            navLinks.style.backdropFilter = 'blur(20px)';
+                            navLinks.style.borderRadius = '0 0 15px 15px';
+                            btn.innerHTML = '✕';
+                            btn.style.transform = 'translateY(-50%) rotate(90deg)';
+                        } else {
+                            navLinks.style.display = 'none';
+                            btn.innerHTML = '☰';
+                            btn.style.transform = 'translateY(-50%) rotate(0deg)';
+                        }
+                    });
+
+                    btn.addEventListener('mouseenter', () => {
+                        btn.style.transform = 'translateY(-50%) scale(1.1)';
+                        btn.style.boxShadow = '0 6px 20px rgba(229, 62, 62, 0.6)';
+                    });
+
+                    btn.addEventListener('mouseleave', () => {
+                        btn.style.transform = open ? 'translateY(-50%) rotate(90deg)' : 'translateY(-50%) rotate(0deg)';
+                        btn.style.boxShadow = '0 4px 15px rgba(229, 62, 62, 0.4)';
+                    });
+                }
+            }
+        }
+
+        window.addEventListener('resize', createMobileMenu);
+        createMobileMenu();
+
+        // Parallax Effects
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.2;
+
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+
+            // Floating elements parallax
+            const floatingElements = document.querySelectorAll('.equipment-card');
+            floatingElements.forEach((el, index) => {
+                const speed = 0.05 * (index + 1);
+                const yPos = scrolled * speed;
+                el.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Advanced Loading Animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.8s ease';
+
+            // Simulated loading with progress
+            let progress = 0;
+            const loadingInterval = setInterval(() => {
+                progress += Math.random() * 30;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(loadingInterval);
+
+                    setTimeout(() => {
+                        document.body.style.opacity = '1';
+
+                        // Trigger hero animations
+                        document.querySelector('.hero h1').style.animation = 'slideInDown 1s ease-out';
+                        document.querySelector('.hero-subtitle').style.animation = 'slideInUp 1s ease-out 0.3s both';
+                    }, 200);
+                }
+            }, 50);
+        });
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', function (e) {
+            // Ctrl + W for WhatsApp
+            if (e.ctrlKey && e.key === 'w') {
+                e.preventDefault();
+                document.querySelector('.whatsapp-catalog').click();
+            }
+
+            // Ctrl + H for Home
+            if (e.ctrlKey && e.key === 'h') {
+                e.preventDefault();
+                window.location.href = 'index.html';
+            }
+        });
+
+        // Enhanced Console Messages
+        console.log('🎨 MetroGráfica "Nosotros" - Página cargada con estilo premium');
+        console.log('📱 WhatsApp: +593 99 123 4567');
+        console.log('⚡ Tecnología: HEIDELBERG • XEROX • MIMAKI • RICOH');
+        console.log('🚀 Atajos: Ctrl+W (WhatsApp) • Ctrl+H (Inicio)');
+        console.log('💎 12+ años de excelencia en impresión digital');
+
+        // Performance Monitoring
+        window.addEventListener('load', function () {
+            const loadTime = performance.now();
+            if (loadTime > 3000) {
+                console.warn('⚠️ Tiempo de carga elevado:', Math.round(loadTime) + 'ms');
+            } else {
+                console.log('⚡ Carga optimizada:', Math.round(loadTime) + 'ms');
+            }
+        });
+
+        // Initialize all systems
+        setTimeout(() => {
+            console.log('✅ Todos los sistemas iniciados - MetroGráfica Nosotros');
+        }, 1000);
+    </script>
+</body>
+
+</html>
