@@ -456,33 +456,72 @@
             overflow: hidden;
         }
 
+        /* Animación de partículas flotantes */
         .cta-section::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.12) 0%, transparent 50%);
-            animation: ctaBackground 15s ease-in-out infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.06) 3px, transparent 3px),
+                radial-gradient(circle at 90% 70%, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                radial-gradient(circle at 10% 60%, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+            background-size: 200px 200px, 150px 150px, 300px 300px, 100px 100px, 250px 250px;
+            animation: particlesFloat 15s linear infinite;
         }
 
-        @keyframes ctaBackground {
+        /* Forma geométrica deslizante */
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.1) 25%,
+                    rgba(255, 255, 255, 0.2) 50%,
+                    rgba(255, 255, 255, 0.1) 75%,
+                    transparent 100%);
+            animation: slideWave 4s ease-in-out infinite;
+        }
+
+        @keyframes particlesFloat {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+
+            25% {
+                transform: translateX(-10px) translateY(-20px);
+            }
+
+            50% {
+                transform: translateX(-20px) translateY(0);
+            }
+
+            75% {
+                transform: translateX(-10px) translateY(20px);
+            }
+
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+        }
+
+        @keyframes slideWave {
 
             0%,
             100% {
-                transform: rotate(0deg) scale(1);
+                transform: translateX(-100%) scaleY(1);
             }
 
-            33% {
-                transform: rotate(120deg) scale(1.1);
-            }
-
-            66% {
-                transform: rotate(240deg) scale(0.9);
+            50% {
+                transform: translateX(100%) scaleY(1.5);
             }
         }
 
@@ -494,60 +533,178 @@
             z-index: 2;
         }
 
+        /* Título con efecto typewriter */
         .cta-content h2 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 900;
             margin-bottom: 2rem;
             text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             letter-spacing: -1px;
+            position: relative;
+            overflow: hidden;
         }
 
+        .cta-content h2::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #E53E3E 0%, #C53030 25%, #B91C1C 50%, #991B1B 100%);
+            animation: typewriterReveal 3s ease-out 0.5s both;
+        }
+
+        @keyframes typewriterReveal {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Párrafo con efecto fade lateral */
         .cta-content p {
             font-size: 1.3rem;
             margin-bottom: 3rem;
-            opacity: 0.95;
+            opacity: 0;
             line-height: 1.7;
+            animation: slideInFromSide 1s ease-out 1.5s both;
         }
 
+        @keyframes slideInFromSide {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            100% {
+                opacity: 0.95;
+                transform: translateX(0);
+            }
+        }
+
+        /* Botón con efecto morphing */
         .btn-primary {
             background: white;
             color: #E53E3E;
-            padding: 1.5rem 3rem;
+            padding: 1.5rem 3.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
             font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: all 0.4s ease;
             display: inline-flex;
             align-items: center;
             gap: 1rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            animation: buttonAppear 0.8s ease-out 2.5s both, buttonMorph 6s ease-in-out 3s infinite;
         }
 
         .btn-primary::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(229, 62, 62, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn-primary:hover {
-            background: #f7fafc;
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(229, 62, 62, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: all 0.6s ease;
+            transform: translate(-50%, -50%);
         }
 
         .btn-primary:hover::before {
-            left: 100%;
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            animation-play-state: paused;
+        }
+
+        @keyframes buttonAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes buttonMorph {
+
+            0%,
+            100% {
+                border-radius: 50px;
+                transform: scale(1);
+            }
+
+            25% {
+                border-radius: 25px;
+                transform: scale(1.05);
+            }
+
+            50% {
+                border-radius: 15px;
+                transform: scale(1);
+            }
+
+            75% {
+                border-radius: 35px;
+                transform: scale(1.02);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .cta-content p {
+                font-size: 1.1rem;
+            }
+
+            .btn-primary {
+                padding: 1.2rem 2.5rem;
+                font-size: 1rem;
+            }
+
+            .cta-section::before {
+                background-size: 100px 100px, 75px 75px, 150px 150px, 50px 50px, 125px 125px;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .cta-content p {
+                font-size: 1.1rem;
+            }
+
+            .btn-primary {
+                padding: 1.2rem 2.5rem;
+                font-size: 1rem;
+            }
+
+            .cta-section::after {
+                border-width: 0 0 150px 200px;
+            }
         }
 
         /* Footer - Enhanced */
@@ -881,7 +1038,7 @@
             <div class="equipment-card fade-in">
                 <h4>OFFSET HEIDELBERG</h4>
                 <img src="/metrografica-website/images/offset.png" alt="Offset Heidelberg"
-                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
                 <p>Perfecto para volúmenes de impresión medianos y grandes, nuestros equipos de impresión HEIDELBERG
                     garantizan un resultado excepcional con un gran detalle, nitidez y uniformidad en los colores.
                     Contamos con impresoras de 4 colores, 2 colores y mono color, ideales para adaptarse a todo tipo de
@@ -892,42 +1049,73 @@
             </div>
 
             <div class="equipment-card fade-in-left">
-                <h4>⚡ DIGITAL XEROX 560</h4>
-                <p>La mejor opción para cantidades cortas, imprime desde 1 hoja con calidad fotográfica gracias a
-                    nuestra prensa digital XEROX 560 de última generación.</p>
+                <h4>DIGITAL XEROX 560</h4>
+                <img src="/metrografica-website/images/laser.png" alt="Offset Heidelberg"
+                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
+                <p>LLa mejor opción para cantidades cortas de impresión, puedes imprimir desde 1 hoja y con calidad
+                    fotográfica gracias a nuestra prensa digital xerox 560 de la marca XEROX, imprime todo lo que te
+                    imaginas hasta un tamaño de 48x33cm, con entrega inmediata.</p>
                 <div class="equipment-highlight">HASTA 48×33CM • ENTREGA INMEDIATA</div>
                 <p>Calidad fotográfica profesional para proyectos urgentes y personalizados.</p>
             </div>
 
             <div class="equipment-card fade-in-right">
-                <h4>🖨️ GRAN FORMATO MIMAKI</h4>
-                <p>Tecnología japonesa de última generación para potenciar la imagen de tu establecimiento, capaz de
-                    imprimir hasta 3.20 metros de ancho.</p>
+                <h4>GRAN FORMATO MIMAKI</h4>
+                <img src="/metrografica-website/images/mimaki.png" alt="Gran Formato Mimaki"
+                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
+                <p>Perfecto para potenciar la imagen de tu establecimiento, contamos con plotter de gran formato de
+                    última tecnología Mimaki, capaz de imprimir hasta 3.20 metros. No te limites en tus proyectos,
+                    nosotros nos encargamos de convertirlos en realidad. Con nuestra capacidad de impresión de gran
+                    formato, podrás destacarte y captar la atención de tus clientes de manera impactante. Confía en
+                    nuestra experiencia y equipo técnico para lograr resultados excepcionales en tus iniciativas de
+                    branding.</p>
                 <div class="equipment-highlight">HASTA 3.20 METROS</div>
                 <p>Sin límites en tus proyectos, resultados impactantes que captan la atención de manera profesional.
                 </p>
             </div>
 
             <div class="equipment-card fade-in">
-                <h4>🎨 PLOTTER UVDTF</h4>
-                <p>Versatilidad máxima para imprimir en plástico, metal, cerámica, metacrilato, aluminio, madera, piel,
-                    vidrio, objetos cilíndricos y mucho más.</p>
+                <h4>PLOTTER UVDTF</h4>
+                <img src="/metrografica-website/images/UVDTF.png" alt="Plotter UVDTF"
+                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
+                <p>Imagina la posibilidad de imprimir en una amplia variedad de materiales: plástico, metal, cerámica,
+                    metacrilato, aluminio, madera, piel, vidrio, objetos cilíndricos, bolas, pelotas, carcasa de móvil
+                    con efecto de relieve, etiquetas, relieve de placa de piedra, bolsos, papel tapiz, azulejo, discos,
+                    CD, cristal, PVC, ABS, tablero acrílico, piedra, cinturón, tablero de espuma, y mucho más. Con
+                    nuestro plotter UVDTF, podemos convertir tu imaginación en realidad. Ofrecemos la versatilidad
+                    necesaria para imprimir en una amplia gama de superficies, permitiéndote crear resultados
+                    impactantes y de alta calidad. Confía en nuestro equipo y tecnología para obtener resultados
+                    excepcionales en tus proyectos de impresión.</p>
                 <div class="equipment-highlight">MATERIALES ILIMITADOS</div>
                 <p>Convertimos tu imaginación en realidad con alta calidad en cualquier superficie.</p>
             </div>
 
             <div class="equipment-card fade-in-left">
-                <h4>👕 TEXTIL DTF</h4>
-                <p>Estampado profesional en textiles: camisetas, banderines, pañuelos, gorras y más. Proyectos
-                    publicitarios efectivos y duraderos.</p>
+                <h4> TEXTIL DTF</h4>
+                <img src="/metrografica-website/images/DTF-PRENDAS.png" alt="Offset Heidelberg"
+                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
+                <p>Con nuestro plotter DTF, podrás estampar en una amplia variedad de textiles, como camisetas,
+                    banderines, pañuelos ,gorras, y más. Te ofrecemos la oportunidad de llevar a cabo tus proyectos
+                    publicitarios de manera oportuna y efectiva. ¡Deja volar tu imaginación y descubre las infinitas
+                    posibilidades que podemos ofrecerte! Nuestro equipo está listo para convertir tus ideas en realidad,
+                    brindándote resultados de calidad y cumpliendo con tus expectativas. Confía en nosotros para obtener
+                    impresiones de alto impacto que capturarán la atención de tu público objetivo.nuestro equipo y
+                    tecnología para obtener resultados excepcionales en tus proyectos de impresión.</p>
                 <div class="equipment-highlight">TEXTILES DIVERSOS</div>
                 <p>Resultados de calidad que cumplen y superan expectativas en el sector textil.</p>
             </div>
 
             <div class="equipment-card fade-in-right">
-                <h4>📐 PLANOS RICOH</h4>
-                <p>Impresión de carteles, pancartas y planos arquitectónicos con precisión milimétrica usando tecnología
-                    japonesa RICOH.</p>
+                <h4>PLANOS RICOH</h4>
+                <img src="/metrografica-website/images/PLANOS.png" alt="Offset Heidelberg"
+                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
+                <p>Con nuestra copiadora de planos, podrás imprimir carteles, pancartas y planos arquitectónicos con
+                    facilidad y precisión. ¡Permite que tu imaginación se desate y descubre las infinitas posibilidades
+                    que tenemos para ofrecerte! Nuestro equipo está preparado para convertir tus ideas en realidad,
+                    brindándote resultados de calidad que cumplirán e incluso superarán tus expectativas. Puedes confiar
+                    en nuestra tecnología de vanguardia Ricoh, que garantiza un trabajo encomendado impecable. Estamos
+                    comprometidos con proporcionarte impresiones de alto impacto que captarán la atención y dejarán una
+                    impresión duradera.</p>
                 <div class="equipment-highlight">PRECISIÓN ARQUITECTÓNICA</div>
                 <p>Trabajo impecable con impresiones técnicas que dejan impresión duradera.</p>
             </div>
@@ -945,7 +1133,6 @@
             </a>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="footer-content">
