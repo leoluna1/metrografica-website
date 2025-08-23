@@ -45,22 +45,9 @@
             padding: 1rem 2rem;
         }
 
-        .logo-placeholder {
-            background: #E53E3E;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 12px;
-            font-weight: 900;
-            font-size: 1.4rem;
-            letter-spacing: -0.5px;
-            box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .logo-placeholder:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.6);
+        .logo img {
+            height: 50px;
+            width: auto;
         }
 
         nav {
@@ -111,6 +98,59 @@
             background: #E53E3E;
             color: white;
             transform: translateY(-2px);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 280px;
+            background: #333;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-content a {
+            border-right: none;
+            border-bottom: 1px solid #444;
+            padding: 1.2rem 2rem;
+            transition: all 0.3s ease;
+            display: block;
+            position: relative;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-content a:hover {
+            background: #E53E3E;
+            color: white;
+            padding-left: 2.5rem;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Hero Section - More Dynamic */
@@ -667,46 +707,6 @@
             }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .cta-content h2 {
-                font-size: 2.2rem;
-            }
-
-            .cta-content p {
-                font-size: 1.1rem;
-            }
-
-            .btn-primary {
-                padding: 1.2rem 2.5rem;
-                font-size: 1rem;
-            }
-
-            .cta-section::before {
-                background-size: 100px 100px, 75px 75px, 150px 150px, 50px 50px, 125px 125px;
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .cta-content h2 {
-                font-size: 2.2rem;
-            }
-
-            .cta-content p {
-                font-size: 1.1rem;
-            }
-
-            .btn-primary {
-                padding: 1.2rem 2.5rem;
-                font-size: 1rem;
-            }
-
-            .cta-section::after {
-                border-width: 0 0 150px 200px;
-            }
-        }
-
         /* Footer - Enhanced */
         footer {
             background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
@@ -945,7 +945,6 @@
     <!-- Scroll Progress -->
     <div class="scroll-progress">
         <div class="scroll-progress-bar" id="scrollProgress"></div>
-        
     </div>
 
     <!-- Header -->
@@ -953,7 +952,7 @@
         <div class="header-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="/metrografica-website/images/LOGO-M.png" alt="Metrográfica Logo">
+                    <img src="/metrografica-website/images/LOGO-M.png" alt="MetroGráfica Logo">
                 </a>
             </div>
         </div>
@@ -962,9 +961,15 @@
                 <ul class="nav-links">
                     <li><a href="index.html">INICIO</a></li>
                     <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
-                    <li><a href="portafolio.html">PORTAFOLIO</a></li>
+                    <li class="dropdown">
+                        <a href="#">PORTAFOLIO</a>
+                        <div class="dropdown-content">
+                            <a href="portafolio-fotografico.html">PORTAFOLIO FOTOGRÁFICO</a>
+                            <a href="portafolio-web.html">PORTAFOLIO WEB</a>
+                        </div>
+                    </li>
                     <li><a href="#catalogo">CATÁLOGO WHATSAPP</a></li>
-                    <li><a href="#contacto">CONTACTOS</a></li>
+                    <li><a href="index.html#contacto">CONTACTOS</a></li>
                     <li><a href="#factron">FACTRÓN</a></li>
                 </ul>
             </div>
@@ -1053,9 +1058,9 @@
 
             <div class="equipment-card fade-in-left">
                 <h4>DIGITAL XEROX 560</h4>
-                <img src="/metrografica-website/images/laser.png" alt="Offset Heidelberg"
+                <img src="/metrografica-website/images/laser.png" alt="Digital Xerox 560"
                     style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
-                <p>LLa mejor opción para cantidades cortas de impresión, puedes imprimir desde 1 hoja y con calidad
+                <p>La mejor opción para cantidades cortas de impresión, puedes imprimir desde 1 hoja y con calidad
                     fotográfica gracias a nuestra prensa digital xerox 560 de la marca XEROX, imprime todo lo que te
                     imaginas hasta un tamaño de 48x33cm, con entrega inmediata.</p>
                 <div class="equipment-highlight">HASTA 48×33CM • ENTREGA INMEDIATA</div>
@@ -1094,23 +1099,22 @@
             </div>
 
             <div class="equipment-card fade-in-left">
-                <h4> TEXTIL DTF</h4>
-                <img src="/metrografica-website/images/DTF-PRENDAS.png" alt="Offset Heidelberg"
+                <h4>TEXTIL DTF</h4>
+                <img src="/metrografica-website/images/DTF-PRENDAS.png" alt="Textil DTF"
                     style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
                 <p>Con nuestro plotter DTF, podrás estampar en una amplia variedad de textiles, como camisetas,
-                    banderines, pañuelos ,gorras, y más. Te ofrecemos la oportunidad de llevar a cabo tus proyectos
+                    banderines, pañuelos, gorras, y más. Te ofrecemos la oportunidad de llevar a cabo tus proyectos
                     publicitarios de manera oportuna y efectiva. ¡Deja volar tu imaginación y descubre las infinitas
                     posibilidades que podemos ofrecerte! Nuestro equipo está listo para convertir tus ideas en realidad,
                     brindándote resultados de calidad y cumpliendo con tus expectativas. Confía en nosotros para obtener
-                    impresiones de alto impacto que capturarán la atención de tu público objetivo.nuestro equipo y
-                    tecnología para obtener resultados excepcionales en tus proyectos de impresión.</p>
+                    impresiones de alto impacto que capturarán la atención de tu público objetivo.</p>
                 <div class="equipment-highlight">TEXTILES DIVERSOS</div>
                 <p>Resultados de calidad que cumplen y superan expectativas en el sector textil.</p>
             </div>
 
             <div class="equipment-card fade-in-right">
                 <h4>PLANOS RICOH</h4>
-                <img src="/metrografica-website/images/PLANOS.png" alt="Offset Heidelberg"
+                <img src="/metrografica-website/images/PLANOS.png" alt="Planos Ricoh"
                     style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
                 <p>Con nuestra copiadora de planos, podrás imprimir carteles, pancartas y planos arquitectónicos con
                     facilidad y precisión. ¡Permite que tu imaginación se desate y descubre las infinitas posibilidades
@@ -1131,11 +1135,12 @@
             <h2>¿LISTO PARA LA EXCELENCIA?</h2>
             <p>Únete a las empresas líderes de Ecuador que confían en MetroGráfica para sus proyectos de impresión y
                 marketing digital. Experiencia, calidad y resultados garantizados.</p>
-            <a href="#contacto" class="btn-primary">
+            <a href="index.html#contacto" class="btn-primary">
                 🚀 COMENZAR PROYECTO
             </a>
         </div>
     </section>
+    
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -1180,8 +1185,8 @@
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="portafolio.html">Portafolio</a></li>
-                        <li><a href="#catalogo">Catálogo WhatsApp</a></li>
+                        <li><a href="portafolio-fotografico.html">Portafolio Fotográfico</a></li>
+                        <li><a href="portafolio-web.html">Portafolio Web</a></li>
                         <li><a href="#factron">Sistema Factrón</a></li>
                     </ul>
                 </div>
