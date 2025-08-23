@@ -45,15 +45,9 @@
             padding: 1rem 2rem;
         }
 
-        .logo-placeholder {
-            background: #E53E3E;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 900;
-            font-size: 1.4rem;
-            letter-spacing: -0.5px;
-            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+        .logo img {
+            height: 50px;
+            width: auto;
         }
 
         nav {
@@ -102,6 +96,64 @@
         .nav-links a:hover {
             background: #E53E3E;
             color: white;
+        }
+
+        .nav-links a.active {
+            background: #E53E3E;
+            color: white;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 280px;
+            background: #333;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-content a {
+            border-right: none;
+            border-bottom: 1px solid #444;
+            padding: 1.2rem 2rem;
+            transition: all 0.3s ease;
+            display: block;
+            position: relative;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-content a:hover {
+            background: #E53E3E;
+            color: white;
+            padding-left: 2.5rem;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Hero Section */
@@ -509,69 +561,6 @@
             line-height: 1.6;
         }
 
-        /* Testimonials */
-        .testimonials {
-            padding: 6rem 0;
-            background: #2D3748;
-            color: white;
-        }
-
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 0;
-            padding: 2.5rem;
-            border-left: 6px solid #E53E3E;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            color: #CBD5E0;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-avatar {
-            width: 60px;
-            height: 60px;
-            background: #E53E3E;
-            border-radius: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 900;
-            font-size: 1.2rem;
-        }
-
-        .author-info h5 {
-            font-weight: 700;
-            color: white;
-            font-size: 1.1rem;
-        }
-
-        .author-info p {
-            color: #CBD5E0;
-            font-size: 0.9rem;
-        }
-
         /* Contact Section */
         .contact {
             padding: 6rem 0;
@@ -963,15 +952,21 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                 <img src="/metrografica-website/images/LOGO-M.png" alt="Metrográfica Logo">
+                <img src="/metrografica-website/images/LOGO-M.png" alt="MetroGráfica Logo">
             </div>
         </div>
         <nav>
             <div class="nav-container">
                 <ul class="nav-links">
-                    <li><a href="#inicio">INICIO</a></li>
-                    <li><a href="nosotros.html">NOSOTROS</a></li>
-                    <li><a href="#portafolio">PORTAFOLIO</a></li>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
+                    <li class="dropdown">
+                        <a href="#portafolio">PORTAFOLIO</a>
+                        <div class="dropdown-content">
+                            <a href="portafolio/portafolio-fotografico.html">PORTAFOLIO FOTOGRÁFICO</a>
+                            <a href="portafolio/portafolio-web.html">PORTAFOLIO WEB</a>
+                        </div>
+                    </li>
                     <li><a href="#catalogo">CATÁLOGO WHATSAPP</a></li>
                     <li><a href="#contacto">CONTACTOS</a></li>
                     <li><a href="#factron">FACTRÓN</a></li>
@@ -986,14 +981,14 @@
             <div class="hero-text">
                 <h1 class="fade-in">BIENVENIDOS</h1>
                 <div class="hero-subtitle fade-in">Líderes en Industria Gráfica</div>
-                <p class="fade-in">En Metrográfica sin duda, nos enorgullece ser líderes en la industria gráfica con más
+                <p class="fade-in">En MetroGráfica sin duda, nos enorgullece ser líderes en la industria gráfica con más
                     de 12 años de experiencia. A lo largo de nuestra trayectoria, hemos consolidado nuestra posición y
                     nos hemos adaptado constantemente para satisfacer las necesidades cambiantes de nuestros valiosos
                     clientes.</p>
                 <p class="fade-in">No solo ofrecemos lo mejor de la imprenta tradicional, sino que también hemos
-                    evolucionado al integrar el poder del mundo digital. Presentamos Metrográfica, tu solución integral
+                    evolucionado al integrar el poder del mundo digital. Presentamos MetroGráfica, tu solución integral
                     en impresión y marketing digital en un solo lugar.</p>
-                <p class="fade-in">En Metrográfica, entendemos la importancia de la comodidad y la eficiencia en tus
+                <p class="fade-in">En MetroGráfica, entendemos la importancia de la comodidad y la eficiencia en tus
                     compras de productos impresos de alta calidad. Por eso, nos enorgullece ofrecerte un servicio
                     excepcional desde la comodidad de tu hogar u oficina. Además, ahora puedes potenciar tu presencia en
                     línea con nuestros servicios de MKR Digital, ayudándote a alcanzar tus objetivos de marketing de
@@ -1001,13 +996,13 @@
                 <p class="fade-in">Queremos ser tu aliado confiable en el mundo de la impresión y el marketing digital.
                     Nuestro equipo altamente capacitado está listo para brindarte soluciones personalizadas y atención
                     excepcional en cada paso del camino.
-                    Únase a la comunidad de clientes satisfechos de Metrográfica y
+                    Únase a la comunidad de clientes satisfechos de MetroGráfica y
                     descubra el poder de nuestra
                     experiencia, donde la calidad, la conveniencia y la innovación se unen en una experiencia única.
-                    Bienvenido a Metrográfica, tu socio profesional en impresión y marketing digital.</p>
+                    Bienvenido a MetroGráfica, tu socio profesional en impresión y marketing digital.</p>
                 <p class="fade-in">
 
-                    Bienvenido a Metrográfica, tu socio profesional en impresión y marketing digital.</p>
+                    Bienvenido a MetroGráfica, tu socio profesional en impresión y marketing digital.</p>
 
 
                 <div class="hero-buttons fade-in">
@@ -1618,20 +1613,6 @@
                 this.style.borderLeftWidth = '6px';
             });
         });
-
-        // Testimonials rotation
-        const testimonials = document.querySelectorAll('.testimonial-card');
-        let current = 0;
-
-        function rotateTestimonials() {
-            testimonials.forEach((card, index) => {
-                card.style.opacity = index === current ? '1' : '0.7';
-                card.style.transform = index === current ? 'scale(1.05)' : 'scale(1)';
-            });
-            current = (current + 1) % testimonials.length;
-        }
-
-        setInterval(rotateTestimonials, 4000);
 
         // Initialize
         console.log('✅ MetroGráfica - Sitio web cargado correctamente');

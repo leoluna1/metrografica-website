@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Fotográfico - MetroGráfica | Proyectos de Fotografía Profesional Ecuador</title>
+    <meta name="description"
+        content="Descubre nuestro portafolio fotográfico con sesiones conceptuales, publicitarias, food style, bodas y más. MetroGráfica - Fotografía profesional en Ecuador.">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background: #f5f5f5;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(51, 51, 51, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav {
+            background: #333;
+            padding: 0.8rem 0;
+            border-top: 1px solid #444;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 1rem 1.8rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border-right: 1px solid #444;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: #E53E3E;
+            color: white;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 280px;
+            background: #333;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-content a {
+            border-right: none;
+            border-bottom: 1px solid #444;
+            padding: 1.2rem 2rem;
+            transition: all 0.3s ease;
+            display: block;
+            position: relative;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-content a.active {
+            background: #E53E3E;
+            color: white;
+        }
+
+        .dropdown-content a:hover {
+            background: #E53E3E;
+            color: white;
+            padding-left: 2.5rem;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Container */
+        .main-container {
+            margin-top: 140px;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        /* Portfolio Header */
+        .portfolio-header {
+            background: #3a3a3a;
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .portfolio-header-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: #3a3a3a;
+        }
+
+        .portfolio-header h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Category Section */
+        .category-section {
+            padding: 6rem 0;
+            background: #f5f5f5;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #E53E3E;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .category-subtitle {
+            width: 60px;
+            height: 3px;
+            background: #E53E3E;
+            margin: 0 auto;
+        }
+
+        /* Photo Grid */
+        .photo-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .photo-item {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            background: #ddd;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Placeholder for images */
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #E53E3E, #C53030);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        /* Different background patterns for categories */
+        .conceptual-bg { background: #3a3a3a; }
+        .publicitarias-bg { background: #f5f5f5; }
+        .food-bg { background: #3a3a3a; }
+        .bodas-bg { background: #f5f5f5; }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            max-width: 90%;
+            max-height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10001;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: #E53E3E;
+            transform: scale(1.1);
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-nav:hover {
+            background: #E53E3E;
+        }
+
+        .modal-prev {
+            left: 30px;
+        }
+
+        .modal-next {
+            right: 30px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-catalog {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.2rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: #E53E3E;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: #CBD5E0;
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #CBD5E0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #E53E3E;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #E53E3E, #C53030);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 900;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .footer-bottom {
+            border-top: 2px solid rgba(229, 62, 62, 0.3);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .portfolio-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .category-title {
+                font-size: 2rem;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .modal-nav {
+                display: none;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #E53E3E;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C53030;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/LOGO-M.png" alt="MetroGráfica Logo">
+                </a>
+            </div>
+        </div>
+        <nav>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="../index.html">INICIO</a></li>
+                    <li><a href="../nosotros.html">NOSOTROS</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="active">PORTAFOLIO</a>
+                        <div class="dropdown-content">
+                            <a href="portafolio-fotografico.html" class="active">PORTAFOLIO FOTOGRÁFICO</a>
+                            <a href="portafolio-web.html">PORTAFOLIO WEB</a>
+                        </div>
+                    </li>
+                    <li><a href="#catalogo">CATÁLOGO WHATSAPP</a></li>
+                    <li><a href="#contacto">CONTACTOS</a></li>
+                    <li><a href="#factron">FACTRÓN</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Portfolio Header -->
+        <section class="portfolio-header">
+            <div class="portfolio-header-icon">📷</div>
+            <h1>PORTAFOLIO<br>FOTOGRÁFICO</h1>
+            <p>Descubre nuestro trabajo fotográfico profesional en diferentes categorías y estilos</p>
+        </section>
+
+        <!-- CONCEPTUAL Section -->
+        <section class="category-section conceptual-bg">
+            <div class="category-header">
+                <h2 class="category-title">CONCEPTUAL</h2>
+                <div class="category-subtitle"></div>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item" data-category="conceptual">
+                    <div class="photo-placeholder">📸</div>
+                </div>
+                <div class="photo-item" data-category="conceptual">
+                    <div class="photo-placeholder">🎭</div>
+                </div>
+                <div class="photo-item" data-category="conceptual">
+                    <div class="photo-placeholder">🌟</div>
+                </div>
+                <div class="photo-item" data-category="conceptual">
+                    <div class="photo-placeholder">🎨</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PUBLICITARIAS Section -->
+        <section class="category-section publicitarias-bg">
+            <div class="category-header">
+                <h2 class="category-title">PUBLICITARIAS</h2>
+                <div class="category-subtitle"></div>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item" data-category="publicitarias">
+                    <div class="photo-placeholder">🏃‍♀️</div>
+                </div>
+                <div class="photo-item" data-category="publicitarias">
+                    <div class="photo-placeholder">🏋️‍♀️</div>
+                </div>
+                <div class="photo-item" data-category="publicitarias">
+                    <div class="photo-placeholder">💪</div>
+                </div>
+                <div class="photo-item" data-category="publicitarias">
+                    <div class="photo-placeholder">🥊</div>
+                </div>
+                <div class="photo-item" data-category="publicitarias">
+                    <div class="photo-placeholder">🤸‍♀️</div>
+                </div>
+                <div class="photo-item" data-category="publicitarias">
+                    <div class="photo-placeholder">🏆</div>
+                </div>
+                <div class="photo-item" data-category="publicitarias">
+                    <div class="photo-placeholder">👨‍💼</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOD STYLE Section -->
+        <section class="category-section food-bg">
+            <div class="category-header">
+                <h2 class="category-title">FOOD STYLE</h2>
+                <div class="category-subtitle"></div>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item" data-category="food">
+                    <div class="photo-placeholder">🍰</div>
+                </div>
+                <div class="photo-item" data-category="food">
+                    <div class="photo-placeholder">☕</div>
+                </div>
+                <div class="photo-item" data-category="food">
+                    <div class="photo-placeholder">🧁</div>
+                </div>
+                <div class="photo-item" data-category="food">
+                    <div class="photo-placeholder">🍫</div>
+                </div>
+                <div class="photo-item" data-category="food">
+                    <div class="photo-placeholder">🥧</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BODAS Section -->
+        <section class="category-section bodas-bg">
+            <div class="category-header">
+                <h2 class="category-title">BODAS</h2>
+                <div class="category-subtitle"></div>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item" data-category="bodas">
+                    <div class="photo-placeholder">💑</div>
+                </div>
+                <div class="photo-item" data-category="bodas">
+                    <div class="photo-placeholder">👰</div>
+                </div>
+                <div class="photo-item" data-category="bodas">
+                    <div class="photo-placeholder">🤵</div>
+                </div>
+                <div class="photo-item" data-category="bodas">
+                    <div class="photo-placeholder">💒</div>
+                </div>
+                <div class="photo-item" data-category="bodas">
+                    <div class="photo-placeholder">💐</div>
+                </div>
+                <div class="photo-item" data-category="bodas">
+                    <div class="photo-placeholder">💍</div>
+                </div>
+                <div class="photo-item" data-category="bodas">
+                    <div class="photo-placeholder">🎊</div>
+                </div>
+                <div class="photo-item" data-category="bodas">
+                    <div class="photo-placeholder">🥂</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close">&times;</span>
+        <button class="modal-nav modal-prev">‹</button>
+        <div class="modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="">
+        </div>
+        <button class="modal-nav modal-next">›</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h4>MetroGráfica Fotografía</h4>
+                    <p>Capturamos momentos únicos con la más alta calidad fotográfica. Especializados en fotografía conceptual, publicitaria, food style y bodas en Ecuador.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">ig</a>
+                        <a href="#" title="LinkedIn">in</a>
+                        <a href="#" title="WhatsApp">wa</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Servicios Fotográficos</h4>
+                    <ul>
+                        <li><a href="#">Fotografía Conceptual</a></li>
+                        <li><a href="#">Fotografía Publicitaria</a></li>
+                        <li><a href="#">Food Style Photography</a></li>
+                        <li><a href="#">Fotografía de Bodas</a></li>
+                        <li><a href="#">Sesiones Corporativas</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📧 foto@metrografica.com</li>
+                        <li>📱 +593 99 123 4567</li>
+                        <li>📍 Ecuador</li>
+                        <li>🕒 Lun-Vie: 8AM-6PM</li>
+                        <li>📅 Citas por WhatsApp</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../nosotros.html">Nosotros</a></li>
+                        <li><a href="portafolio-fotografico.html">Portafolio Fotográfico</a></li>
+                        <li><a href="portafolio-web.html">Portafolio Web</a></li>
+                        <li><a href="#factron">Factrón</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 MetroGráfica. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/593991234567" class="whatsapp-catalog" id="catalogo" title="Catálogo WhatsApp">
+        📱
+    </a>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalClose = document.querySelector('.modal-close');
+        const modalPrev = document.querySelector('.modal-prev');
+        const modalNext = document.querySelector('.modal-next');
+        let currentImageIndex = 0;
+        let currentCategory = '';
+        let categoryImages = [];
+
+        // Get all photo items
+        const photoItems = document.querySelectorAll('.photo-item');
+
+        photoItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentCategory = item.getAttribute('data-category');
+                categoryImages = Array.from(document.querySelectorAll(`[data-category="${currentCategory}"]`));
+                currentImageIndex = categoryImages.indexOf(item);
+                
+                showModal(item);
+            });
+        });
+
+        function showModal(item) {
+            const img = item.querySelector('img');
+            const placeholder = item.querySelector('.photo-placeholder');
+            
+            if (img) {
+                modalImage.src = img.src;
+                modalImage.alt = img.alt || 'Fotografía MetroGráfica';
+            } else if (placeholder) {
+                // Create a canvas with the placeholder content
+                const canvas = document.createElement('canvas');
+                canvas.width = 800;
+                canvas.height = 600;
+                const ctx = canvas.getContext('2d');
+                
+                // Create gradient background based on category
+                const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                switch(currentCategory) {
+                    case 'conceptual':
+                        gradient.addColorStop(0, '#3a3a3a');
+                        gradient.addColorStop(1, '#2a2a2a');
+                        break;
+                    case 'publicitarias':
+                        gradient.addColorStop(0, '#E53E3E');
+                        gradient.addColorStop(1, '#C53030');
+                        break;
+                    case 'food':
+                        gradient.addColorStop(0, '#059669');
+                        gradient.addColorStop(1, '#047857');
+                        break;
+                    case 'bodas':
+                        gradient.addColorStop(0, '#7C3AED');
+                        gradient.addColorStop(1, '#6D28D9');
+                        break;
+                    default:
+                        gradient.addColorStop(0, '#E53E3E');
+                        gradient.addColorStop(1, '#C53030');
+                }
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Add icon
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 120px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(placeholder.textContent, canvas.width/2, canvas.height/2 + 40);
+                
+                // Add category label
+                ctx.font = 'bold 40px Arial';
+                ctx.fillText(currentCategory.toUpperCase(), canvas.width/2, canvas.height - 60);
+                
+                modalImage.src = canvas.toDataURL();
+            }
+            
+            modal.style.display = 'block';
+        }
+
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        modalPrev.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + categoryImages.length) % categoryImages.length;
+            showModal(categoryImages[currentImageIndex]);
+        });
+
+        modalNext.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % categoryImages.length;
+            showModal(categoryImages[currentImageIndex]);
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (modal.style.display === 'block') {
+                if (e.key === 'Escape') {
+                    modal.style.display = 'none';
+                } else if (e.key === 'ArrowLeft') {
+                    modalPrev.click();
+                } else if (e.key === 'ArrowRight') {
+                    modalNext.click();
+                }
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header effects
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(51, 51, 51, 0.98)';
+                header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(51, 51, 51, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // WhatsApp functionality
+        document.querySelector('.whatsapp-catalog').addEventListener('click', function (e) {
+            e.preventDefault();
+            const message = '📸 Hola MetroGráfica! He visto su portafolio fotográfico y me interesa contratar sus servicios profesionales de fotografía. ¿Podrían contactarme?';
+            window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        // Mobile menu functionality
+        function createMobileMenu() {
+            if (window.innerWidth <= 768) {
+                const nav = document.querySelector('.nav-container');
+                const navLinks = document.querySelector('.nav-links');
+
+                if (!document.querySelector('.mobile-menu-btn')) {
+                    const btn = document.createElement('button');
+                    btn.innerHTML = '☰';
+                    btn.className = 'mobile-menu-btn';
+                    btn.style.cssText = `
+                        background: linear-gradient(135deg, #E53E3E, #C53030);
+                        border: none;
+                        color: white;
+                        padding: 0.8rem 1rem;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        position: absolute;
+                        right: 2rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        border-radius: 8px;
+                        box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
+                        transition: all 0.3s ease;
+                    `;
+
+                    nav.style.position = 'relative';
+                    nav.appendChild(btn);
+
+                    let open = false;
+                    btn.addEventListener('click', () => {
+                        open = !open;
+                        if (open) {
+                            navLinks.style.display = 'flex';
+                            navLinks.style.position = 'absolute';
+                            navLinks.style.top = '100%';
+                            navLinks.style.left = '0';
+                            navLinks.style.right = '0';
+                            navLinks.style.background = 'rgba(51, 51, 51, 0.98)';
+                            navLinks.style.flexDirection = 'column';
+                            navLinks.style.zIndex = '1000';
+                            navLinks.style.backdropFilter = 'blur(20px)';
+                            navLinks.style.borderRadius = '0 0 15px 15px';
+                            btn.innerHTML = '✕';
+                        } else {
+                            navLinks.style.display = 'none';
+                            btn.innerHTML = '☰';
+                        }
+                    });
+                }
+            }
+        }
+
+        window.addEventListener('resize', createMobileMenu);
+        createMobileMenu();
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Add animation to photo items
+        photoItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+
+        // Category headers animation
+        document.querySelectorAll('.category-header').forEach(header => {
+            header.style.opacity = '0';
+            header.style.transform = 'translateY(30px)';
+            header.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(header);
+        });
+
+        // Initialize
+        console.log('📸 MetroGráfica - Portafolio Fotográfico cargado');
+        console.log('📱 WhatsApp: +593 99 123 4567');
+        console.log('📷 Categorías: CONCEPTUAL | PUBLICITARIAS | FOOD STYLE | BODAS');
+        console.log('💡 Para personalizar: Reemplaza los placeholders con tus fotos reales');
+        console.log('🎨 Diseño basado en el portafolio original de MetroGráfica');
+    </script>
+</body>
+
+</html>
