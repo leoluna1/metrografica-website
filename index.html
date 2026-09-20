@@ -7,6 +7,18 @@
     <title>MetroGráfica - Líderes en Impresión Digital y Marketing | Ecuador</title>
     <meta name="description"
         content="Más de 12 años liderando la industria gráfica en Ecuador. Impresión digital, tradicional y servicios de marketing. Calidad garantizada.">
+    <link rel="icon" type="image/png" href="images/LOGO-M.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MetroGráfica - Líderes en Impresión Digital y Marketing | Ecuador">
+    <meta property="og:description"
+        content="Más de 12 años liderando la industria gráfica en Ecuador. Impresión digital, tradicional y servicios de marketing. Calidad garantizada.">
+    <meta property="og:image" content="images/LOGO-M.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MetroGráfica - Líderes en Impresión Digital y Marketing | Ecuador">
+    <meta name="twitter:description"
+        content="Más de 12 años liderando la industria gráfica en Ecuador. Impresión digital, tradicional y servicios de marketing. Calidad garantizada.">
+    <meta name="twitter:image" content="images/LOGO-M.png">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
@@ -534,14 +546,52 @@
         }
 
         .portfolio-image {
-            height: 200px;
+            height: 160px;
+            background: #2D3748;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-icon-badge {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
             background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 3rem;
-            font-weight: 900;
+            font-size: 2rem;
+            box-shadow: 0 8px 20px rgba(229, 62, 62, 0.4);
+        }
+
+        .portfolio-cta {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-cta a {
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: #E53E3E;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-cta a:hover {
+            background: #C53030;
+            transform: translateY(-3px);
         }
 
         .portfolio-content {
@@ -953,7 +1003,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="/metrografica-website/images/LOGO-M.png" alt="MetroGráfica Logo">
+                <img src="images/LOGO-M.png" alt="MetroGráfica Logo">
             </div>
         </div>
         <nav>
@@ -1004,10 +1054,6 @@
                     descubra el poder de nuestra
                     experiencia, donde la calidad, la conveniencia y la innovación se unen en una experiencia única.
                     Bienvenido a MetroGráfica, tu socio profesional en impresión y marketing digital.</p>
-                <p class="fade-in">
-
-                    Bienvenido a MetroGráfica, tu socio profesional en impresión y marketing digital.</p>
-
 
                 <div class="hero-buttons fade-in">
                     <a href="#catalogo" class="btn-primary">
@@ -1064,7 +1110,7 @@
         <div class="section-header">
             <h2>NUESTROS SERVICIOS</h2>
             <p>Soluciones integrales que combinan la excelencia de la impresión tradicional con el poder del marketing
-                digitall</p>
+                digital</p>
         </div>
         <div class="services-grid">
             <div class="service-card fade-in">
@@ -1120,7 +1166,7 @@
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-item fade-in">
-                <div class="portfolio-image">📚</div>
+                <div class="portfolio-image"><div class="portfolio-icon-badge">📚</div></div>
                 <div class="portfolio-content">
                     <h4>CATÁLOGOS CORPORATIVOS</h4>
                     <p>Diseño e impresión de catálogos de alta calidad para empresas líderes del sector retail y
@@ -1128,7 +1174,7 @@
                 </div>
             </div>
             <div class="portfolio-item fade-in">
-                <div class="portfolio-image">🏢</div>
+                <div class="portfolio-image"><div class="portfolio-icon-badge">🏢</div></div>
                 <div class="portfolio-content">
                     <h4>IDENTIDAD CORPORATIVA</h4>
                     <p>Desarrollo completo de marca incluyendo logo, papelería y aplicaciones digitales para empresas
@@ -1136,7 +1182,7 @@
                 </div>
             </div>
             <div class="portfolio-item fade-in">
-                <div class="portfolio-image">📦</div>
+                <div class="portfolio-image"><div class="portfolio-icon-badge">📦</div></div>
                 <div class="portfolio-content">
                     <h4>PACKAGING PREMIUM</h4>
                     <p>Diseño de empaques para productos gourmet y líneas premium con acabados especiales y materiales
@@ -1144,7 +1190,7 @@
                 </div>
             </div>
             <div class="portfolio-item fade-in">
-                <div class="portfolio-image">💻</div>
+                <div class="portfolio-image"><div class="portfolio-icon-badge">💻</div></div>
                 <div class="portfolio-content">
                     <h4>CAMPAÑAS DIGITALES</h4>
                     <p>Estrategias integrales de marketing digital que han aumentado las ventas de nuestros clientes
@@ -1152,7 +1198,7 @@
                 </div>
             </div>
             <div class="portfolio-item fade-in">
-                <div class="portfolio-image">🎯</div>
+                <div class="portfolio-image"><div class="portfolio-icon-badge">🎯</div></div>
                 <div class="portfolio-content">
                     <h4>MATERIAL PUBLICITARIO</h4>
                     <p>Desarrollo de material POP y publicitario para lanzamientos de productos y campañas
@@ -1160,13 +1206,17 @@
                 </div>
             </div>
             <div class="portfolio-item fade-in">
-                <div class="portfolio-image">📱</div>
+                <div class="portfolio-image"><div class="portfolio-icon-badge">📱</div></div>
                 <div class="portfolio-content">
                     <h4>APLICACIONES MÓVILES</h4>
                     <p>Diseño UX/UI para aplicaciones móviles de e-commerce con miles de descargas y excelente
                         usabilidad.</p>
                 </div>
             </div>
+        </div>
+        <div class="portfolio-cta">
+            <a href="portafolio/portafolio-fotografico.html">Ver Portafolio Fotográfico</a>
+            <a href="portafolio/portafolio-web.html">Ver Portafolio Web</a>
         </div>
     </section>
 
@@ -1297,7 +1347,7 @@
                 <div class="footer-section">
                     <h4>Enlaces Útiles</h4>
                     <ul>
-                        <li><a href="#nosotros.html">Nosotros</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
                         <li><a href="#portafolio">Portafolio</a></li>
                         <li><a href="#catalogo">Catálogo WhatsApp</a></li>
                         <li><a href="#factron">Factrón</a></li>
