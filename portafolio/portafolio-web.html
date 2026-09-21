@@ -20,659 +20,153 @@
         content="Conoce nuestros proyectos de desarrollo web y marketing digital. MetroGráfica ofrece soluciones digitales completas en Ecuador.">
     <meta name="twitter:image" content="../images/LOGO-M.png">
 
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(51, 51, 51, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 0;
-            transition: all 0.3s ease;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        nav {
-            background: #333;
-            padding: 0.8rem 0;
-            border-top: 1px solid #444;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 0;
-            list-style: none;
-        }
-
-        .nav-links li {
-            position: relative;
-        }
-
-        .nav-links a {
-            display: block;
-            padding: 1rem 1.8rem;
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border-right: 1px solid #444;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            background: #E53E3E;
-            color: white;
-        }
-
-        /* Dropdown */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            min-width: 280px;
-            background: #333;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            z-index: 1001;
-            border-radius: 0 0 8px 8px;
-        }
-
-        .dropdown-content a {
-            border-right: none;
-            border-bottom: 1px solid #444;
-            padding: 1.2rem 2rem;
-            transition: all 0.3s ease;
-            display: block;
-            position: relative;
-        }
-
-        .dropdown-content a:last-child {
-            border-bottom: none;
-            border-radius: 0 0 8px 8px;
-        }
-
-        .dropdown-content a.active {
-            background: #1E40AF;
-            color: white;
-        }
-
-        .dropdown-content a:hover {
-            background: #1E40AF;
-            color: white;
-            padding-left: 2.5rem;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 70vh;
-            background: linear-gradient(135deg, #1E40AF 0%, #1D4ED8 50%, #2563EB 100%);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 140px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-subtitle {
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            border-bottom: 4px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 1rem;
-            display: inline-block;
-        }
+        /* Hero */
+        .hero { padding: 160px 0 3.5rem; background: var(--bg); text-align: center; }
+        .hero-content { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--ink); }
+        .hero-subtitle { font-size: 1.15rem; font-weight: 600; color: var(--text-muted); }
 
         /* Filter Section */
-        .filter-section {
-            background: #f8fafc;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .filter-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
+        .filter-section { background: var(--bg); padding: 0 0 3rem; text-align: center; }
+        .filter-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .filter-buttons { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; }
 
         .filter-btn {
-            background: white;
-            color: #333;
-            border: 2px solid #1E40AF;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            background: var(--panel);
+            color: var(--ink);
+            border: 1px solid var(--border);
+            padding: 0.7rem 1.5rem;
+            font-weight: 600;
+            border-radius: 999px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
         }
-
         .filter-btn.active,
-        .filter-btn:hover {
-            background: #1E40AF;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
-        }
+        .filter-btn:hover { background: var(--red); color: #fff; border-color: var(--red); }
 
         /* Portfolio Gallery */
-        .portfolio-gallery {
-            padding: 6rem 0;
-            background: white;
-        }
-
-        .gallery-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+        .portfolio-gallery { padding: 1rem 0 5rem; background: var(--bg); }
+        .gallery-container { max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.6rem;
         }
 
         .portfolio-item {
-            background: white;
-            border-radius: 20px;
+            padding: 0;
             overflow: hidden;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
             cursor: pointer;
-            position: relative;
-            border: 3px solid transparent;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--red);
+            border-radius: 12px;
+            transition: transform 0.25s ease, border-color 0.25s ease;
         }
-
-        .portfolio-item:hover {
-            transform: translateY(-20px) scale(1.02);
-            box-shadow: 0 30px 80px rgba(30, 64, 175, 0.2);
-            border-color: #1E40AF;
-        }
+        .portfolio-item:hover { transform: translateY(-4px); border-color: var(--red); }
 
         .portfolio-mockup {
-            height: 300px;
-            background: #f8fafc;
-            position: relative;
-            overflow: hidden;
+            height: 260px;
+            background: var(--bg);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 1.6rem;
         }
 
         .mockup-device {
             width: 90%;
-            height: 80%;
-            background: #1f2937;
-            border-radius: 15px;
-            padding: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            transition: all 0.4s ease;
+            height: 85%;
+            background: #000;
+            border-radius: 14px;
+            padding: 10px;
         }
 
-        .portfolio-item:hover .mockup-device {
-            transform: rotateY(5deg) rotateX(5deg);
-        }
+        .mockup-screen { width: 100%; height: 100%; border-radius: 8px; display: flex; flex-direction: column; overflow: hidden; }
 
-        .mockup-screen {
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
+        .mockup-header { height: 24px; background: rgba(0,0,0,0.2); display: flex; align-items: center; padding: 0 10px; gap: 5px; }
+        .mockup-dot { width: 7px; height: 7px; border-radius: 50%; }
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
 
-        .mockup-header {
-            height: 30px;
-            background: #374151;
-            display: flex;
-            align-items: center;
-            padding: 0 10px;
-            gap: 5px;
-        }
+        .mockup-content { flex: 1; display: flex; flex-direction: column; padding: 14px; overflow: hidden; }
 
-        .mockup-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-        }
+        /* Piezas de wireframe: representan de forma ilustrativa el tipo de
+           página (no son capturas reales de proyectos entregados) */
+        .wire-navbar { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; flex-shrink: 0; }
+        .wire-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+        .wire-line { display: block; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.28); }
+        .wire-line.light { background: rgba(255, 255, 255, 0.16); }
+        .wire-btn { display: block; height: 14px; width: 46px; border-radius: 7px; background: var(--red); }
+        .wire-block { border-radius: 4px; background: rgba(255, 255, 255, 0.14); }
+        .wire-icon { width: 15px; height: 15px; color: rgba(255, 255, 255, 0.55); margin-left: auto; }
 
-        .dot-red { background: #EF4444; }
-        .dot-yellow { background: #F59E0B; }
-        .dot-green { background: #10B981; }
-
-        .mockup-content {
-            flex: 1;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .mockup-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .mockup-title {
-            color: white;
-            font-size: 1.2rem;
+        .real-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--red);
+            color: #fff;
+            font-size: 0.65rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            z-index: 2;
         }
 
-        .mockup-subtitle {
-            color: #9CA3AF;
-            font-size: 0.9rem;
-        }
+        .portfolio-content { padding: 1.8rem; }
+        .portfolio-content h3 { font-size: 1.2rem; margin-bottom: 0.7rem; color: var(--ink); }
+        .portfolio-content p { color: var(--text-muted); font-size: 0.94rem; line-height: 1.7; margin-bottom: 1.2rem; }
 
-        .portfolio-content {
-            padding: 2.5rem;
-        }
+        .portfolio-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.2rem; }
+        .stat { text-align: center; padding: 0.8rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; }
+        .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--red); }
+        .stat-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }
 
-        .portfolio-content h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: #2D3748;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-        }
-
-        .portfolio-content p {
-            color: #4A5568;
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .portfolio-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 1rem;
-            background: #f8fafc;
-            border-radius: 10px;
-        }
-
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #1E40AF;
-            margin-bottom: 0.3rem;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: #4A5568;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-
-        .tag {
-            background: #1E40AF;
-            color: white;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
+        .portfolio-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .tag { background: rgba(229, 62, 62, 0.1); color: var(--red); padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.72rem; font-weight: 700; }
 
         .visit-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: #1E40AF;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid var(--border);
+            padding: 0.7rem 1.3rem;
+            border-radius: 999px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
         }
+        .visit-btn:hover { border-color: var(--red); color: var(--red-bright); }
 
-        .visit-btn:hover {
-            background: #1D4ED8;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, #1E40AF 0%, #1D4ED8 25%, #2563EB 50%, #3B82F6 100%);
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-content {
-            max-width: 800px;
+        /* CTA */
+        .cta-section { padding: 1rem 2rem 5rem; }
+        .cta-card {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta-content h2 {
-            font-size: 3.2rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-
-        .cta-content p {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            opacity: 0.95;
-            line-height: 1.7;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #1E40AF;
-            padding: 1.5rem 3.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-catalog {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 75px;
-            height: 75px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.2rem;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            text-decoration: none;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
-            color: white;
-            padding: 4rem 0 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer-main {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h4 {
-            color: #3B82F6;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 1.2rem;
-        }
-
-        .footer-section p,
-        .footer-section li {
-            color: #CBD5E0;
-            margin-bottom: 0.8rem;
-            line-height: 1.7;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
-            color: #CBD5E0;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: #3B82F6;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, #1E40AF, #3B82F6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 900;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        .footer-bottom {
-            border-top: 2px solid rgba(59, 130, 246, 0.3);
-            padding-top: 2rem;
+            background: var(--red);
+            border-radius: 16px;
             text-align: center;
+            color: #fff;
+            padding: 3.5rem 2.5rem;
         }
+        .cta-card h2 { font-size: 2.1rem; margin-bottom: 1.2rem; }
+        .cta-card p { font-size: 1.05rem; margin-bottom: 1.8rem; opacity: 0.95; line-height: 1.7; }
+        .cta-card .btn-primary { background: #fff; color: var(--red); box-shadow: none; }
+        .cta-card .btn-primary:hover { background: #f5f5f7; }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.5rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .filter-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .filter-btn {
-                width: 80%;
-                max-width: 300px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            .hero h1 { font-size: 2.1rem; }
         }
     </style>
 </head>
@@ -686,32 +180,32 @@
                     <img src="../images/LOGO-M.png" alt="MetroGráfica Logo">
                 </a>
             </div>
+            <nav>
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="../index.html">INICIO</a></li>
+                        <li><a href="../nosotros.html">NOSOTROS</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="active">PORTAFOLIO</a>
+                            <div class="dropdown-content">
+                                <a href="portafolio-fotografico.html">PORTAFOLIO FOTOGRÁFICO</a>
+                                <a href="portafolio-web.html" class="active">PORTAFOLIO WEB</a>
+                            </div>
+                        </li>
+                        <li><a href="https://wa.me/c/593968616429" target="_blank" rel="noopener">CATÁLOGO WHATSAPP</a></li>
+                        <li><a href="../index.html#contacto">CONTACTOS</a></li>
+                        <li><a href="https://factron.my.canva.site/factron" target="_blank" rel="noopener">FACTRÓN</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        <nav>
-            <div class="nav-container">
-                <ul class="nav-links">
-                    <li><a href="../index.html">INICIO</a></li>
-                    <li><a href="../nosotros.html">NOSOTROS</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="active">PORTAFOLIO</a>
-                        <div class="dropdown-content">
-                            <a href="portafolio/portafolio-fotografico.html">PORTAFOLIO FOTOGRÁFICO</a>
-                            <a href="portafolio/portafolio-web.html" class="active">PORTAFOLIO WEB</a>
-                        </div>
-                    </li>
-                    <li><a href="#catalogo">CATÁLOGO WHATSAPP</a></li>
-                    <li><a href="#contacto">CONTACTOS</a></li>
-                    <li><a href="#factron">FACTRÓN</a></li>
-                </ul>
-            </div>
-        </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>PORTAFOLIO WEB</h1>
-            <div class="hero-subtitle">Desarrollo Web & Marketing Digital</div>
+            <div class="hero-subtitle">Desarrollo Web &amp; Marketing Digital</div>
         </div>
     </section>
 
@@ -724,6 +218,10 @@
                 <button class="filter-btn" data-filter="ecommerce">E-COMMERCE</button>
                 <button class="filter-btn" data-filter="landing">LANDING PAGES</button>
                 <button class="filter-btn" data-filter="app">APLICACIONES</button>
+                <button class="filter-btn" data-filter="institucional">INSTITUCIONAL</button>
+                <button class="filter-btn" data-filter="blog">BLOG</button>
+                <button class="filter-btn" data-filter="reservas">RESERVAS</button>
+                <button class="filter-btn" data-filter="menu">MENÚ QR</button>
             </div>
         </div>
     </section>
@@ -733,49 +231,27 @@
         <div class="gallery-container">
             <div class="gallery-grid">
                 <!-- AQUÍ PUEDES AGREGAR TUS PROYECTOS WEB REALES -->
-                <!-- Ejemplo de estructura para cada proyecto: -->
-                
+
                 <!-- Proyecto Web 1 -->
                 <div class="portfolio-item fade-in" data-category="corporativo">
-                    <div class="portfolio-mockup">
-                        <div class="mockup-device">
-                            <div class="mockup-screen" style="background: linear-gradient(135deg, #1E40AF, #3B82F6);">
-                                <div class="mockup-header">
-                                    <div class="mockup-dot dot-red"></div>
-                                    <div class="mockup-dot dot-yellow"></div>
-                                    <div class="mockup-dot dot-green"></div>
-                                </div>
-                                <div class="mockup-content">
-                                    <div class="mockup-icon">🏢</div>
-                                    <div class="mockup-title">Tu Sitio Web</div>
-                                    <div class="mockup-subtitle">Corporativo</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="portfolio-mockup" style="padding: 0; position: relative;">
+                        <span class="real-badge">PROYECTO REAL</span>
+                        <img src="../images/portafolio-web/metrografica-sitio-real.jpg" alt="Sitio web real de MetroGráfica" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
                     </div>
                     <div class="portfolio-content">
                         <h3>SITIO WEB CORPORATIVO</h3>
-                        <p>Sitio web profesional desarrollado con las mejores prácticas de diseño y funcionalidad.</p>
+                        <p>Nuestro propio sitio web corporativo, desarrollado en WordPress con un diseño profesional enfocado en presentar nuestros servicios de imprenta y marketing digital.</p>
                         <div class="portfolio-stats">
-                            <div class="stat">
-                                <div class="stat-number">100%</div>
-                                <div class="stat-label">Responsivo</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number">99%</div>
-                                <div class="stat-label">Uptime</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number">95</div>
-                                <div class="stat-label">PageSpeed</div>
-                            </div>
+                            <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Responsivo</div></div>
+                            <div class="stat"><div class="stat-number">Multi</div><div class="stat-label">Páginas</div></div>
+                            <div class="stat"><div class="stat-number">SEO</div><div class="stat-label">Optimizado</div></div>
                         </div>
                         <div class="portfolio-tags">
                             <span class="tag">WordPress</span>
                             <span class="tag">SEO</span>
                             <span class="tag">Responsive</span>
                         </div>
-                        <a href="#" class="visit-btn">🌐 VER DETALLES</a>
+                        <a href="https://metrografica.com/" target="_blank" rel="noopener" class="visit-btn">VISITAR SITIO</a>
                     </div>
                 </div>
 
@@ -783,16 +259,32 @@
                 <div class="portfolio-item fade-in" data-category="ecommerce">
                     <div class="portfolio-mockup">
                         <div class="mockup-device">
-                            <div class="mockup-screen" style="background: linear-gradient(135deg, #059669, #10B981);">
+                            <div class="mockup-screen" style="background: linear-gradient(135deg, #e53e3e, #c53030);">
                                 <div class="mockup-header">
                                     <div class="mockup-dot dot-red"></div>
                                     <div class="mockup-dot dot-yellow"></div>
                                     <div class="mockup-dot dot-green"></div>
                                 </div>
                                 <div class="mockup-content">
-                                    <div class="mockup-icon">🛒</div>
-                                    <div class="mockup-title">Tienda Online</div>
-                                    <div class="mockup-subtitle">E-commerce</div>
+                                    <div class="wire-navbar">
+                                        <span class="wire-dot"></span>
+                                        <span class="wire-line" style="width: 20px;"></span>
+                                        <span class="wire-line" style="width: 20px;"></span>
+                                        <span class="wire-line" style="width: 20px;"></span>
+                                        <svg class="icon wire-icon" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; flex: 1;">
+                                        <div class="wire-block"></div>
+                                        <div class="wire-block"></div>
+                                        <div class="wire-block"></div>
+                                        <div class="wire-block"></div>
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 8px; flex-shrink: 0;">
+                                        <span class="wire-line light"></span>
+                                        <span class="wire-line light"></span>
+                                        <span class="wire-line light"></span>
+                                        <span class="wire-line light"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -801,25 +293,16 @@
                         <h3>PLATAFORMA E-COMMERCE</h3>
                         <p>Tienda online completa con carrito de compras, pagos seguros y gestión de inventario.</p>
                         <div class="portfolio-stats">
-                            <div class="stat">
-                                <div class="stat-number">500+</div>
-                                <div class="stat-label">Productos</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number">98%</div>
-                                <div class="stat-label">Seguridad</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number">24/7</div>
-                                <div class="stat-label">Online</div>
-                            </div>
+                            <div class="stat"><div class="stat-number">500+</div><div class="stat-label">Productos</div></div>
+                            <div class="stat"><div class="stat-number">98%</div><div class="stat-label">Seguridad</div></div>
+                            <div class="stat"><div class="stat-number">24/7</div><div class="stat-label">Online</div></div>
                         </div>
                         <div class="portfolio-tags">
                             <span class="tag">WooCommerce</span>
                             <span class="tag">PayPal</span>
                             <span class="tag">SSL</span>
                         </div>
-                        <a href="#" class="visit-btn">🌐 VER DETALLES</a>
+                        <a href="#" class="visit-btn">VER DETALLES</a>
                     </div>
                 </div>
 
@@ -827,16 +310,21 @@
                 <div class="portfolio-item fade-in" data-category="landing">
                     <div class="portfolio-mockup">
                         <div class="mockup-device">
-                            <div class="mockup-screen" style="background: linear-gradient(135deg, #DC2626, #EF4444);">
+                            <div class="mockup-screen" style="background: linear-gradient(135deg, #6e6e73, #1d1d1f);">
                                 <div class="mockup-header">
                                     <div class="mockup-dot dot-red"></div>
                                     <div class="mockup-dot dot-yellow"></div>
                                     <div class="mockup-dot dot-green"></div>
                                 </div>
-                                <div class="mockup-content">
-                                    <div class="mockup-icon">🚀</div>
-                                    <div class="mockup-title">Landing Page</div>
-                                    <div class="mockup-subtitle">Alta Conversión</div>
+                                <div class="mockup-content" style="align-items: center; justify-content: center; gap: 8px;">
+                                    <span class="wire-line" style="width: 70%; height: 10px;"></span>
+                                    <span class="wire-line light" style="width: 46%;"></span>
+                                    <span class="wire-btn" style="margin: 6px 0 12px;"></span>
+                                    <div style="display: flex; gap: 12px;">
+                                        <span class="wire-dot" style="width: 16px; height: 16px;"></span>
+                                        <span class="wire-dot" style="width: 16px; height: 16px;"></span>
+                                        <span class="wire-dot" style="width: 16px; height: 16px;"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -845,25 +333,16 @@
                         <h3>LANDING PAGE OPTIMIZADA</h3>
                         <p>Página de aterrizaje diseñada para maximizar conversiones con formularios optimizados.</p>
                         <div class="portfolio-stats">
-                            <div class="stat">
-                                <div class="stat-number">35%</div>
-                                <div class="stat-label">Conversión</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number">2s</div>
-                                <div class="stat-label">Carga</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number">100+</div>
-                                <div class="stat-label">Leads/mes</div>
-                            </div>
+                            <div class="stat"><div class="stat-number">35%</div><div class="stat-label">Conversión</div></div>
+                            <div class="stat"><div class="stat-number">2s</div><div class="stat-label">Carga</div></div>
+                            <div class="stat"><div class="stat-number">100+</div><div class="stat-label">Leads/mes</div></div>
                         </div>
                         <div class="portfolio-tags">
                             <span class="tag">Landing</span>
                             <span class="tag">CRO</span>
                             <span class="tag">Analytics</span>
                         </div>
-                        <a href="#" class="visit-btn">🌐 VER DETALLES</a>
+                        <a href="#" class="visit-btn">VER DETALLES</a>
                     </div>
                 </div>
 
@@ -871,16 +350,34 @@
                 <div class="portfolio-item fade-in" data-category="app">
                     <div class="portfolio-mockup">
                         <div class="mockup-device">
-                            <div class="mockup-screen" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6);">
+                            <div class="mockup-screen" style="background: linear-gradient(135deg, #1d1d1f, #3a3a3c);">
                                 <div class="mockup-header">
                                     <div class="mockup-dot dot-red"></div>
                                     <div class="mockup-dot dot-yellow"></div>
                                     <div class="mockup-dot dot-green"></div>
                                 </div>
-                                <div class="mockup-content">
-                                    <div class="mockup-icon">📱</div>
-                                    <div class="mockup-title">Web App</div>
-                                    <div class="mockup-subtitle">Aplicación Web</div>
+                                <div class="mockup-content" style="flex-direction: row; gap: 8px;">
+                                    <div style="width: 18px; display: flex; flex-direction: column; gap: 6px; flex-shrink: 0;">
+                                        <div class="wire-block" style="height: 14px; background: var(--red);"></div>
+                                        <div class="wire-block" style="height: 14px;"></div>
+                                        <div class="wire-block" style="height: 14px;"></div>
+                                        <div class="wire-block" style="height: 14px;"></div>
+                                    </div>
+                                    <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+                                        <div style="display: flex; gap: 6px; flex-shrink: 0;">
+                                            <div class="wire-block" style="flex: 1; height: 20px;"></div>
+                                            <div class="wire-block" style="flex: 1; height: 20px;"></div>
+                                            <div class="wire-block" style="flex: 1; height: 20px;"></div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; align-items: flex-end; gap: 5px;">
+                                            <span style="flex: 1; height: 35%; background: rgba(255,255,255,0.18); border-radius: 2px;"></span>
+                                            <span style="flex: 1; height: 65%; background: var(--red); border-radius: 2px;"></span>
+                                            <span style="flex: 1; height: 45%; background: rgba(255,255,255,0.18); border-radius: 2px;"></span>
+                                            <span style="flex: 1; height: 85%; background: var(--red); border-radius: 2px;"></span>
+                                            <span style="flex: 1; height: 55%; background: rgba(255,255,255,0.18); border-radius: 2px;"></span>
+                                            <span style="flex: 1; height: 70%; background: rgba(255,255,255,0.18); border-radius: 2px;"></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -889,42 +386,210 @@
                         <h3>APLICACIÓN WEB PERSONALIZADA</h3>
                         <p>Aplicación web a medida con funcionalidades específicas para tu negocio.</p>
                         <div class="portfolio-stats">
-                            <div class="stat">
-                                <div class="stat-number">1000+</div>
-                                <div class="stat-label">Usuarios</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number">99%</div>
-                                <div class="stat-label">Uptime</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number">4.8★</div>
-                                <div class="stat-label">Rating</div>
-                            </div>
+                            <div class="stat"><div class="stat-number">1000+</div><div class="stat-label">Usuarios</div></div>
+                            <div class="stat"><div class="stat-number">99%</div><div class="stat-label">Uptime</div></div>
+                            <div class="stat"><div class="stat-number">4.8★</div><div class="stat-label">Rating</div></div>
                         </div>
                         <div class="portfolio-tags">
                             <span class="tag">React</span>
                             <span class="tag">Node.js</span>
                             <span class="tag">Custom</span>
                         </div>
-                        <a href="#" class="visit-btn">🌐 VER DETALLES</a>
+                        <a href="#" class="visit-btn">VER DETALLES</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto Web 5 -->
+                <div class="portfolio-item fade-in" data-category="institucional">
+                    <div class="portfolio-mockup">
+                        <div class="mockup-device">
+                            <div class="mockup-screen" style="background: linear-gradient(135deg, #2a2a2d, #1d1d1f);">
+                                <div class="mockup-header">
+                                    <div class="mockup-dot dot-red"></div>
+                                    <div class="mockup-dot dot-yellow"></div>
+                                    <div class="mockup-dot dot-green"></div>
+                                </div>
+                                <div class="mockup-content" style="align-items: center; justify-content: center; text-align: center; gap: 8px; position: relative;">
+                                    <div class="wire-block" style="position: absolute; inset: 0;"></div>
+                                    <span class="wire-dot" style="width: 18px; height: 18px; position: relative;"></span>
+                                    <span class="wire-line" style="width: 55%; height: 9px; position: relative;"></span>
+                                    <span class="wire-line light" style="width: 38%; position: relative;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>SITIO INSTITUCIONAL</h3>
+                        <p>Presentación de marca en una sola página, ideal para dar a conocer tu negocio de forma rápida y profesional.</p>
+                        <div class="portfolio-stats">
+                            <div class="stat"><div class="stat-number">1</div><div class="stat-label">Página</div></div>
+                            <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Responsivo</div></div>
+                            <div class="stat"><div class="stat-number">2s</div><div class="stat-label">Carga</div></div>
+                        </div>
+                        <div class="portfolio-tags">
+                            <span class="tag">One-Page</span>
+                            <span class="tag">Branding</span>
+                            <span class="tag">Mobile-First</span>
+                        </div>
+                        <a href="#" class="visit-btn">VER DETALLES</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto Web 6 -->
+                <div class="portfolio-item fade-in" data-category="blog">
+                    <div class="portfolio-mockup">
+                        <div class="mockup-device">
+                            <div class="mockup-screen" style="background: linear-gradient(135deg, #3a3a3c, #1d1d1f);">
+                                <div class="mockup-header">
+                                    <div class="mockup-dot dot-red"></div>
+                                    <div class="mockup-dot dot-yellow"></div>
+                                    <div class="mockup-dot dot-green"></div>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="wire-navbar">
+                                        <span class="wire-dot"></span>
+                                        <span class="wire-line" style="width: 20px;"></span>
+                                        <span class="wire-line" style="width: 20px;"></span>
+                                        <span class="wire-line" style="width: 20px;"></span>
+                                    </div>
+                                    <div style="display: flex; gap: 8px; flex: 1;">
+                                        <div class="wire-block" style="flex: 1.2;"></div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; justify-content: center;">
+                                            <span class="wire-line" style="width: 90%;"></span>
+                                            <span class="wire-line light" style="width: 70%;"></span>
+                                            <span class="wire-line light" style="width: 50%;"></span>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; gap: 6px; margin-top: 8px; flex-shrink: 0;">
+                                        <div class="wire-block" style="flex: 1; height: 24px;"></div>
+                                        <div class="wire-block" style="flex: 1; height: 24px;"></div>
+                                        <div class="wire-block" style="flex: 1; height: 24px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>BLOG / REVISTA DIGITAL</h3>
+                        <p>Blog o revista digital para publicar contenido, mejorar tu posicionamiento SEO y conectar con tu audiencia.</p>
+                        <div class="portfolio-stats">
+                            <div class="stat"><div class="stat-number">∞</div><div class="stat-label">Artículos</div></div>
+                            <div class="stat"><div class="stat-number">100%</div><div class="stat-label">SEO</div></div>
+                            <div class="stat"><div class="stat-number">RSS</div><div class="stat-label">Integrado</div></div>
+                        </div>
+                        <div class="portfolio-tags">
+                            <span class="tag">Blog</span>
+                            <span class="tag">SEO</span>
+                            <span class="tag">CMS</span>
+                        </div>
+                        <a href="#" class="visit-btn">VER DETALLES</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto Web 7 -->
+                <div class="portfolio-item fade-in" data-category="reservas">
+                    <div class="portfolio-mockup">
+                        <div class="mockup-device">
+                            <div class="mockup-screen" style="background: linear-gradient(135deg, #1d1d1f, #2a2a2d);">
+                                <div class="mockup-header">
+                                    <div class="mockup-dot dot-red"></div>
+                                    <div class="mockup-dot dot-yellow"></div>
+                                    <div class="mockup-dot dot-green"></div>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="wire-navbar">
+                                        <span class="wire-dot"></span>
+                                        <span class="wire-line" style="width: 40%;"></span>
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; flex: 1;">
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1; background: var(--red);"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1; background: var(--red);"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
+                                    </div>
+                                    <span class="wire-btn" style="margin: 8px auto 0; flex-shrink: 0;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>SISTEMA DE RESERVAS</h3>
+                        <p>Sistema de reservas y citas en línea que tus clientes pueden agendar desde cualquier dispositivo, las 24 horas.</p>
+                        <div class="portfolio-stats">
+                            <div class="stat"><div class="stat-number">24/7</div><div class="stat-label">Reservas</div></div>
+                            <div class="stat"><div class="stat-number">0</div><div class="stat-label">Llamadas</div></div>
+                            <div class="stat"><div class="stat-number">5min</div><div class="stat-label">Confirmación</div></div>
+                        </div>
+                        <div class="portfolio-tags">
+                            <span class="tag">Booking</span>
+                            <span class="tag">Calendario</span>
+                            <span class="tag">Recordatorios</span>
+                        </div>
+                        <a href="#" class="visit-btn">VER DETALLES</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto Web 8 -->
+                <div class="portfolio-item fade-in" data-category="menu">
+                    <div class="portfolio-mockup">
+                        <div class="mockup-device">
+                            <div class="mockup-screen" style="background: linear-gradient(135deg, #3a3a3c, #1d1d1f);">
+                                <div class="mockup-header">
+                                    <div class="mockup-dot dot-red"></div>
+                                    <div class="mockup-dot dot-yellow"></div>
+                                    <div class="mockup-dot dot-green"></div>
+                                </div>
+                                <div class="mockup-content" style="align-items: center;">
+                                    <span class="wire-dot" style="width: 14px; height: 14px; margin-bottom: 10px;"></span>
+                                    <div style="width: 100%; display: flex; flex-direction: column; gap: 8px; flex: 1;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center;"><span class="wire-line" style="width: 55%;"></span><span class="wire-line light" style="width: 15%; background: var(--red);"></span></div>
+                                        <div style="display: flex; justify-content: space-between; align-items: center;"><span class="wire-line light" style="width: 65%;"></span><span class="wire-line light" style="width: 15%; background: var(--red);"></span></div>
+                                        <div style="display: flex; justify-content: space-between; align-items: center;"><span class="wire-line light" style="width: 45%;"></span><span class="wire-line light" style="width: 15%; background: var(--red);"></span></div>
+                                        <div style="display: flex; justify-content: space-between; align-items: center;"><span class="wire-line light" style="width: 60%;"></span><span class="wire-line light" style="width: 15%; background: var(--red);"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>MENÚ DIGITAL QR</h3>
+                        <p>Menú digital con código QR para restaurantes: siempre actualizado, sin costos de reimpresión.</p>
+                        <div class="portfolio-stats">
+                            <div class="stat"><div class="stat-number">QR</div><div class="stat-label">Acceso</div></div>
+                            <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Actualizable</div></div>
+                            <div class="stat"><div class="stat-number">0</div><div class="stat-label">Impresión</div></div>
+                        </div>
+                        <div class="portfolio-tags">
+                            <span class="tag">Menú QR</span>
+                            <span class="tag">Restaurantes</span>
+                            <span class="tag">Tiempo Real</span>
+                        </div>
+                        <a href="#" class="visit-btn">VER DETALLES</a>
                     </div>
                 </div>
 
                 <!-- Puedes agregar más proyectos aquí siguiendo la misma estructura -->
-                
+
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content">
+        <div class="cta-card">
             <h2>¿NECESITAS UNA PRESENCIA DIGITAL?</h2>
             <p>Desarrollamos sitios web profesionales y estrategias de marketing digital que impulsan tu negocio hacia el éxito online.</p>
-            <a href="#contacto" class="btn-primary">
-                🚀 INICIAR PROYECTO WEB
-            </a>
+            <a href="../index.html#contacto" class="btn-primary">INICIAR PROYECTO WEB</a>
         </div>
     </section>
 
@@ -934,33 +599,20 @@
             <div class="footer-main">
                 <div class="footer-section">
                     <h4>MetroGráfica Digital</h4>
-                    <p>Más de 10 años desarrollando soluciones web y estrategias de marketing digital para empresas ecuatorianas.</p>
+                    <p>Más de 12 años de experiencia impulsando marcas con soluciones de impresión y marketing digital.</p>
                     <div class="social-links">
-                        <a href="#" title="Facebook">f</a>
-                        <a href="#" title="Instagram">ig</a>
-                        <a href="#" title="LinkedIn">in</a>
-                        <a href="#" title="WhatsApp">wa</a>
+                        <a href="https://www.facebook.com/Metrografica" target="_blank" rel="noopener" title="Facebook">f</a>
+                        <a href="https://www.instagram.com/metrografica/" target="_blank" rel="noopener" title="Instagram">ig</a>
+                        <a href="https://wa.me/593995856385" target="_blank" rel="noopener" title="WhatsApp">wa</a>
                     </div>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Servicios Web</h4>
-                    <ul>
-                        <li><a href="#">Desarrollo Web</a></li>
-                        <li><a href="#">E-commerce</a></li>
-                        <li><a href="#">Landing Pages</a></li>
-                        <li><a href="#">Marketing Digital</a></li>
-                        <li><a href="#">SEO & Analytics</a></li>
-                    </ul>
                 </div>
 
                 <div class="footer-section">
                     <h4>Contacto</h4>
                     <ul>
-                        <li>📧 web@metrografica.com</li>
-                        <li>📱 +593 99 123 4567</li>
-                        <li>📍 Ecuador</li>
-                        <li>🕒 Lun-Vie: 8AM-6PM</li>
+                        <li>metrograficadesign@gmail.com</li>
+                        <li>099 585 6385 · 096 861 6429</li>
+                        <li>Ibarra, Ecuador</li>
                     </ul>
                 </div>
 
@@ -970,23 +622,23 @@
                         <li><a href="../index.html">Inicio</a></li>
                         <li><a href="../nosotros.html">Nosotros</a></li>
                         <li><a href="portafolio-fotografico.html">Portafolio Fotográfico</a></li>
-                        <li><a href="portafolio-web.html">Portafolio Web</a></li>
-                        <li><a href="#factron">Factrón</a></li>
+                        <li><a href="https://factron.my.canva.site/factron" target="_blank" rel="noopener">Factrón</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 MetroGráfica. Todos los derechos reservados.</p>
+                <p>Metrográfica &copy; Todos los derechos reservados 2026</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/593991234567" class="whatsapp-catalog" id="catalogo" title="Catálogo WhatsApp">
-        📱
+    <a href="https://wa.me/c/593968616429" target="_blank" rel="noopener" class="whatsapp-catalog" title="Catálogo WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
     </a>
 
+    <script src="../script.js"></script>
     <script>
         // Filter functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -1000,142 +652,29 @@
                 const filter = button.getAttribute('data-filter');
 
                 portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                        item.style.animation = 'fadeInUp 0.6s ease forwards';
-                    } else {
-                        item.style.display = 'none';
-                    }
+                    item.style.display = (filter === 'all' || item.getAttribute('data-category') === filter) ? 'block' : 'none';
                 });
             });
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Header effects
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(51, 51, 51, 0.98)';
-                header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
-            } else {
-                header.style.background = 'rgba(51, 51, 51, 0.95)';
-                header.style.boxShadow = 'none';
-            }
-        });
-
-        // WhatsApp functionality
-        document.querySelector('.whatsapp-catalog').addEventListener('click', function (e) {
-            e.preventDefault();
-            const message = '💻 Hola MetroGráfica! He revisado su portafolio web y me interesa desarrollar un sitio web profesional. ¿Podrían contactarme para una cotización?';
-            window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
         });
 
         // CTA Button
         document.querySelector('.btn-primary').addEventListener('click', function (e) {
             e.preventDefault();
-            const message = '🚀 Hola MetroGráfica! Estoy listo para iniciar mi proyecto web. ¿Cuándo podemos conversar sobre mis necesidades digitales?';
-            window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+            openWhatsApp('🚀 Hola MetroGráfica! Estoy listo para iniciar mi proyecto web. ¿Cuándo podemos conversar sobre mis necesidades digitales?');
         });
 
-        // Visit site buttons
+        // Visit site buttons (si tienen un link real, navegan directo; si no, consultan por WhatsApp)
         document.querySelectorAll('.visit-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+            btn.addEventListener('click', function (e) {
+                if (btn.getAttribute('href') !== '#') return;
                 e.preventDefault();
                 e.stopPropagation();
                 const projectTitle = this.closest('.portfolio-item').querySelector('h3').textContent;
-                const message = `🌐 Hola MetroGráfica! Me interesa conocer más detalles sobre "${projectTitle}". ¿Podrían proporcionarme más información sobre este tipo de proyectos?`;
-                window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
+                openWhatsApp(`🌐 Hola MetroGráfica! Me interesa conocer más detalles sobre "${projectTitle}". ¿Podrían proporcionarme más información sobre este tipo de proyectos?`);
             });
         });
 
-        // Mobile menu functionality
-        function createMobileMenu() {
-            if (window.innerWidth <= 768) {
-                const nav = document.querySelector('.nav-container');
-                const navLinks = document.querySelector('.nav-links');
-
-                if (!document.querySelector('.mobile-menu-btn')) {
-                    const btn = document.createElement('button');
-                    btn.innerHTML = '☰';
-                    btn.className = 'mobile-menu-btn';
-                    btn.style.cssText = `
-                        background: linear-gradient(135deg, #1E40AF, #3B82F6);
-                        border: none;
-                        color: white;
-                        padding: 0.8rem 1rem;
-                        font-size: 1.2rem;
-                        cursor: pointer;
-                        position: absolute;
-                        right: 2rem;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        border-radius: 8px;
-                        box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
-                        transition: all 0.3s ease;
-                    `;
-
-                    nav.style.position = 'relative';
-                    nav.appendChild(btn);
-
-                    let open = false;
-                    btn.addEventListener('click', () => {
-                        open = !open;
-                        if (open) {
-                            navLinks.style.display = 'flex';
-                            navLinks.style.position = 'absolute';
-                            navLinks.style.top = '100%';
-                            navLinks.style.left = '0';
-                            navLinks.style.right = '0';
-                            navLinks.style.background = 'rgba(51, 51, 51, 0.98)';
-                            navLinks.style.flexDirection = 'column';
-                            navLinks.style.zIndex = '1000';
-                            navLinks.style.backdropFilter = 'blur(20px)';
-                            btn.innerHTML = '✕';
-                        } else {
-                            navLinks.style.display = 'none';
-                            btn.innerHTML = '☰';
-                        }
-                    });
-                }
-            }
-        }
-
-        window.addEventListener('resize', createMobileMenu);
-        createMobileMenu();
-
         console.log('💻 MetroGráfica - Portafolio Web cargado');
-        console.log('📱 WhatsApp: +593 99 123 4567');
         console.log('🌐 Servicios: Desarrollo Web | E-commerce | Landing Pages | Marketing Digital');
     </script>
 </body>

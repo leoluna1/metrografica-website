@@ -20,945 +20,100 @@
         content="Conoce la historia, equipos y compromiso de MetroGráfica. Más de 12 años ofreciendo soluciones de impresión digital de alta calidad en Ecuador.">
     <meta name="twitter:image" content="images/LOGO-M.png">
 
+    <link rel="stylesheet" href="styles.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+        /* Hero */
+        .hero { padding: 170px 0 4rem; background: var(--bg); text-align: center; position: relative; overflow: hidden; }
+        .hero .glow { top: -150px; left: 50%; transform: translateX(-50%); }
+        .hero-content { max-width: 800px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+        .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin-bottom: 0.6rem; color: var(--ink); }
+        .hero-subtitle { font-size: 1.1rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Main content intro */
+        .main-content { padding: 0 0 3rem; background: var(--bg); }
 
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(51, 51, 51, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 0;
-            transition: all 0.3s ease;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        nav {
-            background: #333;
-            padding: 0.8rem 0;
-            border-top: 1px solid #444;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 0;
-            list-style: none;
-        }
-
-        .nav-links li {
-            position: relative;
-        }
-
-        .nav-links a {
-            display: block;
-            padding: 1rem 1.8rem;
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border-right: 1px solid #444;
-            position: relative;
-        }
-
-        .nav-links a.active {
-            background: #E53E3E;
-            color: white;
-        }
-
-        .nav-links a:hover {
-            background: #E53E3E;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Dropdown Menu */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            min-width: 280px;
-            background: #333;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            z-index: 1001;
-            border-radius: 0 0 8px 8px;
-        }
-
-        .dropdown-content a {
-            border-right: none;
-            border-bottom: 1px solid #444;
-            padding: 1.2rem 2rem;
-            transition: all 0.3s ease;
-            display: block;
-            position: relative;
-        }
-
-        .dropdown-content a:last-child {
-            border-bottom: none;
-            border-radius: 0 0 8px 8px;
-        }
-
-        .dropdown-content a:hover {
-            background: #E53E3E;
-            color: white;
-            padding-left: 2.5rem;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Hero Section - More Dynamic */
-        .hero {
-            min-height: 70vh;
-            background: linear-gradient(135deg, #E53E3E 0%, #C53030 50%, #B91C1C 100%);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 140px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
-            animation: heroAnimation 10s ease-in-out infinite;
-        }
-
-        @keyframes heroAnimation {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.8;
-                transform: scale(1.05);
-            }
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: slideInDown 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            border-bottom: 4px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 1rem;
-            display: inline-block;
-            animation: slideInUp 1s ease-out 0.3s both;
-        }
-
-        @keyframes slideInDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Main Content - Modern Grid */
-        .main-content {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            position: relative;
-        }
-
-        .main-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                radial-gradient(circle at 1px 1px, rgba(229, 62, 62, 0.1) 1px, transparent 0);
-            background-size: 40px 40px;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 5rem;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-header h2 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
-            color: #2D3748;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            position: relative;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(90deg, #E53E3E, #C53030);
-            border-radius: 3px;
-        }
-
-        .section-header p {
-            font-size: 1.3rem;
-            color: #4A5568;
-            line-height: 1.8;
-        }
-
-        /* Values Section - Card Design Revolution */
-        .values-section {
-            padding: 8rem 0;
-            background: white;
-            position: relative;
-        }
+        /* Values */
+        .values-section { padding: 2rem 0 5rem; background: var(--bg); }
 
         .values-grid {
-            max-width: 1300px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 2rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
 
-        .value-card {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem 2.5rem;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
+        @media (max-width: 760px) { .values-grid { grid-template-columns: 1fr; } }
 
-        .value-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #E53E3E, #C53030, #B91C1C);
-            transition: all 0.3s ease;
-        }
+        .value-panel { padding-top: 1.6rem; }
+        .value-panel .icon { color: var(--red); margin-bottom: 1rem; }
+        .value-panel h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--ink); }
+        .value-panel p { color: var(--text-muted); line-height: 1.7; font-size: 0.94rem; }
 
-        .value-card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 25px 60px rgba(229, 62, 62, 0.2);
-            border-color: #E53E3E;
-        }
-
-        .value-card:hover::before {
-            height: 12px;
-        }
-
-        .value-icon {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #E53E3E, #C53030);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: 900;
-            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .value-card:hover .value-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 12px 35px rgba(229, 62, 62, 0.5);
-        }
-
-        .value-card h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: #2D3748;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-        }
-
-        .value-card p {
-            color: #4A5568;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Equipment Section - Dark Theme Enhanced */
-        .equipment-section {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-            color: white;
-            position: relative;
-        }
-
-        .equipment-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                linear-gradient(45deg, transparent 49%, rgba(229, 62, 62, 0.05) 50%, transparent 51%),
-                linear-gradient(-45deg, transparent 49%, rgba(229, 62, 62, 0.05) 50%, transparent 51%);
-            background-size: 60px 60px;
-        }
+        /* Equipment */
+        .equipment-section { padding: 5rem 0; background: var(--bg); }
 
         .equipment-grid {
-            max-width: 1300px;
+            max-width: 1240px;
             margin: 0 auto;
             padding: 0 2rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            position: relative;
-            z-index: 2;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.6rem;
         }
 
         .equipment-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 3rem;
-            border: 1px solid rgba(229, 62, 62, 0.3);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            border-top: 3px solid var(--red);
         }
 
-        .equipment-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(229, 62, 62, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: all 0.4s ease;
+        .equipment-card h4 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--ink); display: flex; align-items: center; gap: 0.7rem; }
+        .equipment-card h4 .icon { color: var(--red); }
+        .equipment-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 1.2rem;
+            background: #fff;
         }
-
-        .equipment-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: #E53E3E;
-        }
-
-        .equipment-card:hover::before {
-            opacity: 1;
-        }
-
-        .equipment-card h4 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: #E53E3E;
-            text-transform: uppercase;
-            position: relative;
-            z-index: 3;
-        }
-
-        .equipment-card p {
-            color: #CBD5E0;
-            line-height: 1.7;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 3;
-        }
+        .equipment-card p { color: var(--text-muted); line-height: 1.7; font-size: 0.94rem; }
 
         .equipment-highlight {
-            background: linear-gradient(90deg, #E53E3E, #C53030);
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 25px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            margin: 1rem 0;
+            background: rgba(229, 52, 47, 0.12);
+            color: var(--red-bright);
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.5px;
+            margin: 0.9rem 0;
             display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
-            position: relative;
-            z-index: 3;
         }
 
-        /* CTA Section - More Impact */
-        .cta-section {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, #E53E3E 0%, #C53030 25%, #B91C1C 50%, #991B1B 100%);
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Animación de partículas flotantes */
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.06) 3px, transparent 3px),
-                radial-gradient(circle at 90% 70%, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                radial-gradient(circle at 10% 60%, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
-            background-size: 200px 200px, 150px 150px, 300px 300px, 100px 100px, 250px 250px;
-            animation: particlesFloat 15s linear infinite;
-        }
-
-        /* Forma geométrica deslizante */
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            background: linear-gradient(90deg,
-                    transparent 0%,
-                    rgba(255, 255, 255, 0.1) 25%,
-                    rgba(255, 255, 255, 0.2) 50%,
-                    rgba(255, 255, 255, 0.1) 75%,
-                    transparent 100%);
-            animation: slideWave 4s ease-in-out infinite;
-        }
-
-        @keyframes particlesFloat {
-            0% {
-                transform: translateX(0) translateY(0);
-            }
-
-            25% {
-                transform: translateX(-10px) translateY(-20px);
-            }
-
-            50% {
-                transform: translateX(-20px) translateY(0);
-            }
-
-            75% {
-                transform: translateX(-10px) translateY(20px);
-            }
-
-            100% {
-                transform: translateX(0) translateY(0);
-            }
-        }
-
-        @keyframes slideWave {
-
-            0%,
-            100% {
-                transform: translateX(-100%) scaleY(1);
-            }
-
-            50% {
-                transform: translateX(100%) scaleY(1.5);
-            }
-        }
-
-        .cta-content {
-            max-width: 800px;
+        /* CTA */
+        .cta-section { padding: 2rem 2rem 6rem; }
+        .cta-card {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Título con efecto typewriter */
-        .cta-content h2 {
-            font-size: 3.2rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-content h2::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #E53E3E 0%, #C53030 25%, #B91C1C 50%, #991B1B 100%);
-            animation: typewriterReveal 3s ease-out 0.5s both;
-        }
-
-        @keyframes typewriterReveal {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(100%);
-            }
-        }
-
-        /* Párrafo con efecto fade lateral */
-        .cta-content p {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            opacity: 0;
-            line-height: 1.7;
-            animation: slideInFromSide 1s ease-out 1.5s both;
-        }
-
-        @keyframes slideInFromSide {
-            0% {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-
-            100% {
-                opacity: 0.95;
-                transform: translateX(0);
-            }
-        }
-
-        /* Botón con efecto morphing */
-        .btn-primary {
-            background: white;
-            color: #E53E3E;
-            padding: 1.5rem 3.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            animation: buttonAppear 0.8s ease-out 2.5s both, buttonMorph 6s ease-in-out 3s infinite;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: radial-gradient(circle, rgba(229, 62, 62, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
-            transition: all 0.6s ease;
-            transform: translate(-50%, -50%);
-        }
-
-        .btn-primary:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-            animation-play-state: paused;
-        }
-
-        @keyframes buttonAppear {
-            0% {
-                opacity: 0;
-                transform: translateY(30px) scale(0.8);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        @keyframes buttonMorph {
-
-            0%,
-            100% {
-                border-radius: 50px;
-                transform: scale(1);
-            }
-
-            25% {
-                border-radius: 25px;
-                transform: scale(1.05);
-            }
-
-            50% {
-                border-radius: 15px;
-                transform: scale(1);
-            }
-
-            75% {
-                border-radius: 35px;
-                transform: scale(1.02);
-            }
-        }
-
-        /* Footer - Enhanced */
-        footer {
-            background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
-            color: white;
-            padding: 4rem 0 2rem;
-            position: relative;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer-main {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h4 {
-            color: #E53E3E;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 1.2rem;
-        }
-
-        .footer-section p,
-        .footer-section li {
-            color: #CBD5E0;
-            margin-bottom: 0.8rem;
-            line-height: 1.7;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
-            color: #CBD5E0;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: #E53E3E;
-            transform: translateX(5px);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, #E53E3E, #C53030);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 900;
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(229, 62, 62, 0.4);
-        }
-
-        .footer-bottom {
-            border-top: 2px solid rgba(229, 62, 62, 0.3);
-            padding-top: 2rem;
+            background: var(--red);
+            border-radius: 16px;
             text-align: center;
+            color: #fff;
+            padding: 3.5rem 2.5rem;
         }
-
-        .footer-bottom p {
-            color: #4A5568;
-            font-size: 1rem;
-        }
-
-        /* WhatsApp Button - Enhanced */
-        .whatsapp-catalog {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 75px;
-            height: 75px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.2rem;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            text-decoration: none;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        .whatsapp-catalog:hover {
-            transform: scale(1.15);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
-            color: white;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.5rem;
-            }
-
-            .section-header h2 {
-                font-size: 2.5rem;
-            }
-
-            .values-grid,
-            .equipment-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .value-card,
-            .equipment-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .cta-content h2 {
-                font-size: 2.2rem;
-            }
-
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-container {
-                overflow-x: auto;
-            }
-        }
-
-        /* Advanced Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .fade-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            animation: fadeInLeft 0.8s ease forwards;
-        }
-
-        .fade-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            animation: fadeInRight 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInLeft {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Scroll Progress Bar */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: rgba(229, 62, 62, 0.2);
-            z-index: 1001;
-        }
-
-        .scroll-progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #E53E3E, #C53030);
-            width: 0%;
-            transition: width 0.1s ease;
-        }
+        .cta-card h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1.2rem; }
+        .cta-card p { font-size: 1.05rem; margin-bottom: 1.8rem; opacity: 0.95; line-height: 1.7; }
+        .cta-card .btn-primary { background: #fff; color: var(--red); box-shadow: none; }
+        .cta-card .btn-primary:hover { background: #f2f2f0; }
     </style>
 </head>
 
 <body>
-    <!-- Scroll Progress -->
-    <div class="scroll-progress">
-        <div class="scroll-progress-bar" id="scrollProgress"></div>
-    </div>
-
     <!-- Header -->
     <header>
         <div class="header-container">
@@ -967,29 +122,30 @@
                     <img src="images/LOGO-M.png" alt="MetroGráfica Logo">
                 </a>
             </div>
+            <nav>
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
+                        <li class="dropdown">
+                            <a href="#">PORTAFOLIO</a>
+                            <div class="dropdown-content">
+                                <a href="portafolio/portafolio-fotografico.html">PORTAFOLIO FOTOGRÁFICO</a>
+                                <a href="portafolio/portafolio-web.html">PORTAFOLIO WEB</a>
+                            </div>
+                        </li>
+                        <li><a href="https://wa.me/c/593968616429" target="_blank" rel="noopener">CATÁLOGO WHATSAPP</a></li>
+                        <li><a href="index.html#contacto">CONTACTOS</a></li>
+                        <li><a href="https://factron.my.canva.site/factron" target="_blank" rel="noopener">FACTRÓN</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        <nav>
-            <div class="nav-container">
-                <ul class="nav-links">
-                    <li><a href="index.html">INICIO</a></li>
-                    <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
-                    <li class="dropdown">
-                        <a href="#">PORTAFOLIO</a>
-                        <div class="dropdown-content">
-                            <a href="portafolio-fotografico.html">PORTAFOLIO FOTOGRÁFICO</a>
-                            <a href="portafolio-web.html">PORTAFOLIO WEB</a>
-                        </div>
-                    </li>
-                    <li><a href="#catalogo">CATÁLOGO WHATSAPP</a></li>
-                    <li><a href="index.html#contacto">CONTACTOS</a></li>
-                    <li><a href="#factron">FACTRÓN</a></li>
-                </ul>
-            </div>
-        </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="glow"></div>
         <div class="hero-content">
             <h1>NOSOTROS</h1>
             <div class="hero-subtitle">Más de 12 Años de Excelencia</div>
@@ -999,6 +155,7 @@
     <!-- Main Content -->
     <section class="main-content">
         <div class="section-header">
+            <div class="eyebrow">Quiénes somos</div>
             <h2>NUESTRA EMPRESA</h2>
             <p>En MetroGráfica nos enorgullecemos de ser líderes en la industria gráfica, ofreciendo soluciones de
                 impresión de alta calidad con compromiso, experiencia y tecnología de vanguardia que transforma ideas en
@@ -1009,40 +166,30 @@
     <!-- Values Section -->
     <section class="values-section">
         <div class="section-header">
+            <div class="eyebrow">Valores</div>
             <h2>NUESTROS VALORES</h2>
             <p>Los pilares fundamentales que nos distinguen en el mercado de impresión digital</p>
         </div>
         <div class="values-grid">
-            <div class="value-card fade-in">
-                <div class="value-icon">⚡</div>
-                <h3>CUMPLIMIENTO</h3>
-                <p>Nos enorgullece cumplir rigurosamente con los plazos de entrega acordados. Sabemos lo importante que
-                    es para ti contar con soluciones rápidas y eficientes. Nos comprometemos a ofrecerte tiempos de
-                    producción excepcionalmente cortos, para satisfacer incluso tus necesidades más urgentes.</p>
+            <div class="value-panel panel fade-in">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <h3>SIN DUDA ENTREGAMOS A TIEMPO</h3>
+                <p>Nos enorgullece cumplir rigurosamente con los plazos de entrega acordados, con tiempos de
+                    producción excepcionalmente cortos para tus necesidades más urgentes.</p>
             </div>
 
-            <div class="value-card fade-in-left">
-                <div class="value-icon">💎</div>
-                <h3>CALIDAD PREMIUM</h3>
-                <p>Aseguramos la reproducción precisa de colores en todos nuestros sistemas de impresión. Trabajamos con
-                    materiales de primera calidad y nos esforzamos por lograr acabados impecables en cada proyecto.
-                    Nuestro compromiso con la excelencia nos impulsa a superar tus expectativas constantemente.</p>
+            <div class="value-panel panel fade-in">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                <h3>EXCELENTE CALIDAD</h3>
+                <p>Aseguramos la reproducción precisa de colores en todos nuestros sistemas de impresión, con
+                    materiales de primera calidad y acabados impecables en cada proyecto.</p>
             </div>
 
-            <div class="value-card fade-in-right">
-                <div class="value-icon">🎯</div>
-                <h3>FLEXIBILIDAD TOTAL</h3>
-                <p>Ofrecemos la posibilidad de imprimir el 90% de tus productos desde una única unidad, sin comprometer
-                    la calidad que nos distingue. Valoramos tus necesidades individuales y nos esforzamos por brindarte
-                    soluciones personalizadas sin importar el tamaño de tu proyecto.</p>
-            </div>
-
-            <div class="value-card fade-in">
-                <div class="value-icon">💰</div>
-                <h3>PRECIOS JUSTOS</h3>
-                <p>Ofrecemos impresiones de la más alta calidad a precios competitivos en el mercado. Valoramos tu
-                    satisfacción y nos esforzamos por brindarte un excelente valor por tu inversión. Resultados
-                    impresionantes sin comprometer la calidad, una solución confiable y asequible.</p>
+            <div class="value-panel panel fade-in">
+                <svg class="icon" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+                <h3>IMPRESIONES SIN MÍNIMOS REQUERIDOS</h3>
+                <p>Te ofrecemos la posibilidad de imprimir el 90% de tus productos desde una única unidad, sin
+                    comprometer la calidad que nos distingue.</p>
             </div>
         </div>
     </section>
@@ -1050,109 +197,72 @@
     <!-- Equipment Section -->
     <section class="equipment-section">
         <div class="section-header">
-            <h2 style="color: white;">TECNOLOGÍA DE VANGUARDIA</h2>
-            <p style="color: #CBD5E0;">Equipamiento de última generación para satisfacer todas tus necesidades de
-                impresión</p>
+            <div class="eyebrow">Equipamiento</div>
+            <h2>TECNOLOGÍA DE VANGUARDIA</h2>
+            <p>Equipamiento de última generación para satisfacer todas tus necesidades de impresión</p>
         </div>
         <div class="equipment-grid">
             <div class="equipment-card fade-in">
-                <h4>OFFSET HEIDELBERG</h4>
-                <img src="images/offset.png" alt="Offset Heidelberg" loading="lazy"
-                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
-                <p>Perfecto para volúmenes de impresión medianos y grandes, nuestros equipos de impresión HEIDELBERG
-                    garantizan un resultado excepcional con un gran detalle, nitidez y uniformidad en los colores.
-                    Contamos con impresoras de 4 colores, 2 colores y mono color, ideales para adaptarse a todo tipo de
-                    papeles y cartulinas. Puedes confiar en nuestra tecnología de vanguardia y nuestra dedicación para
-                    ofrecerte resultados de impresión superiores en cada proyecto.</p>
+                <h4><svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>IMPRESIÓN OFFSET</h4>
+                <img src="images/offset.png" alt="Offset Heidelberg" loading="lazy">
+                <p>Perfecto para volúmenes de impresión medianos y grandes, con impresoras de 4 colores, 2 colores y
+                    mono color, ideales para todo tipo de papeles y cartulinas.</p>
                 <div class="equipment-highlight">4 COLORES • 2 COLORES • MONO COLOR</div>
-                <p>Adaptable a todo tipo de papeles y cartulinas con tecnología de vanguardia alemana.</p>
-            </div>
-
-            <div class="equipment-card fade-in-left">
-                <h4>DIGITAL XEROX 560</h4>
-                <img src="images/laser.png" alt="Digital Xerox 560" loading="lazy"
-                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
-                <p>La mejor opción para cantidades cortas de impresión, puedes imprimir desde 1 hoja y con calidad
-                    fotográfica gracias a nuestra prensa digital xerox 560 de la marca XEROX, imprime todo lo que te
-                    imaginas hasta un tamaño de 48x33cm, con entrega inmediata.</p>
-                <div class="equipment-highlight">HASTA 48×33CM • ENTREGA INMEDIATA</div>
-                <p>Calidad fotográfica profesional para proyectos urgentes y personalizados.</p>
-            </div>
-
-            <div class="equipment-card fade-in-right">
-                <h4>GRAN FORMATO MIMAKI</h4>
-                <img src="images/mimaki.png" alt="Gran Formato Mimaki" loading="lazy"
-                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
-                <p>Perfecto para potenciar la imagen de tu establecimiento, contamos con plotter de gran formato de
-                    última tecnología Mimaki, capaz de imprimir hasta 3.20 metros. No te limites en tus proyectos,
-                    nosotros nos encargamos de convertirlos en realidad. Con nuestra capacidad de impresión de gran
-                    formato, podrás destacarte y captar la atención de tus clientes de manera impactante. Confía en
-                    nuestra experiencia y equipo técnico para lograr resultados excepcionales en tus iniciativas de
-                    branding.</p>
-                <div class="equipment-highlight">HASTA 3.20 METROS</div>
-                <p>Sin límites en tus proyectos, resultados impactantes que captan la atención de manera profesional.
-                </p>
             </div>
 
             <div class="equipment-card fade-in">
-                <h4>PLOTTER UVDTF</h4>
-                <img src="images/UVDTF.png" alt="Plotter UVDTF" loading="lazy"
-                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
-                <p>Imagina la posibilidad de imprimir en una amplia variedad de materiales: plástico, metal, cerámica,
-                    metacrilato, aluminio, madera, piel, vidrio, objetos cilíndricos, bolas, pelotas, carcasa de móvil
-                    con efecto de relieve, etiquetas, relieve de placa de piedra, bolsos, papel tapiz, azulejo, discos,
-                    CD, cristal, PVC, ABS, tablero acrílico, piedra, cinturón, tablero de espuma, y mucho más. Con
-                    nuestro plotter UVDTF, podemos convertir tu imaginación en realidad. Ofrecemos la versatilidad
-                    necesaria para imprimir en una amplia gama de superficies, permitiéndote crear resultados
-                    impactantes y de alta calidad. Confía en nuestro equipo y tecnología para obtener resultados
-                    excepcionales en tus proyectos de impresión.</p>
+                <h4><svg class="icon" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>IMPRESIÓN DIGITAL</h4>
+                <img src="images/laser.png" alt="Digital Xerox 560" loading="lazy">
+                <p>La mejor opción para cantidades cortas, desde 1 hoja y con calidad fotográfica, hasta un tamaño de
+                    48x33cm, con entrega inmediata.</p>
+                <div class="equipment-highlight">HASTA 48×33CM • ENTREGA INMEDIATA</div>
+            </div>
+
+            <div class="equipment-card fade-in">
+                <h4><svg class="icon" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>GIGANTOGRAFÍAS</h4>
+                <img src="images/mimaki.png" alt="Gran Formato Mimaki" loading="lazy">
+                <p>Plotter de gran formato de última tecnología, capaz de imprimir hasta 3.20 metros para potenciar la
+                    imagen de tu marca.</p>
+                <div class="equipment-highlight">HASTA 3.20 METROS</div>
+            </div>
+
+            <div class="equipment-card fade-in">
+                <h4><svg class="icon" viewBox="0 0 24 24"><path d="M12 2s6 7.5 6 12a6 6 0 0 1-12 0c0-4.5 6-12 6-12Z"/></svg>IMPRESIÓN UVDTF</h4>
+                <img src="images/UVDTF.png" alt="Plotter UVDTF" loading="lazy">
+                <p>Imprime en una amplia variedad de materiales: plástico, metal, cerámica, madera, vidrio, cristal y
+                    mucho más.</p>
                 <div class="equipment-highlight">MATERIALES ILIMITADOS</div>
-                <p>Convertimos tu imaginación en realidad con alta calidad en cualquier superficie.</p>
             </div>
 
-            <div class="equipment-card fade-in-left">
-                <h4>TEXTIL DTF</h4>
-                <img src="images/DTF-PRENDAS.png" alt="Textil DTF" loading="lazy"
-                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
-                <p>Con nuestro plotter DTF, podrás estampar en una amplia variedad de textiles, como camisetas,
-                    banderines, pañuelos, gorras, y más. Te ofrecemos la oportunidad de llevar a cabo tus proyectos
-                    publicitarios de manera oportuna y efectiva. ¡Deja volar tu imaginación y descubre las infinitas
-                    posibilidades que podemos ofrecerte! Nuestro equipo está listo para convertir tus ideas en realidad,
-                    brindándote resultados de calidad y cumpliendo con tus expectativas. Confía en nosotros para obtener
-                    impresiones de alto impacto que capturarán la atención de tu público objetivo.</p>
+            <div class="equipment-card fade-in">
+                <h4><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>IMPRESIÓN DTF</h4>
+                <img src="images/DTF-PRENDAS.png" alt="Textil DTF" loading="lazy">
+                <p>Estampa en una amplia variedad de textiles: camisetas, banderines, pañuelos, gorras y más, con
+                    calidad y rapidez.</p>
                 <div class="equipment-highlight">TEXTILES DIVERSOS</div>
-                <p>Resultados de calidad que cumplen y superan expectativas en el sector textil.</p>
             </div>
 
-            <div class="equipment-card fade-in-right">
-                <h4>PLANOS RICOH</h4>
-                <img src="images/PLANOS.png" alt="Planos Ricoh" loading="lazy"
-                    style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);display: block; margin: 0 auto;">
-                <p>Con nuestra copiadora de planos, podrás imprimir carteles, pancartas y planos arquitectónicos con
-                    facilidad y precisión. ¡Permite que tu imaginación se desate y descubre las infinitas posibilidades
-                    que tenemos para ofrecerte! Nuestro equipo está preparado para convertir tus ideas en realidad,
-                    brindándote resultados de calidad que cumplirán e incluso superarán tus expectativas. Puedes confiar
-                    en nuestra tecnología de vanguardia Ricoh, que garantiza un trabajo encomendado impecable. Estamos
-                    comprometidos con proporcionarte impresiones de alto impacto que captarán la atención y dejarán una
-                    impresión duradera.</p>
+            <div class="equipment-card fade-in">
+                <h4><svg class="icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>COPIADORA DE PLANOS</h4>
+                <img src="images/PLANOS.png" alt="Planos Ricoh" loading="lazy">
+                <p>Imprime carteles, pancartas y planos arquitectónicos con facilidad y precisión gracias a nuestra
+                    tecnología Ricoh.</p>
                 <div class="equipment-highlight">PRECISIÓN ARQUITECTÓNICA</div>
-                <p>Trabajo impecable con impresiones técnicas que dejan impresión duradera.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content">
-            <h2>¿LISTO PARA LA EXCELENCIA?</h2>
-            <p>Únete a las empresas líderes de Ecuador que confían en MetroGráfica para sus proyectos de impresión y
-                marketing digital. Experiencia, calidad y resultados garantizados.</p>
-            <a href="index.html#contacto" class="btn-primary">
-                🚀 COMENZAR PROYECTO
-            </a>
+        <div class="cta-card">
+            <h2>¿BUSCAS CALIDAD? IMPRIME CON NOSOTROS</h2>
+            <p>En MetroGráfica nos enorgullece ofrecerte impresiones de la más alta calidad a precios competitivos en
+                el mercado. Valoramos tu satisfacción y nos esforzamos por brindarte un excelente valor por tu
+                inversión, con una solución confiable y asequible para todas tus necesidades de impresión.</p>
+            <a href="https://wa.me/593995856385" target="_blank" rel="noopener" class="btn-primary">ESCRÍBENOS</a>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -1162,33 +272,18 @@
                     <p>Líderes en la industria gráfica con más de 12 años de experiencia. Tu aliado confiable en el
                         mundo de la impresión y el marketing digital, transformando ideas en realidad.</p>
                     <div class="social-links">
-                        <a href="#" title="Facebook">f</a>
-                        <a href="#" title="Instagram">ig</a>
-                        <a href="#" title="LinkedIn">in</a>
-                        <a href="#" title="WhatsApp">wa</a>
+                        <a href="https://www.facebook.com/Metrografica" target="_blank" rel="noopener" title="Facebook">f</a>
+                        <a href="https://www.instagram.com/metrografica/" target="_blank" rel="noopener" title="Instagram">ig</a>
+                        <a href="https://wa.me/593995856385" target="_blank" rel="noopener" title="WhatsApp">wa</a>
                     </div>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Servicios Premium</h4>
-                    <ul>
-                        <li><a href="#">Impresión Digital</a></li>
-                        <li><a href="#">Marketing Digital</a></li>
-                        <li><a href="#">Diseño Gráfico</a></li>
-                        <li><a href="#">Identidad Corporativa</a></li>
-                        <li><a href="#">Packaging & Empaques</a></li>
-                        <li><a href="#">Gran Formato</a></li>
-                    </ul>
                 </div>
 
                 <div class="footer-section">
                     <h4>Contacto Directo</h4>
                     <ul>
-                        <li>📧 info@metrografica.com</li>
-                        <li>📱 +593 99 123 4567</li>
-                        <li>📍 Quito, Ecuador</li>
-                        <li>🕒 Lun-Vie: 8AM-6PM</li>
-                        <li>🕒 Sáb: 9AM-1PM</li>
+                        <li>metrograficadesign@gmail.com</li>
+                        <li>099 585 6385 · 096 861 6429</li>
+                        <li>Calle Simón Bolívar 6-08 y Juan José Flores, Ibarra</li>
                     </ul>
                 </div>
 
@@ -1197,283 +292,46 @@
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="portafolio-fotografico.html">Portafolio Fotográfico</a></li>
-                        <li><a href="portafolio-web.html">Portafolio Web</a></li>
-                        <li><a href="#factron">Sistema Factrón</a></li>
+                        <li><a href="portafolio/portafolio-fotografico.html">Portafolio Fotográfico</a></li>
+                        <li><a href="https://factron.my.canva.site/factron" target="_blank" rel="noopener">Sistema Factrón</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 MetroGráfica. Todos los derechos reservados. | Diseñado con ❤️ para la excelencia en
-                    Ecuador</p>
+                <p>Metrográfica &copy; Todos los derechos reservados 2026</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Catalog Button -->
-    <a href="https://wa.me/593991234567" class="whatsapp-catalog" id="catalogo" title="Catálogo WhatsApp">
-        📱
+    <a href="https://wa.me/c/593968616429" target="_blank" rel="noopener" class="whatsapp-catalog" title="Catálogo WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
     </a>
 
+    <script src="script.js"></script>
     <script>
-        // Scroll Progress Bar
-        window.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercent = (scrollTop / scrollHeight) * 100;
-            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
-        });
-
-        // Enhanced Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Advanced Intersection Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = `${index * 0.1}s`;
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements with staggered animation
-        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach((el, index) => {
-            observer.observe(el);
-        });
-
-        // Enhanced Header Effects
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            const scrolled = window.pageYOffset;
-
-            if (scrolled > 100) {
-                header.style.background = 'rgba(51, 51, 51, 0.98)';
-                header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
-                header.style.backdropFilter = 'blur(20px)';
-            } else {
-                header.style.background = 'rgba(51, 51, 51, 0.95)';
-                header.style.boxShadow = 'none';
-                header.style.backdropFilter = 'blur(10px)';
-            }
-        });
-
-        // Advanced Card Interactions
-        document.querySelectorAll('.value-card').forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateY(-15px) scale(1.03) rotateY(5deg)';
-                this.style.borderColor = '#E53E3E';
-                this.style.boxShadow = '0 25px 60px rgba(229, 62, 62, 0.25)';
-            });
-
-            card.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
-                this.style.borderColor = 'transparent';
-                this.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.1)';
-            });
-
-            // Click effect
-            card.addEventListener('click', function () {
-                this.style.animation = 'pulse 0.6s ease';
-                setTimeout(() => {
-                    this.style.animation = '';
-                }, 600);
-            });
-        });
-
-        // Equipment cards enhanced interactions
-        document.querySelectorAll('.equipment-card').forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateY(-10px) scale(1.02) rotateX(5deg)';
-                this.style.background = 'rgba(255, 255, 255, 0.18)';
-                this.style.borderColor = '#E53E3E';
-            });
-
-            card.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateY(0) scale(1) rotateX(0deg)';
-                this.style.background = 'rgba(255, 255, 255, 0.08)';
-                this.style.borderColor = 'rgba(229, 62, 62, 0.3)';
-            });
-        });
-
-        // WhatsApp Enhanced Functionality
-        document.querySelector('.whatsapp-catalog').addEventListener('click', function (e) {
-            e.preventDefault();
-            const message = 'Hola MetroGráfica! 👋 He revisado su página "Nosotros" y me impresiona su experiencia y equipamiento. Me interesa conocer más sobre sus servicios premium. ¿Podrían contactarme?';
-            window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
-        });
-
-        // CTA Button Enhanced
+        // WhatsApp
+        // CTA Button
         document.querySelector('.btn-primary').addEventListener('click', function (e) {
             e.preventDefault();
-            const message = '🚀 Hola MetroGráfica! Estoy listo para comenzar un proyecto con ustedes. He visto su experiencia de 12+ años y su tecnología de vanguardia. ¿Cuándo podemos conversar?';
-            window.open(`https://wa.me/593991234567?text=${encodeURIComponent(message)}`, '_blank');
-        });
-
-        // Mobile Menu Enhanced
-        function createMobileMenu() {
-            if (window.innerWidth <= 768) {
-                const nav = document.querySelector('.nav-container');
-                const navLinks = document.querySelector('.nav-links');
-
-                if (!document.querySelector('.mobile-menu-btn')) {
-                    const btn = document.createElement('button');
-                    btn.innerHTML = '☰';
-                    btn.className = 'mobile-menu-btn';
-                    btn.style.cssText = `
-                        background: linear-gradient(135deg, #E53E3E, #C53030);
-                        border: none;
-                        color: white;
-                        padding: 0.8rem 1rem;
-                        font-size: 1.2rem;
-                        cursor: pointer;
-                        position: absolute;
-                        right: 2rem;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        border-radius: 8px;
-                        box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
-                        transition: all 0.3s ease;
-                    `;
-
-                    nav.style.position = 'relative';
-                    nav.appendChild(btn);
-
-                    let open = false;
-                    btn.addEventListener('click', () => {
-                        open = !open;
-                        if (open) {
-                            navLinks.style.display = 'flex';
-                            navLinks.style.position = 'absolute';
-                            navLinks.style.top = '100%';
-                            navLinks.style.left = '0';
-                            navLinks.style.right = '0';
-                            navLinks.style.background = 'rgba(51, 51, 51, 0.98)';
-                            navLinks.style.flexDirection = 'column';
-                            navLinks.style.zIndex = '1000';
-                            navLinks.style.backdropFilter = 'blur(20px)';
-                            navLinks.style.borderRadius = '0 0 15px 15px';
-                            btn.innerHTML = '✕';
-                            btn.style.transform = 'translateY(-50%) rotate(90deg)';
-                        } else {
-                            navLinks.style.display = 'none';
-                            btn.innerHTML = '☰';
-                            btn.style.transform = 'translateY(-50%) rotate(0deg)';
-                        }
-                    });
-
-                    btn.addEventListener('mouseenter', () => {
-                        btn.style.transform = 'translateY(-50%) scale(1.1)';
-                        btn.style.boxShadow = '0 6px 20px rgba(229, 62, 62, 0.6)';
-                    });
-
-                    btn.addEventListener('mouseleave', () => {
-                        btn.style.transform = open ? 'translateY(-50%) rotate(90deg)' : 'translateY(-50%) rotate(0deg)';
-                        btn.style.boxShadow = '0 4px 15px rgba(229, 62, 62, 0.4)';
-                    });
-                }
-            }
-        }
-
-        window.addEventListener('resize', createMobileMenu);
-        createMobileMenu();
-
-        // Parallax Effects
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            const rate = scrolled * -0.2;
-
-            if (hero) {
-                hero.style.transform = `translateY(${rate}px)`;
-            }
-
-            // Floating elements parallax
-            const floatingElements = document.querySelectorAll('.equipment-card');
-            floatingElements.forEach((el, index) => {
-                const speed = 0.05 * (index + 1);
-                const yPos = scrolled * speed;
-                el.style.transform = `translateY(${yPos}px)`;
-            });
-        });
-
-        // Advanced Loading Animation
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.8s ease';
-
-            // Simulated loading with progress
-            let progress = 0;
-            const loadingInterval = setInterval(() => {
-                progress += Math.random() * 30;
-                if (progress >= 100) {
-                    progress = 100;
-                    clearInterval(loadingInterval);
-
-                    setTimeout(() => {
-                        document.body.style.opacity = '1';
-
-                        // Trigger hero animations
-                        document.querySelector('.hero h1').style.animation = 'slideInDown 1s ease-out';
-                        document.querySelector('.hero-subtitle').style.animation = 'slideInUp 1s ease-out 0.3s both';
-                    }, 200);
-                }
-            }, 50);
+            openWhatsApp('🚀 Hola MetroGráfica! Estoy listo para comenzar un proyecto con ustedes. He visto su experiencia de 12+ años y su tecnología de vanguardia. ¿Cuándo podemos conversar?');
         });
 
         // Keyboard Shortcuts
         document.addEventListener('keydown', function (e) {
-            // Ctrl + W for WhatsApp
             if (e.ctrlKey && e.key === 'w') {
                 e.preventDefault();
                 document.querySelector('.whatsapp-catalog').click();
             }
-
-            // Ctrl + H for Home
             if (e.ctrlKey && e.key === 'h') {
                 e.preventDefault();
                 window.location.href = 'index.html';
             }
         });
 
-        // Enhanced Console Messages
-        console.log('🎨 MetroGráfica "Nosotros" - Página cargada con estilo premium');
-        console.log('📱 WhatsApp: +593 99 123 4567');
+        console.log('🎨 MetroGráfica "Nosotros" cargada');
         console.log('⚡ Tecnología: HEIDELBERG • XEROX • MIMAKI • RICOH');
-        console.log('🚀 Atajos: Ctrl+W (WhatsApp) • Ctrl+H (Inicio)');
-        console.log('💎 12+ años de excelencia en impresión digital');
-
-        // Performance Monitoring
-        window.addEventListener('load', function () {
-            const loadTime = performance.now();
-            if (loadTime > 3000) {
-                console.warn('⚠️ Tiempo de carga elevado:', Math.round(loadTime) + 'ms');
-            } else {
-                console.log('⚡ Carga optimizada:', Math.round(loadTime) + 'ms');
-            }
-        });
-
-        // Initialize all systems
-        setTimeout(() => {
-            console.log('✅ Todos los sistemas iniciados - MetroGráfica Nosotros');
-        }, 1000);
     </script>
 </body>
 
