@@ -97,7 +97,7 @@
             bubble.href = whatsappFloat.href;
             bubble.target = '_blank';
             bubble.rel = 'noopener';
-            bubble.innerHTML = '👋 ¡Hola! ¿En qué podemos ayudarte hoy?<button type="button" class="whatsapp-bubble-close" aria-label="Cerrar">×</button>';
+            bubble.innerHTML = 'Hola, bienvenido a MetroGráfica. ¿En qué podemos ayudarte?<button type="button" class="whatsapp-bubble-close" aria-label="Cerrar">×</button>';
             document.body.appendChild(bubble);
 
             setTimeout(function () { bubble.classList.add('show'); }, 1800);
