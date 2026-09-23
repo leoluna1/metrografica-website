@@ -70,18 +70,36 @@
             border-radius: 12px;
             padding: 2rem;
             border-top: 3px solid var(--red);
+            cursor: pointer;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .equipment-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--red);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
         }
 
         .equipment-card h4 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--ink); display: flex; align-items: center; gap: 0.7rem; }
         .equipment-card h4 .icon { color: var(--red); }
-        .equipment-card img {
-            max-width: 100%;
-            height: auto;
+
+        .equipment-image {
+            height: 190px;
             border-radius: 8px;
-            display: block;
-            margin-bottom: 1.2rem;
             background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
         }
+        .equipment-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .equipment-card:hover .equipment-image img { transform: scale(1.05); }
+
         .equipment-card p { color: var(--text-muted); line-height: 1.7; font-size: 0.94rem; }
 
         .equipment-highlight {
@@ -111,6 +129,65 @@
         .cta-card p { font-size: 1.05rem; margin-bottom: 1.8rem; opacity: 0.95; line-height: 1.7; }
         .cta-card .btn-primary { background: #fff; color: var(--red); box-shadow: none; }
         .cta-card .btn-primary:hover { background: #f2f2f0; }
+
+        /* Lightbox (equipamiento) */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+        }
+        .lightbox-content {
+            position: relative;
+            margin: 5% auto;
+            max-width: 90%;
+            max-height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-image { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 10px; background: #fff; }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10001;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-close:hover { background: var(--red); border-color: var(--red); }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--panel);
+            color: #fff;
+            border: 1px solid var(--border);
+            padding: 1rem;
+            font-size: 1.6rem;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-nav:hover { background: var(--red); border-color: var(--red); }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+        @media (max-width: 768px) { .lightbox-nav { display: none; } }
     </style>
 </head>
 
@@ -205,7 +282,7 @@
         <div class="equipment-grid">
             <div class="equipment-card fade-in">
                 <h4><svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>IMPRESIÓN OFFSET</h4>
-                <img src="images/offset.png" alt="Offset Heidelberg" loading="lazy">
+                <div class="equipment-image"><img src="images/offset.png" alt="Offset Heidelberg" loading="lazy"></div>
                 <p>Perfecto para volúmenes de impresión medianos y grandes, con impresoras de 4 colores, 2 colores y
                     mono color, ideales para todo tipo de papeles y cartulinas.</p>
                 <div class="equipment-highlight">4 COLORES • 2 COLORES • MONO COLOR</div>
@@ -213,7 +290,7 @@
 
             <div class="equipment-card fade-in">
                 <h4><svg class="icon" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>IMPRESIÓN DIGITAL</h4>
-                <img src="images/laser.png" alt="Digital Xerox 560" loading="lazy">
+                <div class="equipment-image"><img src="images/laser.png" alt="Digital Xerox 560" loading="lazy"></div>
                 <p>La mejor opción para cantidades cortas, desde 1 hoja y con calidad fotográfica, hasta un tamaño de
                     48x33cm, con entrega inmediata.</p>
                 <div class="equipment-highlight">HASTA 48×33CM • ENTREGA INMEDIATA</div>
@@ -221,7 +298,7 @@
 
             <div class="equipment-card fade-in">
                 <h4><svg class="icon" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>GIGANTOGRAFÍAS</h4>
-                <img src="images/mimaki.png" alt="Gran Formato Mimaki" loading="lazy">
+                <div class="equipment-image"><img src="images/mimaki.png" alt="Gran Formato Mimaki" loading="lazy"></div>
                 <p>Plotter de gran formato de última tecnología, capaz de imprimir hasta 3.20 metros para potenciar la
                     imagen de tu marca.</p>
                 <div class="equipment-highlight">HASTA 3.20 METROS</div>
@@ -229,7 +306,7 @@
 
             <div class="equipment-card fade-in">
                 <h4><svg class="icon" viewBox="0 0 24 24"><path d="M12 2s6 7.5 6 12a6 6 0 0 1-12 0c0-4.5 6-12 6-12Z"/></svg>IMPRESIÓN UVDTF</h4>
-                <img src="images/UVDTF.png" alt="Plotter UVDTF" loading="lazy">
+                <div class="equipment-image"><img src="images/UVDTF.png" alt="Plotter UVDTF" loading="lazy"></div>
                 <p>Imprime en una amplia variedad de materiales: plástico, metal, cerámica, madera, vidrio, cristal y
                     mucho más.</p>
                 <div class="equipment-highlight">MATERIALES ILIMITADOS</div>
@@ -237,7 +314,7 @@
 
             <div class="equipment-card fade-in">
                 <h4><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>IMPRESIÓN DTF</h4>
-                <img src="images/DTF-PRENDAS.png" alt="Textil DTF" loading="lazy">
+                <div class="equipment-image"><img src="images/DTF-PRENDAS.png" alt="Textil DTF" loading="lazy"></div>
                 <p>Estampa en una amplia variedad de textiles: camisetas, banderines, pañuelos, gorras y más, con
                     calidad y rapidez.</p>
                 <div class="equipment-highlight">TEXTILES DIVERSOS</div>
@@ -245,13 +322,23 @@
 
             <div class="equipment-card fade-in">
                 <h4><svg class="icon" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>COPIADORA DE PLANOS</h4>
-                <img src="images/PLANOS.png" alt="Planos Ricoh" loading="lazy">
+                <div class="equipment-image"><img src="images/PLANOS.png" alt="Planos Ricoh" loading="lazy"></div>
                 <p>Imprime carteles, pancartas y planos arquitectónicos con facilidad y precisión gracias a nuestra
                     tecnología Ricoh.</p>
                 <div class="equipment-highlight">PRECISIÓN ARQUITECTÓNICA</div>
             </div>
         </div>
     </section>
+
+    <!-- Equipment Lightbox -->
+    <div class="lightbox" id="equipmentModal">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-nav lightbox-prev">‹</button>
+        <div class="lightbox-content">
+            <img class="lightbox-image" id="equipmentModalImage" src="" alt="">
+        </div>
+        <button class="lightbox-nav lightbox-next">›</button>
+    </div>
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -317,6 +404,39 @@
         document.querySelector('.btn-primary').addEventListener('click', function (e) {
             e.preventDefault();
             openWhatsApp('🚀 Hola MetroGráfica! Estoy listo para comenzar un proyecto con ustedes. He visto su experiencia de 12+ años y su tecnología de vanguardia. ¿Cuándo podemos conversar?');
+        });
+
+        // Equipment lightbox
+        const equipModal = document.getElementById('equipmentModal');
+        const equipModalImage = document.getElementById('equipmentModalImage');
+        const equipModalClose = equipModal.querySelector('.lightbox-close');
+        const equipModalPrev = equipModal.querySelector('.lightbox-prev');
+        const equipModalNext = equipModal.querySelector('.lightbox-next');
+        const equipCards = Array.from(document.querySelectorAll('.equipment-card'));
+        let equipIndex = 0;
+
+        function showEquipModal(index) {
+            equipIndex = (index + equipCards.length) % equipCards.length;
+            const img = equipCards[equipIndex].querySelector('.equipment-image img');
+            equipModalImage.src = img.src;
+            equipModalImage.alt = img.alt || 'Equipo MetroGráfica';
+            equipModal.style.display = 'block';
+        }
+
+        equipCards.forEach(function (card, index) {
+            card.addEventListener('click', function () { showEquipModal(index); });
+        });
+
+        equipModalClose.addEventListener('click', function () { equipModal.style.display = 'none'; });
+        equipModalPrev.addEventListener('click', function () { showEquipModal(equipIndex - 1); });
+        equipModalNext.addEventListener('click', function () { showEquipModal(equipIndex + 1); });
+        equipModal.addEventListener('click', function (e) { if (e.target === equipModal) equipModal.style.display = 'none'; });
+        document.addEventListener('keydown', function (e) {
+            if (equipModal.style.display === 'block') {
+                if (e.key === 'Escape') equipModal.style.display = 'none';
+                else if (e.key === 'ArrowLeft') showEquipModal(equipIndex - 1);
+                else if (e.key === 'ArrowRight') showEquipModal(equipIndex + 1);
+            }
         });
 
         // Keyboard Shortcuts
