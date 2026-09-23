@@ -85,6 +85,33 @@
         window.open('https://wa.me/593995856385?text=' + encodeURIComponent(message), '_blank');
     };
 
+    // Burbuja de bienvenida junto al botón flotante de WhatsApp
+    const whatsappFloat = document.querySelector('.whatsapp-float');
+    if (whatsappFloat) {
+        let dismissed = false;
+        try { dismissed = localStorage.getItem('mg_whatsapp_bubble_dismissed') === '1'; } catch (e) {}
+
+        if (!dismissed) {
+            const bubble = document.createElement('a');
+            bubble.className = 'whatsapp-bubble';
+            bubble.href = whatsappFloat.href;
+            bubble.target = '_blank';
+            bubble.rel = 'noopener';
+            bubble.innerHTML = '👋 ¡Hola! ¿En qué podemos ayudarte hoy?<button type="button" class="whatsapp-bubble-close" aria-label="Cerrar">×</button>';
+            document.body.appendChild(bubble);
+
+            setTimeout(function () { bubble.classList.add('show'); }, 1800);
+
+            bubble.querySelector('.whatsapp-bubble-close').addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                bubble.classList.remove('show');
+                try { localStorage.setItem('mg_whatsapp_bubble_dismissed', '1'); } catch (err) {}
+                setTimeout(function () { bubble.remove(); }, 300);
+            });
+        }
+    }
+
     // Helper: confirmación no bloqueante (reemplaza alert())
     window.showToast = function (message, duration) {
         const existing = document.querySelector('.toast');
