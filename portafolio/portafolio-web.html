@@ -106,6 +106,24 @@
         .wire-block { border-radius: 4px; background: rgba(255, 255, 255, 0.14); }
         .wire-icon { width: 15px; height: 15px; color: rgba(255, 255, 255, 0.55); margin-left: auto; }
 
+        /* Código QR ilustrativo (patrón simplificado, no escaneable) */
+        .wire-qr {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .wire-qr-eye {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border: 2px solid #000;
+        }
+        .wire-qr-eye::after { content: ''; position: absolute; inset: 2px; background: #000; }
+        .wire-qr-dot { position: absolute; width: 2.5px; height: 2.5px; background: #000; }
+
         .real-badge {
             position: absolute;
             top: 12px;
@@ -220,7 +238,6 @@
                 <button class="filter-btn" data-filter="app">APLICACIONES</button>
                 <button class="filter-btn" data-filter="institucional">INSTITUCIONAL</button>
                 <button class="filter-btn" data-filter="blog">BLOG</button>
-                <button class="filter-btn" data-filter="reservas">RESERVAS</button>
                 <button class="filter-btn" data-filter="menu">MENÚ QR</button>
             </div>
         </div>
@@ -274,10 +291,10 @@
                                         <svg class="icon wire-icon" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
                                     </div>
                                     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; flex: 1;">
-                                        <div class="wire-block"></div>
-                                        <div class="wire-block"></div>
-                                        <div class="wire-block"></div>
-                                        <div class="wire-block"></div>
+                                        <div class="wire-block" style="overflow: hidden;"><img src="../images/torta.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                                        <div class="wire-block" style="overflow: hidden;"><img src="../images/tre-leches.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                                        <div class="wire-block" style="overflow: hidden;"><img src="../images/brounie.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                                        <div class="wire-block" style="overflow: hidden;"><img src="../images/capuchi.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
                                     </div>
                                     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 8px; flex-shrink: 0;">
                                         <span class="wire-line light"></span>
@@ -291,7 +308,7 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>PLATAFORMA E-COMMERCE</h3>
-                        <p>Tienda online completa con carrito de compras, pagos seguros y gestión de inventario.</p>
+                        <p>Tienda online completa con carrito de compras, pagos seguros y gestión de inventario. Ejemplo con fotografía de producto real de nuestro estudio.</p>
                         <div class="portfolio-stats">
                             <div class="stat"><div class="stat-number">500+</div><div class="stat-label">Productos</div></div>
                             <div class="stat"><div class="stat-number">98%</div><div class="stat-label">Seguridad</div></div>
@@ -316,11 +333,13 @@
                                     <div class="mockup-dot dot-yellow"></div>
                                     <div class="mockup-dot dot-green"></div>
                                 </div>
-                                <div class="mockup-content" style="align-items: center; justify-content: center; gap: 8px;">
-                                    <span class="wire-line" style="width: 70%; height: 10px;"></span>
-                                    <span class="wire-line light" style="width: 46%;"></span>
-                                    <span class="wire-btn" style="margin: 6px 0 12px;"></span>
-                                    <div style="display: flex; gap: 12px;">
+                                <div class="mockup-content" style="align-items: center; justify-content: center; gap: 8px; position: relative; overflow: hidden;">
+                                    <img src="../images/running-scaled.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+                                    <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.55);"></div>
+                                    <span class="wire-line" style="width: 70%; height: 10px; position: relative;"></span>
+                                    <span class="wire-line light" style="width: 46%; position: relative;"></span>
+                                    <span class="wire-btn" style="margin: 6px 0 12px; position: relative;"></span>
+                                    <div style="display: flex; gap: 12px; position: relative;">
                                         <span class="wire-dot" style="width: 16px; height: 16px;"></span>
                                         <span class="wire-dot" style="width: 16px; height: 16px;"></span>
                                         <span class="wire-dot" style="width: 16px; height: 16px;"></span>
@@ -331,7 +350,7 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>LANDING PAGE OPTIMIZADA</h3>
-                        <p>Página de aterrizaje diseñada para maximizar conversiones con formularios optimizados.</p>
+                        <p>Página de aterrizaje diseñada para maximizar conversiones, con fotografía publicitaria real para eventos deportivos y campañas de marca.</p>
                         <div class="portfolio-stats">
                             <div class="stat"><div class="stat-number">35%</div><div class="stat-label">Conversión</div></div>
                             <div class="stat"><div class="stat-number">2s</div><div class="stat-label">Carga</div></div>
@@ -365,7 +384,7 @@
                                     </div>
                                     <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
                                         <div style="display: flex; gap: 6px; flex-shrink: 0;">
-                                            <div class="wire-block" style="flex: 1; height: 20px;"></div>
+                                            <div class="wire-block" style="flex: 1; height: 20px; overflow: hidden;"><img src="../images/m-cara-arriba.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
                                             <div class="wire-block" style="flex: 1; height: 20px;"></div>
                                             <div class="wire-block" style="flex: 1; height: 20px;"></div>
                                         </div>
@@ -384,7 +403,7 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>APLICACIÓN WEB PERSONALIZADA</h3>
-                        <p>Aplicación web a medida con funcionalidades específicas para tu negocio.</p>
+                        <p>Aplicación web a medida con funcionalidades específicas para tu negocio, con panel de gestión de clientes y fotografía de perfil real.</p>
                         <div class="portfolio-stats">
                             <div class="stat"><div class="stat-number">1000+</div><div class="stat-label">Usuarios</div></div>
                             <div class="stat"><div class="stat-number">99%</div><div class="stat-label">Uptime</div></div>
@@ -409,8 +428,9 @@
                                     <div class="mockup-dot dot-yellow"></div>
                                     <div class="mockup-dot dot-green"></div>
                                 </div>
-                                <div class="mockup-content" style="align-items: center; justify-content: center; text-align: center; gap: 8px; position: relative;">
-                                    <div class="wire-block" style="position: absolute; inset: 0;"></div>
+                                <div class="mockup-content" style="align-items: center; justify-content: center; text-align: center; gap: 8px; position: relative; overflow: hidden;">
+                                    <img src="../images/offset.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #fff;">
+                                    <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
                                     <span class="wire-dot" style="width: 18px; height: 18px; position: relative;"></span>
                                     <span class="wire-line" style="width: 55%; height: 9px; position: relative;"></span>
                                     <span class="wire-line light" style="width: 38%; position: relative;"></span>
@@ -420,7 +440,7 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>SITIO INSTITUCIONAL</h3>
-                        <p>Presentación de marca en una sola página, ideal para dar a conocer tu negocio de forma rápida y profesional.</p>
+                        <p>Presentación de marca en una sola página, ideal para negocios industriales o de manufactura que quieren mostrar sus equipos e instalaciones.</p>
                         <div class="portfolio-stats">
                             <div class="stat"><div class="stat-number">1</div><div class="stat-label">Página</div></div>
                             <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Responsivo</div></div>
@@ -453,7 +473,7 @@
                                         <span class="wire-line" style="width: 20px;"></span>
                                     </div>
                                     <div style="display: flex; gap: 8px; flex: 1;">
-                                        <div class="wire-block" style="flex: 1.2;"></div>
+                                        <div class="wire-block" style="flex: 1.2; overflow: hidden;"><img src="../images/afichesonger.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
                                         <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; justify-content: center;">
                                             <span class="wire-line" style="width: 90%;"></span>
                                             <span class="wire-line light" style="width: 70%;"></span>
@@ -461,9 +481,9 @@
                                         </div>
                                     </div>
                                     <div style="display: flex; gap: 6px; margin-top: 8px; flex-shrink: 0;">
-                                        <div class="wire-block" style="flex: 1; height: 24px;"></div>
-                                        <div class="wire-block" style="flex: 1; height: 24px;"></div>
-                                        <div class="wire-block" style="flex: 1; height: 24px;"></div>
+                                        <div class="wire-block" style="flex: 1; height: 24px; overflow: hidden;"><img src="../images/martillo.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                                        <div class="wire-block" style="flex: 1; height: 24px; overflow: hidden;"><img src="../images/llanta.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                                        <div class="wire-block" style="flex: 1; height: 24px; overflow: hidden;"><img src="../images/taekwondo.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -471,7 +491,7 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>BLOG / REVISTA DIGITAL</h3>
-                        <p>Blog o revista digital para publicar contenido, mejorar tu posicionamiento SEO y conectar con tu audiencia.</p>
+                        <p>Blog o revista digital para publicar contenido, mejorar tu posicionamiento SEO y conectar con tu audiencia, con fotografía publicitaria propia.</p>
                         <div class="portfolio-stats">
                             <div class="stat"><div class="stat-number">∞</div><div class="stat-label">Artículos</div></div>
                             <div class="stat"><div class="stat-number">100%</div><div class="stat-label">SEO</div></div>
@@ -481,59 +501,6 @@
                             <span class="tag">Blog</span>
                             <span class="tag">SEO</span>
                             <span class="tag">CMS</span>
-                        </div>
-                        <a href="#" class="visit-btn">VER DETALLES</a>
-                    </div>
-                </div>
-
-                <!-- Proyecto Web 7 -->
-                <div class="portfolio-item fade-in" data-category="reservas">
-                    <div class="portfolio-mockup">
-                        <div class="mockup-device">
-                            <div class="mockup-screen" style="background: linear-gradient(135deg, #1d1d1f, #2a2a2d);">
-                                <div class="mockup-header">
-                                    <div class="mockup-dot dot-red"></div>
-                                    <div class="mockup-dot dot-yellow"></div>
-                                    <div class="mockup-dot dot-green"></div>
-                                </div>
-                                <div class="mockup-content">
-                                    <div class="wire-navbar">
-                                        <span class="wire-dot"></span>
-                                        <span class="wire-line" style="width: 40%;"></span>
-                                    </div>
-                                    <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; flex: 1;">
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1; background: var(--red);"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1; background: var(--red);"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                        <div class="wire-block" style="aspect-ratio: 1;"></div>
-                                    </div>
-                                    <span class="wire-btn" style="margin: 8px auto 0; flex-shrink: 0;"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>SISTEMA DE RESERVAS</h3>
-                        <p>Sistema de reservas y citas en línea que tus clientes pueden agendar desde cualquier dispositivo, las 24 horas.</p>
-                        <div class="portfolio-stats">
-                            <div class="stat"><div class="stat-number">24/7</div><div class="stat-label">Reservas</div></div>
-                            <div class="stat"><div class="stat-number">0</div><div class="stat-label">Llamadas</div></div>
-                            <div class="stat"><div class="stat-number">5min</div><div class="stat-label">Confirmación</div></div>
-                        </div>
-                        <div class="portfolio-tags">
-                            <span class="tag">Booking</span>
-                            <span class="tag">Calendario</span>
-                            <span class="tag">Recordatorios</span>
                         </div>
                         <a href="#" class="visit-btn">VER DETALLES</a>
                     </div>
@@ -550,12 +517,39 @@
                                     <div class="mockup-dot dot-green"></div>
                                 </div>
                                 <div class="mockup-content" style="align-items: center;">
-                                    <span class="wire-dot" style="width: 14px; height: 14px; margin-bottom: 10px;"></span>
-                                    <div style="width: 100%; display: flex; flex-direction: column; gap: 8px; flex: 1;">
-                                        <div style="display: flex; justify-content: space-between; align-items: center;"><span class="wire-line" style="width: 55%;"></span><span class="wire-line light" style="width: 15%; background: var(--red);"></span></div>
-                                        <div style="display: flex; justify-content: space-between; align-items: center;"><span class="wire-line light" style="width: 65%;"></span><span class="wire-line light" style="width: 15%; background: var(--red);"></span></div>
-                                        <div style="display: flex; justify-content: space-between; align-items: center;"><span class="wire-line light" style="width: 45%;"></span><span class="wire-line light" style="width: 15%; background: var(--red);"></span></div>
-                                        <div style="display: flex; justify-content: space-between; align-items: center;"><span class="wire-line light" style="width: 60%;"></span><span class="wire-line light" style="width: 15%; background: var(--red);"></span></div>
+                                    <div class="wire-block" style="width: 100%; height: 30px; overflow: hidden; margin-bottom: 8px; flex-shrink: 0; position: relative;">
+                                        <img src="../images/torta.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <div class="wire-qr" style="position: absolute; top: 4px; right: 4px; width: 24px; height: 24px; box-shadow: 0 0 0 2px rgba(0,0,0,0.4);">
+                                            <span class="wire-qr-eye" style="top: 2px; left: 2px; width: 6px; height: 6px; border-width: 1.5px;"></span>
+                                            <span class="wire-qr-eye" style="top: 2px; right: 2px; width: 6px; height: 6px; border-width: 1.5px;"></span>
+                                            <span class="wire-qr-eye" style="bottom: 2px; left: 2px; width: 6px; height: 6px; border-width: 1.5px;"></span>
+                                            <span class="wire-qr-dot" style="top: 11px; left: 13px;"></span>
+                                            <span class="wire-qr-dot" style="top: 15px; left: 9px;"></span>
+                                            <span class="wire-qr-dot" style="bottom: 3px; right: 4px;"></span>
+                                        </div>
+                                        <span class="wire-line" style="width: 45%; position: absolute; left: 6px; bottom: 5px; background: rgba(255,255,255,0.85);"></span>
+                                    </div>
+                                    <div style="width: 100%; display: flex; flex-direction: column; gap: 6px; flex: 1;">
+                                        <div style="display: flex; align-items: center; gap: 6px;">
+                                            <div style="width: 16px; height: 16px; border-radius: 4px; overflow: hidden; flex-shrink: 0;"><img src="../images/torta.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                                            <span class="wire-line" style="flex: 1;"></span>
+                                            <span class="wire-line light" style="width: 15%; background: var(--red);"></span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 6px;">
+                                            <div style="width: 16px; height: 16px; border-radius: 4px; overflow: hidden; flex-shrink: 0;"><img src="../images/tre-leches.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                                            <span class="wire-line light" style="flex: 1;"></span>
+                                            <span class="wire-line light" style="width: 15%; background: var(--red);"></span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 6px;">
+                                            <div style="width: 16px; height: 16px; border-radius: 4px; overflow: hidden; flex-shrink: 0;"><img src="../images/capuchi.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                                            <span class="wire-line light" style="flex: 1;"></span>
+                                            <span class="wire-line light" style="width: 15%; background: var(--red);"></span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 6px;">
+                                            <div style="width: 16px; height: 16px; border-radius: 4px; overflow: hidden; flex-shrink: 0;"><img src="../images/fresa.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                                            <span class="wire-line light" style="flex: 1;"></span>
+                                            <span class="wire-line light" style="width: 15%; background: var(--red);"></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -563,7 +557,7 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>MENÚ DIGITAL QR</h3>
-                        <p>Menú digital con código QR para restaurantes: siempre actualizado, sin costos de reimpresión.</p>
+                        <p>Menú digital con código QR para restaurantes: siempre actualizado, sin costos de reimpresión, con fotografía food style real de nuestro estudio.</p>
                         <div class="portfolio-stats">
                             <div class="stat"><div class="stat-number">QR</div><div class="stat-label">Acceso</div></div>
                             <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Actualizable</div></div>
