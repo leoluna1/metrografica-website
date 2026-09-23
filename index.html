@@ -8,6 +8,7 @@
     <meta name="description"
         content="Más de 12 años liderando la industria gráfica en Ecuador. Impresión digital, tradicional y servicios de marketing. Calidad garantizada.">
     <link rel="icon" type="image/png" href="images/LOGO-M.png">
+    <link rel="canonical" href="https://metrografica.com/">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="MetroGráfica - Líderes en Impresión Digital y Marketing | Ecuador">
@@ -19,6 +20,30 @@
     <meta name="twitter:description"
         content="Más de 12 años liderando la industria gráfica en Ecuador. Impresión digital, tradicional y servicios de marketing. Calidad garantizada.">
     <meta name="twitter:image" content="images/LOGO-M.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://metrografica.com/#negocio",
+        "name": "MetroGráfica",
+        "url": "https://metrografica.com/",
+        "image": "https://metrografica.com/images/LOGO-M.png",
+        "logo": "https://metrografica.com/images/LOGO-M.png",
+        "telephone": ["+593995856385", "+593968616429"],
+        "email": "metrograficadesign@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Simón Bolívar 6-08 y Juan José Flores (Esquina)",
+            "addressLocality": "Ibarra",
+            "addressCountry": "EC"
+        },
+        "sameAs": [
+            "https://www.facebook.com/Metrografica",
+            "https://www.instagram.com/metrografica/"
+        ]
+    }
+    </script>
 
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -540,7 +565,7 @@
 ¡Gracias!`;
 
             openWhatsApp(message);
-            alert('¡Gracias! Te hemos redirigido a WhatsApp para completar tu solicitud.');
+            showToast('¡Gracias! Te hemos redirigido a WhatsApp para completar tu solicitud.');
             this.reset();
         });
 
@@ -668,6 +693,7 @@
 
                 openWhatsApp(message);
                 modal.remove();
+                showToast('¡Gracias! Te hemos redirigido a WhatsApp para completar tu solicitud.');
             });
 
             modal.addEventListener('click', function (e) {

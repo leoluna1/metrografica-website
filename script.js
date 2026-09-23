@@ -84,4 +84,23 @@
     window.openWhatsApp = function (message) {
         window.open('https://wa.me/593995856385?text=' + encodeURIComponent(message), '_blank');
     };
+
+    // Helper: confirmación no bloqueante (reemplaza alert())
+    window.showToast = function (message, duration) {
+        const existing = document.querySelector('.toast');
+        if (existing) existing.remove();
+
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = '<svg class="icon toast-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><p></p>';
+        toast.querySelector('p').textContent = message;
+        document.body.appendChild(toast);
+
+        requestAnimationFrame(function () { toast.classList.add('show'); });
+
+        setTimeout(function () {
+            toast.classList.remove('show');
+            setTimeout(function () { toast.remove(); }, 300);
+        }, duration || 4000);
+    };
 })();
