@@ -1,8 +1,20 @@
 // MetroGráfica — comportamiento compartido por las 4 páginas del sitio.
-// Lo específico de cada página (formularios, filtros, modal de fotos, etc.)
+// Lo específico de cada página (filtros, visor de fotos y otros detalles)
 // vive en el <script> propio de cada .html.
 
 (function () {
+    // Enlace para saltar la navegación con teclado.
+    const firstSection = document.querySelector('.hero, main, .main-container');
+    if (firstSection) {
+        firstSection.id = firstSection.id || 'contenido';
+        firstSection.tabIndex = -1;
+        const skipLink = document.createElement('a');
+        skipLink.className = 'skip-link';
+        skipLink.href = '#' + firstSection.id;
+        skipLink.textContent = 'Saltar al contenido';
+        document.body.prepend(skipLink);
+    }
+
     // Smooth scroll para anclas internas
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
@@ -11,7 +23,8 @@
             const target = document.querySelector(targetId);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
             }
         });
     });
@@ -25,21 +38,32 @@
     }
 
     // Dropdown del nav: clic/tap para abrir (además del hover en desktop)
+    function closeDropdowns(except) {
+        document.querySelectorAll('.dropdown.open').forEach(function (dropdown) {
+            if (dropdown !== except) {
+                dropdown.classList.remove('open');
+                const button = dropdown.querySelector(':scope > a');
+                if (button) button.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
     document.querySelectorAll('.dropdown > a').forEach(function (toggle) {
+        toggle.setAttribute('aria-haspopup', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
         toggle.addEventListener('click', function (e) {
             if (toggle.getAttribute('href') === '#') {
                 e.preventDefault();
                 const dropdown = toggle.closest('.dropdown');
                 const wasOpen = dropdown.classList.contains('open');
-                document.querySelectorAll('.dropdown.open').forEach(function (d) { d.classList.remove('open'); });
-                if (!wasOpen) dropdown.classList.add('open');
+                closeDropdowns(dropdown);
+                dropdown.classList.toggle('open', !wasOpen);
+                toggle.setAttribute('aria-expanded', String(!wasOpen));
             }
         });
     });
     document.addEventListener('click', function (e) {
-        if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown.open').forEach(function (d) { d.classList.remove('open'); });
-        }
+        if (!e.target.closest('.dropdown')) closeDropdowns();
     });
 
     // Menú mobile
@@ -49,18 +73,47 @@
         if (!nav || !navLinks) return;
 
         let btn = document.querySelector('.mobile-menu-btn');
+        nav.setAttribute('aria-label', 'Navegación principal');
+        navLinks.id = navLinks.id || 'menu-principal';
         if (!btn) {
             btn = document.createElement('button');
-            btn.innerHTML = '☰';
+            btn.textContent = 'Menú';
             btn.className = 'mobile-menu-btn';
-            btn.setAttribute('aria-label', 'Abrir menú');
+            btn.type = 'button';
+            btn.setAttribute('aria-label', 'Abrir menú de navegación');
+            btn.setAttribute('aria-controls', navLinks.id);
+            btn.setAttribute('aria-expanded', 'false');
             nav.appendChild(btn);
 
             btn.addEventListener('click', function () {
                 const isOpen = navLinks.classList.toggle('open');
-                btn.innerHTML = isOpen ? '✕' : '☰';
+                btn.textContent = isOpen ? 'Cerrar' : 'Menú';
+                btn.setAttribute('aria-expanded', String(isOpen));
+                btn.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
             });
         }
+
+        navLinks.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                navLinks.classList.remove('open');
+                btn.textContent = 'Menú';
+                btn.setAttribute('aria-expanded', 'false');
+                btn.setAttribute('aria-label', 'Abrir menú de navegación');
+            });
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                navLinks.classList.remove('open');
+                btn.textContent = 'Menú';
+                btn.setAttribute('aria-expanded', 'false');
+                btn.setAttribute('aria-label', 'Abrir menú de navegación');
+                closeDropdowns();
+                if (document.activeElement.closest('.dropdown')) {
+                    document.querySelector('.dropdown > a').focus();
+                }
+            }
+        });
     }
     window.addEventListener('resize', createMobileMenu);
     createMobileMenu();
@@ -82,7 +135,7 @@
 
     // Helper: abrir WhatsApp con un mensaje (número real de MetroGráfica)
     window.openWhatsApp = function (message) {
-        window.open('https://wa.me/593995856385?text=' + encodeURIComponent(message), '_blank');
+        return window.open('https://wa.me/593995856385?text=' + encodeURIComponent(message), '_blank', 'noopener');
     };
 
     // Burbuja de bienvenida junto al botón flotante de WhatsApp
@@ -92,12 +145,9 @@
         try { dismissed = localStorage.getItem('mg_whatsapp_bubble_dismissed') === '1'; } catch (e) {}
 
         if (!dismissed) {
-            const bubble = document.createElement('a');
+            const bubble = document.createElement('div');
             bubble.className = 'whatsapp-bubble';
-            bubble.href = whatsappFloat.href;
-            bubble.target = '_blank';
-            bubble.rel = 'noopener';
-            bubble.innerHTML = 'Hola, bienvenido a MetroGráfica. ¿En qué podemos ayudarte?<button type="button" class="whatsapp-bubble-close" aria-label="Cerrar">×</button>';
+            bubble.innerHTML = '<a class="whatsapp-bubble-link" href="' + whatsappFloat.href + '" target="_blank" rel="noopener">Hola, bienvenido a MetroGráfica. ¿En qué podemos ayudarte?</a><button type="button" class="whatsapp-bubble-close" aria-label="Cerrar mensaje">×</button>';
             document.body.appendChild(bubble);
 
             setTimeout(function () { bubble.classList.add('show'); }, 1800);
@@ -112,22 +162,4 @@
         }
     }
 
-    // Helper: confirmación no bloqueante (reemplaza alert())
-    window.showToast = function (message, duration) {
-        const existing = document.querySelector('.toast');
-        if (existing) existing.remove();
-
-        const toast = document.createElement('div');
-        toast.className = 'toast';
-        toast.innerHTML = '<svg class="icon toast-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><p></p>';
-        toast.querySelector('p').textContent = message;
-        document.body.appendChild(toast);
-
-        requestAnimationFrame(function () { toast.classList.add('show'); });
-
-        setTimeout(function () {
-            toast.classList.remove('show');
-            setTimeout(function () { toast.remove(); }, 300);
-        }, duration || 4000);
-    };
 })();

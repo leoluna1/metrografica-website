@@ -31,6 +31,7 @@
 
         /* Filter Section */
         .filter-section { background: var(--bg); padding: 0 0 3rem; text-align: center; }
+        .portfolio-note { max-width: 760px; margin: 1.2rem auto 0; padding: 0 1rem; color: var(--text-muted); line-height: 1.65; }
         .filter-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         .filter-buttons { display: flex; justify-content: center; gap: 0.7rem; flex-wrap: wrap; }
 
@@ -143,10 +144,6 @@
         .portfolio-content h3 { font-size: 1.2rem; margin-bottom: 0.7rem; color: var(--ink); }
         .portfolio-content p { color: var(--text-muted); font-size: 0.94rem; line-height: 1.7; margin-bottom: 1.2rem; }
 
-        .portfolio-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.2rem; }
-        .stat { text-align: center; padding: 0.8rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; }
-        .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--red); }
-        .stat-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }
 
         .portfolio-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
         .tag { background: rgba(229, 62, 62, 0.1); color: var(--red); padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.72rem; font-weight: 700; }
@@ -231,6 +228,7 @@
     <!-- Filter Section -->
     <section class="filter-section">
         <div class="filter-container">
+            <p class="portfolio-note">El sitio de MetroGráfica es el proyecto publicado que mostramos aquí. Las demás pantallas son conceptos visuales para ilustrar tipos de página, no sitios entregados a clientes.</p>
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">TODOS LOS PROYECTOS</button>
                 <button class="filter-btn" data-filter="corporativo">CORPORATIVO</button>
@@ -258,12 +256,8 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>SITIO WEB CORPORATIVO</h3>
-                        <p>Nuestro propio sitio web corporativo, desarrollado en WordPress con un diseño profesional enfocado en presentar nuestros servicios de imprenta y marketing digital.</p>
-                        <div class="portfolio-stats">
-                            <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Responsivo</div></div>
-                            <div class="stat"><div class="stat-number">Multi</div><div class="stat-label">Páginas</div></div>
-                            <div class="stat"><div class="stat-number">SEO</div><div class="stat-label">Optimizado</div></div>
-                        </div>
+                        <p>Sitio web publicado de MetroGráfica, presentado como referencia real de nuestro trabajo.</p>
+
                         <div class="portfolio-tags">
                             <span class="tag">WordPress</span>
                             <span class="tag">SEO</span>
@@ -309,18 +303,14 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>PLATAFORMA E-COMMERCE</h3>
-                        <p>Tienda online completa con carrito de compras, pagos seguros y gestión de inventario. Ejemplo con fotografía de producto real de nuestro estudio.</p>
-                        <div class="portfolio-stats">
-                            <div class="stat"><div class="stat-number">500+</div><div class="stat-label">Productos</div></div>
-                            <div class="stat"><div class="stat-number">98%</div><div class="stat-label">Seguridad</div></div>
-                            <div class="stat"><div class="stat-number">24/7</div><div class="stat-label">Online</div></div>
-                        </div>
+                        <p>Concepto visual ilustrativo de una tienda en línea. Las funciones y el alcance se definen con cada cliente.</p>
+
                         <div class="portfolio-tags">
                             <span class="tag">WooCommerce</span>
                             <span class="tag">PayPal</span>
                             <span class="tag">SSL</span>
                         </div>
-                        <a href="#" class="visit-btn">VER DETALLES</a>
+                        <a href="https://wa.me/593995856385?text=Hola%20MetroGr%C3%A1fica%2C%20quisiera%20consultar%20sobre%20un%20proyecto%20web." target="_blank" rel="noopener" class="visit-btn">CONSULTAR POR WHATSAPP</a>
                     </div>
                 </div>
 
@@ -351,18 +341,14 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>LANDING PAGE OPTIMIZADA</h3>
-                        <p>Página de aterrizaje diseñada para maximizar conversiones, con fotografía publicitaria real para eventos deportivos y campañas de marca.</p>
-                        <div class="portfolio-stats">
-                            <div class="stat"><div class="stat-number">35%</div><div class="stat-label">Conversión</div></div>
-                            <div class="stat"><div class="stat-number">2s</div><div class="stat-label">Carga</div></div>
-                            <div class="stat"><div class="stat-number">100+</div><div class="stat-label">Leads/mes</div></div>
-                        </div>
+                        <p>Concepto visual ilustrativo de una página de campaña. El contenido, las funciones y los objetivos se acuerdan para cada proyecto.</p>
+
                         <div class="portfolio-tags">
                             <span class="tag">Landing</span>
                             <span class="tag">CRO</span>
                             <span class="tag">Analytics</span>
                         </div>
-                        <a href="#" class="visit-btn">VER DETALLES</a>
+                        <a href="https://wa.me/593995856385?text=Hola%20MetroGr%C3%A1fica%2C%20quisiera%20consultar%20sobre%20un%20proyecto%20web." target="_blank" rel="noopener" class="visit-btn">CONSULTAR POR WHATSAPP</a>
                     </div>
                 </div>
 
@@ -404,18 +390,14 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>APLICACIÓN WEB PERSONALIZADA</h3>
-                        <p>Aplicación web a medida con funcionalidades específicas para tu negocio, con panel de gestión de clientes y fotografía de perfil real.</p>
-                        <div class="portfolio-stats">
-                            <div class="stat"><div class="stat-number">1000+</div><div class="stat-label">Usuarios</div></div>
-                            <div class="stat"><div class="stat-number">99%</div><div class="stat-label">Uptime</div></div>
-                            <div class="stat"><div class="stat-number">4.8★</div><div class="stat-label">Rating</div></div>
-                        </div>
+                        <p>Concepto visual ilustrativo de una aplicación web. Las pantallas no representan un sistema implementado para un cliente.</p>
+
                         <div class="portfolio-tags">
                             <span class="tag">React</span>
                             <span class="tag">Node.js</span>
                             <span class="tag">Custom</span>
                         </div>
-                        <a href="#" class="visit-btn">VER DETALLES</a>
+                        <a href="https://wa.me/593995856385?text=Hola%20MetroGr%C3%A1fica%2C%20quisiera%20consultar%20sobre%20un%20proyecto%20web." target="_blank" rel="noopener" class="visit-btn">CONSULTAR POR WHATSAPP</a>
                     </div>
                 </div>
 
@@ -441,18 +423,14 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>SITIO INSTITUCIONAL</h3>
-                        <p>Presentación de marca en una sola página, ideal para negocios industriales o de manufactura que quieren mostrar sus equipos e instalaciones.</p>
-                        <div class="portfolio-stats">
-                            <div class="stat"><div class="stat-number">1</div><div class="stat-label">Página</div></div>
-                            <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Responsivo</div></div>
-                            <div class="stat"><div class="stat-number">2s</div><div class="stat-label">Carga</div></div>
-                        </div>
+                        <p>Concepto visual ilustrativo de una página institucional para presentar una empresa y sus servicios.</p>
+
                         <div class="portfolio-tags">
                             <span class="tag">One-Page</span>
                             <span class="tag">Branding</span>
                             <span class="tag">Mobile-First</span>
                         </div>
-                        <a href="#" class="visit-btn">VER DETALLES</a>
+                        <a href="https://wa.me/593995856385?text=Hola%20MetroGr%C3%A1fica%2C%20quisiera%20consultar%20sobre%20un%20proyecto%20web." target="_blank" rel="noopener" class="visit-btn">CONSULTAR POR WHATSAPP</a>
                     </div>
                 </div>
 
@@ -492,18 +470,14 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>BLOG / REVISTA DIGITAL</h3>
-                        <p>Blog o revista digital para publicar contenido, mejorar tu posicionamiento SEO y conectar con tu audiencia, con fotografía publicitaria propia.</p>
-                        <div class="portfolio-stats">
-                            <div class="stat"><div class="stat-number">∞</div><div class="stat-label">Artículos</div></div>
-                            <div class="stat"><div class="stat-number">100%</div><div class="stat-label">SEO</div></div>
-                            <div class="stat"><div class="stat-number">RSS</div><div class="stat-label">Integrado</div></div>
-                        </div>
+                        <p>Concepto visual ilustrativo de un blog o revista digital para publicar contenido y presentar una marca.</p>
+
                         <div class="portfolio-tags">
                             <span class="tag">Blog</span>
                             <span class="tag">SEO</span>
                             <span class="tag">CMS</span>
                         </div>
-                        <a href="#" class="visit-btn">VER DETALLES</a>
+                        <a href="https://wa.me/593995856385?text=Hola%20MetroGr%C3%A1fica%2C%20quisiera%20consultar%20sobre%20un%20proyecto%20web." target="_blank" rel="noopener" class="visit-btn">CONSULTAR POR WHATSAPP</a>
                     </div>
                 </div>
 
@@ -558,18 +532,14 @@
                     </div>
                     <div class="portfolio-content">
                         <h3>MENÚ DIGITAL QR</h3>
-                        <p>Menú digital con código QR para restaurantes: siempre actualizado, sin costos de reimpresión, con fotografía food style real de nuestro estudio.</p>
-                        <div class="portfolio-stats">
-                            <div class="stat"><div class="stat-number">QR</div><div class="stat-label">Acceso</div></div>
-                            <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Actualizable</div></div>
-                            <div class="stat"><div class="stat-number">0</div><div class="stat-label">Impresión</div></div>
-                        </div>
+                        <p>Concepto visual ilustrativo de un menú digital para restaurante; funciones y actualizaciones se definen según el proyecto.</p>
+
                         <div class="portfolio-tags">
                             <span class="tag">Menú QR</span>
                             <span class="tag">Restaurantes</span>
                             <span class="tag">Tiempo Real</span>
                         </div>
-                        <a href="#" class="visit-btn">VER DETALLES</a>
+                        <a href="https://wa.me/593995856385?text=Hola%20MetroGr%C3%A1fica%2C%20quisiera%20consultar%20sobre%20un%20proyecto%20web." target="_blank" rel="noopener" class="visit-btn">CONSULTAR POR WHATSAPP</a>
                     </div>
                 </div>
 
@@ -584,7 +554,7 @@
         <div class="cta-card">
             <h2>¿NECESITAS UNA PRESENCIA DIGITAL?</h2>
             <p>Desarrollamos sitios web profesionales y estrategias de marketing digital que impulsan tu negocio hacia el éxito online.</p>
-            <a href="../index.html#contacto" class="btn-primary">INICIAR PROYECTO WEB</a>
+            <a href="https://wa.me/593995856385?text=Hola%20MetroGr%C3%A1fica%2C%20quisiera%20conversar%20sobre%20un%20proyecto%20web." target="_blank" rel="noopener" class="btn-primary">CONVERSAR POR WHATSAPP</a>
         </div>
     </section>
 
@@ -607,7 +577,9 @@
                     <ul>
                         <li>metrograficadesign@gmail.com</li>
                         <li>099 585 6385 · 096 861 6429</li>
-                        <li>Ibarra, Ecuador</li>
+                        <li><a href="../index.html#location-map-title">Calle Simón Bolívar 6-08 y Juan José Flores, Ibarra · Cómo llegar</a></li>
+                        <li>Lunes a viernes, 9:00 a. m. a 6:00 p. m.</li>
+                        <li>En feriados el horario puede variar; confirma antes de visitarnos.</li>
                     </ul>
                 </div>
 
